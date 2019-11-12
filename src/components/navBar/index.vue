@@ -47,10 +47,10 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 10px 20px;
+  padding: 0 20px;
   box-sizing: border-box;
   width: 100%;
-  height: 56px;
+  height: 44px;
   display: flex;
   align-items: center;
   z-index: 9;

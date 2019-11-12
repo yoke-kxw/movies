@@ -161,7 +161,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 56px;
+  padding-top: 44px;
   padding-bottom: 100px;
   // nav部分
   .nav {
@@ -173,6 +173,7 @@ export default {
   }
   // banner部分
   .banner {
+    padding-top: 10px;
     .swiper-slide {
       width: 330px;
       height: 145px;

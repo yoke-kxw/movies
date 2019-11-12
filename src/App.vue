@@ -2,10 +2,6 @@
   <div id="app">
     <!-- 放入百度地图容器，进入页面时利用百度地图获取位置信息 -->
     <baidu-map class="bm-view" @ready="getLocation"></baidu-map>
-    <div id="nav">
-      <router-link to="/home">Home</router-link>|
-      <router-link to="/ticketBuy">ticketBuy</router-link>
-    </div>
     <router-view />
   </div>
 </template>
