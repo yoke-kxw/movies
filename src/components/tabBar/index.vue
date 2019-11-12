@@ -1,10 +1,10 @@
 <template>
   <ul class="tab-bar">
-    <router-link class="item" to="/home" tag="li">
+    <router-link to="/home" tag="li">
       <img src="@/assets/images/图标/形状结合e@3x.png" alt />
       <img src="@/assets/images/图标/形状结合@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/movie" tag="li">
+    <router-link to="/movie" tag="li">
       <img src="@/assets/images/图标/编组 4@3x.png" alt />
       <img src="@/assets/images/图标/编组 4复制@3x.png" alt />
     </router-link>
@@ -12,11 +12,11 @@
       <img src="@/assets/images/图标/编组 6@3x.png" alt />
       <img src="@/assets/images/图标/编组 6@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/cinema" tag="li">
+    <router-link to="/cinema" tag="li">
       <img src="@/assets/images/图标/编组 8@3x.png" alt />
       <img src="@/assets/images/图标/编组 811@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/main" tag="li">
+    <router-link to="/user" tag="li">
       <img src="@/assets/images/图标/编组 3@3x.png" alt />
       <img src="@/assets/images/图标/编组 31@3x.png" alt />
     </router-link>
