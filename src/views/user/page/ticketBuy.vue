@@ -1,11 +1,11 @@
 <template>
   <div class="ticket-buy">
     <div class="head">
-      <span @click="back">&lt;</span> <span>我的影票</span> <span> &lt; </span>
+      <span @click="$router.go(-1)">&lt;</span> <span>我的影票</span> <span> &lt; </span>
     </div>
     <div class="content">
-      <img class="content-shadow1" src="../../assets/images/我的影票_slices/形状结合@3x.png" alt="">
-      <img class="content-shadow2" src="../../assets/images/我的影票_slices/形状结合@3x.png" alt="">
+      <img class="content-shadow1" src="@/assets/images/我的影票_slices/形状结合@3x.png" alt="">
+      <img class="content-shadow2" src="@/assets/images/我的影票_slices/形状结合@3x.png" alt="">
       <swiper :options="swiperOption" ref="mySwiper">
         <!-- slides -->
         <swiper-slide>
@@ -132,7 +132,7 @@ export default {
   methods: {
     back() {
       // console.log("点击成功");
-      this.$router.push()
+      // this.$router.push('/user')
     }
   }
 };
@@ -248,6 +248,7 @@ export default {
           width: 320px;
           margin: 20px auto;
           padding: 0 10px;
+          color: #3A3A3A;
           box-sizing: border-box;
           p:nth-child(1) {
             width: 154px;
