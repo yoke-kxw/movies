@@ -9,7 +9,7 @@
 export default {
   name: "cinema",
   components: {
-    tabBar: () => import("@/components/tabBar/index.vue")
+    tabBar: () => import("@/components/tabBar")
   }
 };
 </script>

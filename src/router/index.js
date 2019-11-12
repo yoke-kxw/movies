@@ -34,9 +34,9 @@ const routes = [{
     component: () => import('@/views/cinema'),
   },
   {
-    path: '/main',
-    name: 'main',
-    component: () => import('@/views/main'),
+    path: '/user',
+    name: 'user',
+    component: () => import('@/views/user'),
   }
 ]
 

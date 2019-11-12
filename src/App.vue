@@ -15,5 +15,8 @@ html,
 body {
   // height: 100%;
   background-color: #23262d;
+  #app {
+    color: #dfdfdf;
+  }
 }
 </style>
