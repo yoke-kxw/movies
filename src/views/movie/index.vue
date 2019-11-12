@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
-    home页面
+  <div>
+    movie页面
     <tab-bar></tab-bar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "movie",
   components: {
     tabBar: () => import("@/components/tabBar/index.vue")
   }

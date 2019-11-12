@@ -17,6 +17,26 @@ const routes = [{
     path: '/ticketBuy',
     name: 'ticketBuy',
     component: () => import('@/views/user/ticketBuy')
+  }, 
+  {
+    path: '/movie',
+    name: 'movie',
+    component: () => import('@/views/movie')
+  },
+  {
+    path: '/ticket',
+    name: 'ticket',
+    component: () => import('@/views/ticket'),
+  },
+  {
+    path: '/cinema',
+    name: 'cinema',
+    component: () => import('@/views/cinema'),
+  },
+  {
+    path: '/main',
+    name: 'main',
+    component: () => import('@/views/main'),
   }
 ]
 
