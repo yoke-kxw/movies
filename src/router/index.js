@@ -56,11 +56,12 @@ const routes = [{
     component: () => import('@/views/user'),
   },
   {
-<<<<<<< HEAD
+
     path: '/cinecism',
     name: 'cinecism',
-    component:()=>import('@/views/movie/cinecism')
-=======
+    component: () => import('@/views/movie/cinecism')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/user/page/login.vue'),
@@ -74,7 +75,6 @@ const routes = [{
     path: '/talk',
     name: 'talk',
     component: () => import('@/views/user/page/talk.vue'),
->>>>>>> 24bb72a1ef691d440b1cf6452473483ac03ee139
   }
 ];
 
