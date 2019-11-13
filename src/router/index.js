@@ -3,8 +3,7 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "index",
     redirect: "/home"
@@ -19,8 +18,7 @@ const routes = [
     name: "movie",
     component: () => import("@/views/movie/index.vue"),
     redirect: "/movie/hotmovie",
-    children: [
-      {
+    children: [{
         path: "hotmovie",
         name: "hotmovie",
         component: () => import("@/views/movie/hotmovie/index.vue")
@@ -56,6 +54,16 @@ const routes = [
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
+    children: [{
+      path: 'login',
+      name: 'login',
+      component: () => import('@/views/user/page/login'),
+    },
+    {
+      path: 'tickectBuy',
+      name: 'tickectBuy',
+      component: () => import('@/views/user/page/ticketBuy'),
+    }]
   }
 ];
 
