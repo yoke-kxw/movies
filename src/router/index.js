@@ -1,37 +1,54 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [{
-    path: '/',
-    name: 'index',
-    redirect: '/home',
+    path: "/",
+    name: "index",
+    redirect: "/home"
   },
   {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/home')
+    path: "/home",
+    name: "home",
+    component: () => import("@/views/home")
   },
   {
-    path: '/ticketBuy',
-    name: 'ticketBuy',
-    component: () => import('@/views/user/ticketBuy')
-  }, 
-  {
-    path: '/movie',
-    name: 'movie',
-    component: () => import('@/views/movie')
+    path: "/movie",
+    name: "movie",
+    component: () => import("@/views/movie/index.vue"),
+    redirect: "/movie/hotmovie",
+    children: [{
+        path: "hotmovie",
+        name: "hotmovie",
+        component: () => import("@/views/movie/hotmovie/index.vue")
+      },
+      {
+        path: "upcoming",
+        name: "upcoming",
+        component: () => import("@/views/movie/upcoming/index.vue")
+      }
+    ]
   },
   {
-    path: '/ticket',
-    name: 'ticket',
-    component: () => import('@/views/ticket'),
+    path: "/ticket",
+    name: "ticket",
+    component: () => import("@/views/ticket")
   },
   {
-    path: '/cinema',
-    name: 'cinema',
-    component: () => import('@/views/cinema'),
+    path: "/cinema",
+    name: "cinema",
+    component: () => import("@/views/cinema")
+  },
+  {
+    path: '/cinema/cinemaMap',
+    name: 'cinemaMap',
+    component: () => import('@/views/cinema/cinemaMap'),
+  },
+  {
+    path: '/cinema/cinemaDetails/:uid',
+    name: 'cinemaDetails',
+    component: () => import('@/views/cinema/cinemaDetails'),
   },
   {
     path: '/user',
@@ -39,16 +56,32 @@ const routes = [{
     component: () => import('@/views/user'),
   },
   {
+<<<<<<< HEAD
     path: '/cinecism',
     name: 'cinecism',
     component:()=>import('@/views/movie/cinecism')
+=======
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/user/page/login.vue'),
+  },
+  {
+    path: '/tickectBuy',
+    name: 'tickectBuy',
+    component: () => import('@/views/user/page/ticketBuy.vue'),
+  },
+  {
+    path: '/talk',
+    name: 'talk',
+    component: () => import('@/views/user/page/talk.vue'),
+>>>>>>> 24bb72a1ef691d440b1cf6452473483ac03ee139
   }
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
