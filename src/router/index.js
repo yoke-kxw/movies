@@ -14,21 +14,6 @@ const routes = [{
     component: () => import("@/views/home")
   },
   {
-<<<<<<< HEAD
-    path: '/user/ticketBuy',
-    name: 'ticketBuy',
-    component: () => import('@/views/user/page/ticketBuy')
-  },
-  {
-    path: '/user/login',
-    name: 'login',
-    component: () => import('@/views/user/page/login')
-  },
-  {
-    path: '/movie',
-    name: 'movie',
-    component: () => import('@/views/movie')
-=======
     path: "/movie",
     name: "movie",
     component: () => import("@/views/movie/index.vue"),
@@ -44,7 +29,6 @@ const routes = [{
         component: () => import("@/views/movie/upcoming/index.vue")
       }
     ]
->>>>>>> 6a0f1e2c90bb67dff039f64ce7fa523f97bc5236
   },
   {
     path: "/ticket",
@@ -72,7 +56,6 @@ const routes = [{
     name: 'user',
     component: () => import('@/views/user'),
   },
-<<<<<<< HEAD
   {
     // 用户信息页面
     path: '/detailed',
@@ -86,33 +69,31 @@ const routes = [{
     redirect: '/order/whole',
     component: () => import('@/views/user/order/index.vue'),
     children: [{
-        // 全部
-        path: 'whole',
-        name: 'whole',
-        component: () => import('@/views/user/order/whole.vue'),
-      },
-      {
-        // 待付款
-        path: 'obligation',
-        name: 'obligation',
-        component: () => import('@/views/user/order/obligation.vue'),
-      },
-      {
-        // 待评价
-        path: 'appra',
-        name: 'appra',
-        component: () => import('@/views/user/order/appra.vue'),
-      },
-      {
-        // 退款
-        path: 'refund',
-        name: 'refund',
-        component: () => import('@/views/user/order/refund.vue'),
-      }
+      // 全部
+      path: 'whole',
+      name: 'whole',
+      component: () => import('@/views/user/order/whole.vue'),
+    },
+    {
+      // 待付款
+      path: 'obligation',
+      name: 'obligation',
+      component: () => import('@/views/user/order/obligation.vue'),
+    },
+    {
+      // 待评价
+      path: 'appra',
+      name: 'appra',
+      component: () => import('@/views/user/order/appra.vue'),
+    },
+    {
+      // 退款
+      path: 'refund',
+      name: 'refund',
+      component: () => import('@/views/user/order/refund.vue'),
+    }
     ]
-=======
-
-
+  },
 
   { // coupon: 优惠券页面
     path: '/user/coupon',
@@ -150,7 +131,6 @@ const routes = [{
     path: '/talk',
     name: 'talk',
     component: () => import('@/views/user/page/talk.vue'),
->>>>>>> 6a0f1e2c90bb67dff039f64ce7fa523f97bc5236
   }
 ];
 
