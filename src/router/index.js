@@ -14,21 +14,6 @@ const routes = [{
     component: () => import("@/views/home")
   },
   {
-<<<<<<< HEAD
-    path: '/user/ticketBuy',
-    name: 'ticketBuy',
-    component: () => import('@/views/user/page/ticketBuy')
-  },
-  {
-    path: '/user/login',
-    name: 'login',
-    component: () => import('@/views/user/page/login')
-  },
-  {
-    path: '/movie',
-    name: 'movie',
-    component: () => import('@/views/movie')
-=======
     path: "/movie",
     name: "movie",
     component: () => import("@/views/movie/index.vue"),
@@ -44,7 +29,6 @@ const routes = [{
         component: () => import("@/views/movie/upcoming/index.vue")
       }
     ]
->>>>>>> 6a0f1e2c90bb67dff039f64ce7fa523f97bc5236
   },
   {
     path: "/ticket",
@@ -72,7 +56,6 @@ const routes = [{
     name: 'user',
     component: () => import('@/views/user'),
   },
-<<<<<<< HEAD
   {
     // 用户信息页面
     path: '/detailed',
@@ -110,10 +93,7 @@ const routes = [{
         component: () => import('@/views/user/order/refund.vue'),
       }
     ]
-=======
-
-
-
+  },
   { // coupon: 优惠券页面
     path: '/user/coupon',
     name: 'coupon',
@@ -125,28 +105,25 @@ const routes = [{
     name: 'message',
     component: () => import('@/views/user/page/message.vue')
   },
-
   {
-
     path: '/cinecism',
     name: 'cinecism',
     component: () => import('@/views/movie/cinecism')
   },
-  {
+  { //登陆界面
     path: '/login',
     name: 'login',
     component: () => import('@/views/user/page/login.vue'),
   },
-  {
-    path: '/tickectBuy',
+  {  // 我的影票
+    path: '/ticketBuy',
     name: 'tickectBuy',
     component: () => import('@/views/user/page/ticketBuy.vue'),
   },
-  {
+  {  // 消息列表
     path: '/talk',
     name: 'talk',
     component: () => import('@/views/user/page/talk.vue'),
->>>>>>> 6a0f1e2c90bb67dff039f64ce7fa523f97bc5236
   }
 ];
 
