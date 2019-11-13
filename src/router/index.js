@@ -56,10 +56,14 @@ const routes = [{
     component: () => import('@/views/user'),
   },
   {
-
     path: '/cinecism',
     name: 'cinecism',
     component: () => import('@/views/movie/cinecism')
+  },
+  {
+    path: '/actorDetail',
+    name: 'actorDetail',
+    component: () => import('@/views/movie/actorDetail')
   },
   {
     path: '/login',
