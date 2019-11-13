@@ -16,6 +16,7 @@ const routes = [{
   {
     path: '/user/ticketBuy',
     name: 'ticketBuy',
+<<<<<<< HEAD
     component: () => import('@/views/user/page/ticketBuy')
   }, 
   {
@@ -23,6 +24,10 @@ const routes = [{
     name: 'login',
     component: () => import('@/views/user/page/login')
   }, 
+=======
+    component: () => import('@/views/user/ticketBuy')
+  },
+>>>>>>> 30145365bf4a51aecd769c3a370f5fc5adfcdd3b
   {
     path: '/movie',
     name: 'movie',
@@ -37,6 +42,11 @@ const routes = [{
     path: '/cinema',
     name: 'cinema',
     component: () => import('@/views/cinema'),
+  },
+  {
+    path: '/cinema/cinemaMap',
+    name: 'cinemaMap',
+    component: () => import('@/views/cinema/cinemaMap'),
   },
   {
     path: '/user',
