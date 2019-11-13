@@ -10,7 +10,7 @@
       </template>
     </nav-bar>
     <!-- 显示地址 -->
-    <router-link class="address-bar" to="/cinemaMap" tag="p">
+    <router-link class="address-bar" to="/cinema/cinemaMap" tag="p">
       <img class="icon" src="@/assets/images/影院_slices/定位@3x.png" alt />
       我在：{{ location.address }}
     </router-link>

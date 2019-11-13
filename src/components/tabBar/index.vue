@@ -47,7 +47,7 @@ export default {
     width: 40px;
     &.router-link-active {
       animation-name: rubberBand;
-      animation-duration: 0.5s;
+      animation-duration: 1s;
       animation-fill-mode: both;
     }
     &:nth-child(3) {
