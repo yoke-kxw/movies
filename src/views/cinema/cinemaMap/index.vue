@@ -1,7 +1,7 @@
 <template>
   <div class="cinema-map">
     <!-- nav开始 -->
-    <nav-bar left="back">
+    <nav-bar left="back" class="nav">
       <template v-slot:center>
         <p class="nav-title">影院地图</p>
       </template>
@@ -18,7 +18,7 @@
       <li class="item" v-for="item in cinemaList" :key="item.uid">
         <img class="cinema-img" src="@/assets/images/影院地图_slices/影院门头_百度图片搜索@3x.png" alt />
         <div class="cinema-info">
-          <router-link :to="`/cinemaDetails/${item.uid}`" class="view" tag="div">查看</router-link>
+          <router-link :to="`/cinema/cinemaDetails/${item.uid}`" class="view" tag="div">查看</router-link>
           <p class="elipsis">{{ item.title }}</p>
         </div>
       </li>
@@ -48,6 +48,11 @@ export default {
 
 <style lang="scss" scoped>
 .cinema-map {
+  padding-top: 44px;
+  .nav {
+    font-size: 20px;
+    color: #fff;
+  }
   .cinema-map-view {
     width: 100%;
     height: 584px;
