@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-c">
       <div class="header-text">
-        <a href="javascript:;">郑州 &or;</a>
+        <a href="http:www.baidu.com">郑州 &or;</a>
       </div>
       <!-- <div class="header-hotmovie" @click="hotmovie">
         <img
@@ -25,7 +25,6 @@
 
 <script>
 export default {
-  props: ["isShow"],
   data() {
     return {
       navSwitch: false,

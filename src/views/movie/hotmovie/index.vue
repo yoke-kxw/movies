@@ -56,14 +56,18 @@
 
 <script>
 import BScroll from "@better-scroll/core";
-import bigImg from "@/assets/images/电影详情_slices/傲慢与偏见.png";
-import smallImg from "@/assets/images/电影正在热映_slices/编组 9.png";
 export default {
   name: "HotMovie",
   data() {
     return {
       list: [],
-      navSwitch: false
+      navSwitch: false,
+      imgs: [
+        {
+          bigImg: require("@/assets/images/电影详情_slices/傲慢与偏见.png"),
+          smallImg: require("@/assets/images/电影正在热映_slices/编组 9.png")
+        }
+      ]
     };
   },
   mounted() {
@@ -77,8 +81,8 @@ export default {
     init() {
       for (var i = 0; i < 10; i++) {
         var obj = {
-          bigImg: bigImg,
-          smallImg: smallImg,
+          bigImg: this.imgs[0].bigImg,
+          smallImg: this.imgs[0].smallImg,
           oneTitle: "傲慢与偏见",
           twoTitle: "萤火虫评分",
           score: 9.1,

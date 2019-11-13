@@ -28,7 +28,16 @@ const routes = [
       {
         path: "upcoming",
         name: "upcoming",
-        component: () => import("@/views/movie/upcoming/index.vue")
+        component: () => import("@/views/movie/upcoming/index.vue"),
+        redirect: "/movie/upcoming/childpage",
+        children: [
+          {
+            path: "childpage",
+            path: "childpage",
+            component: () =>
+              import("@/views/movie/upcoming/childpages/index.vue")
+          }
+        ]
       }
     ]
   },
@@ -43,19 +52,19 @@ const routes = [
     component: () => import("@/views/cinema")
   },
   {
-    path: '/cinema/cinemaMap',
-    name: 'cinemaMap',
-    component: () => import('@/views/cinema/cinemaMap'),
+    path: "/cinema/cinemaMap",
+    name: "cinemaMap",
+    component: () => import("@/views/cinema/cinemaMap")
   },
   {
-    path: '/cinema/cinemaDetails/:uid',
-    name: 'cinemaDetails',
-    component: () => import('@/views/cinema/cinemaDetails'),
+    path: "/cinema/cinemaDetails/:uid",
+    name: "cinemaDetails",
+    component: () => import("@/views/cinema/cinemaDetails")
   },
   {
-    path: '/user',
-    name: 'user',
-    component: () => import('@/views/user'),
+    path: "/user",
+    name: "user",
+    component: () => import("@/views/user")
   }
 ];
 
