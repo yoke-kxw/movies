@@ -1,11 +1,11 @@
 <template>
   <div class="user">
     <!-- 顶部 -->
-    <div class="top">
+    <router-link tag="div" to="/detailed" class="top">
       <!-- 顶部设置评论栏 -->
       <div class="install">
         <img :src="img1" alt class="install-img1" />
-        <img :src="img2" alt class="install-img2" />
+        <img :src="img2" alt class="install-img2"  @click="toMessage" />
       </div>
       <!--  头像栏 -->
       <div class="head">
@@ -22,7 +22,7 @@
         <!-- 跳转图标 -->
         <div class="jump">&gt</div>
       </div>
-    </div>
+    </router-link>
     <!-- 会员中心 -->
     <div class="member">
       <!-- 会员中心标题 -->
@@ -38,7 +38,7 @@
       <img :src="img4" alt class="package" />
     </div>
     <!-- 我的订单 -->
-    <div class="order">
+    <router-link tag="div" to="/order" class="order">
       <!-- 导航栏 -->
       <div class="navigator">
         <div class="navigator-from">我的订单</div>
@@ -66,16 +66,16 @@
           <div>付款</div>
         </li>
       </ul>
-    </div>
+    </router-link>
     <!-- 底部 -->
     <ul class="bottom">
       <li>
         <div class="card">影城会员卡</div>
         <div class="jump">&gt</div>
       </li>
-      <li>
-        <div class="card">优惠券</div>
-        <div class="jump">&gt</div>
+      <li @click="toCoupon">
+        <div class="card" >优惠券</div>
+        <div class="jump" >&gt</div>
       </li>
       <li>
         <div class="card">我的收藏</div>
@@ -115,13 +115,24 @@ export default {
   },
   components: {
     tabBar: () => import("@/components/tabBar")
+  },
+
+  methods: {
+
+    toCoupon(){ // 点击跳转优惠券页面
+      this.$router.push('/user/coupon')
+    },
+
+    toMessage(){  // 点击跳到消息页面
+      this.$router.push('/user/message')
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
 .user {
   width: 100%;
-  height: 813px;
+  height: 760px;
   // 顶部
   .top {
     width: 100%;
