@@ -54,16 +54,21 @@ const routes = [{
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
-    children: [{
-      path: 'login',
-      name: 'login',
-      component: () => import('@/views/user/page/login'),
-    },
-    {
-      path: 'tickectBuy',
-      name: 'tickectBuy',
-      component: () => import('@/views/user/page/ticketBuy'),
-    }]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/user/page/login.vue'),
+  },
+  {
+    path: '/tickectBuy',
+    name: 'tickectBuy',
+    component: () => import('@/views/user/page/ticketBuy.vue'),
+  },
+  {
+    path: '/talk',
+    name: 'talk',
+    component: () => import('@/views/user/page/talk.vue'),
   }
 ];
 
