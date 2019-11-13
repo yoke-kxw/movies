@@ -1,10 +1,10 @@
 <template>
   <ul class="tab-bar">
-    <router-link class="item" to="/home" tag="li">
+    <router-link to="/home" tag="li">
       <img src="@/assets/images/图标/形状结合e@3x.png" alt />
       <img src="@/assets/images/图标/形状结合@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/movie" tag="li">
+    <router-link to="/movie" tag="li">
       <img src="@/assets/images/图标/编组 4@3x.png" alt />
       <img src="@/assets/images/图标/编组 4复制@3x.png" alt />
     </router-link>
@@ -12,11 +12,11 @@
       <img src="@/assets/images/图标/编组 6@3x.png" alt />
       <img src="@/assets/images/图标/编组 6@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/cinema" tag="li">
+    <router-link to="/cinema" tag="li">
       <img src="@/assets/images/图标/编组 8@3x.png" alt />
       <img src="@/assets/images/图标/编组 811@3x.png" alt />
     </router-link>
-    <router-link class="item" to="/main" tag="li">
+    <router-link to="/user" tag="li">
       <img src="@/assets/images/图标/编组 3@3x.png" alt />
       <img src="@/assets/images/图标/编组 31@3x.png" alt />
     </router-link>
@@ -45,6 +45,11 @@ export default {
   box-sizing: border-box;
   li {
     width: 40px;
+    &.router-link-active {
+      animation-name: rubberBand;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
     &:nth-child(3) {
       width: 65px;
       height: 65px;
@@ -62,6 +67,35 @@ export default {
     &.router-link-active img:last-child {
       display: block;
     }
+  }
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>
