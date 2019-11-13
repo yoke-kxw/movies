@@ -44,6 +44,11 @@ const routes = [{
     component: () => import('@/views/cinema/cinemaMap'),
   },
   {
+    path: '/cinema/cinemaDetails/:uid',
+    name: 'cinemaDetails',
+    component: () => import('@/views/cinema/cinemaDetails'),
+  },
+  {
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
