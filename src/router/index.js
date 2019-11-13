@@ -48,11 +48,28 @@ const routes = [{
     name: 'cinemaDetails',
     component: () => import('@/views/cinema/cinemaDetails'),
   },
+
   {
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
+  },
+
+
+
+  { // coupon: 优惠券页面
+    path: '/user/coupon',
+    name: 'coupon',
+    component: () => import('@/views/user/page/coupon.vue')
+  },
+
+  { // message: 消息页面
+    path: '/user/message',
+    name: 'message',
+    component: () => import('@/views/user/page/message.vue')
   }
+
+
 ]
 
 const router = new VueRouter({

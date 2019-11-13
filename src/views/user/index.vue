@@ -5,7 +5,7 @@
       <!-- 顶部设置评论栏 -->
       <div class="install">
         <img :src="img1" alt class="install-img1" />
-        <img :src="img2" alt class="install-img2" />
+        <img :src="img2" alt class="install-img2"  @click="toMessage" />
       </div>
       <!--  头像栏 -->
       <div class="head">
@@ -73,9 +73,9 @@
         <div class="card">影城会员卡</div>
         <div class="jump">&gt</div>
       </li>
-      <li>
-        <div class="card">优惠券</div>
-        <div class="jump">&gt</div>
+      <li @click="toCoupon">
+        <div class="card" >优惠券</div>
+        <div class="jump" >&gt</div>
       </li>
       <li>
         <div class="card">我的收藏</div>
@@ -115,6 +115,17 @@ export default {
   },
   components: {
     tabBar: () => import("@/components/tabBar")
+  },
+
+  methods: {
+
+    toCoupon(){ // 点击跳转优惠券页面
+      this.$router.push('/user/coupon')
+    },
+
+    toMessage(){  // 点击跳到消息页面
+      this.$router.push('/user/message')
+    }
   }
 };
 </script>
