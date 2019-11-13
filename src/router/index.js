@@ -56,6 +56,12 @@ const routes = [{
     component: () => import('@/views/user'),
   },
   {
+
+    path: '/cinecism',
+    name: 'cinecism',
+    component: () => import('@/views/movie/cinecism')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/user/page/login.vue'),
