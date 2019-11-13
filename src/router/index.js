@@ -17,12 +17,12 @@ const routes = [{
     path: '/user/ticketBuy',
     name: 'ticketBuy',
     component: () => import('@/views/user/page/ticketBuy')
-  }, 
+  },
   {
     path: '/user/login',
     name: 'login',
     component: () => import('@/views/user/page/login')
-  }, 
+  },
   {
     path: '/movie',
     name: 'movie',
@@ -52,6 +52,44 @@ const routes = [{
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
+  },
+  {
+    // 用户信息页面
+    path: '/detailed',
+    name: 'detailed',
+    component: () => import('@/views/user/detailed/index.vue'),
+  },
+  {
+    // 我的订单
+    path: '/order',
+    name: 'order',
+    redirect: '/order/whole',
+    component: () => import('@/views/user/order/index.vue'),
+    children: [{
+        // 全部
+        path: 'whole',
+        name: 'whole',
+        component: () => import('@/views/user/order/whole.vue'),
+      },
+      {
+        // 待付款
+        path: 'obligation',
+        name: 'obligation',
+        component: () => import('@/views/user/order/obligation.vue'),
+      },
+      {
+        // 待评价
+        path: 'appra',
+        name: 'appra',
+        component: () => import('@/views/user/order/appra.vue'),
+      },
+      {
+        // 退款
+        path: 'refund',
+        name: 'refund',
+        component: () => import('@/views/user/order/refund.vue'),
+      }
+    ]
   }
 ]
 
