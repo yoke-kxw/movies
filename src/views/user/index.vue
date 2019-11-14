@@ -1,8 +1,7 @@
 <template>
-  <div>
-    我的页面
+<div>
     <tab-bar></tab-bar>
-  </div>
+</div>
 </template>
 
 <script>
@@ -10,6 +9,6 @@ export default {
   name: "user",
   components: {
     tabBar: () => import("@/components/tabBar")
-  }
+  },
 };
 </script>

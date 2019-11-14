@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    home页面
     <tab-bar></tab-bar>
   </div>
 </template>

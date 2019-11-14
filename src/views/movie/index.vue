@@ -1,6 +1,5 @@
 <template>
   <div>
-    movie页面
     <tab-bar></tab-bar>
   </div>
 </template>

@@ -11,12 +11,27 @@ const routes = [{
   {
     path: '/home',
     name: 'home',
-    component: () => import('@/views/home')
+    component: () => import('@/views/home'),
+  },
+  {
+    path:'/search',
+    name:'Search',
+    component:() => import('../views/home/search/index.vue'),
+  },
+  {
+    path:'/home/signIn',
+    name:'homeSignIn',
+    component:() => import('../views/home/sign-in/index.vue'),
   },
   {
     path: '/movie',
     name: 'movie',
     component: () => import('@/views/movie')
+  },
+  {
+    path: '/movie/boxoffice',
+    name: 'boxOffice',
+    component: () => import('../views/movie/box-office/index.vue')
   },
   {
     path: '/ticket',
@@ -32,7 +47,13 @@ const routes = [{
     path: '/user',
     name: 'user',
     component: () => import('@/views/user'),
+  }, 
+  {
+    path:'/user/setting',
+    name:'userSetting',
+    component:()=>import('@/views/user/setting/index.vue'),
   }
+  
 ]
 
 const router = new VueRouter({
