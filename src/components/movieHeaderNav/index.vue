@@ -16,7 +16,7 @@
           alt=""
         />
       </div> -->
-      <div class="header-search">
+      <div class="header-search" @click="$router.push('/search')">
         <img src="@/assets/images/首页_slices/搜索.png" alt="" />
       </div>
     </div>

@@ -2,12 +2,12 @@
   <div class="nav-bar">
     <!-- 导航栏左侧 -->
     <div class="left">
-      <div class="location" v-if="left==='location'">
+      <div class="location" v-if="left==='location'" @click="$router.push('cityList')">
         <p class="elipsis">{{ city }}</p>
         <img src="@/assets/images/首页_slices/下 箭头@3x.png" alt />
       </div>
       <div class="close" v-if="left==='close'">
-        <span>关闭</span>
+        <span @click="$router.go(-1)">关闭</span>
       </div>
       <div class="back" v-if="left==='back'">
         <span @click="$router.go(-1)">&lt;</span>
@@ -55,7 +55,7 @@ export default {
   align-items: center;
   z-index: 9;
   .location {
-    width: 55px;
+    min-width: 55px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -65,8 +65,10 @@ export default {
       width: 12px;
     }
   }
-  .back {
+  .back,
+  .close {
     width: 55px;
+    font-size: 16px;
   }
   .center {
     flex: 1;

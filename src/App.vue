@@ -11,12 +11,11 @@
 </template>
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-
 export default {
   methods: {
     ...mapActions({ getLocation: "BaiduMap/getLocation" })
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 </style>
