@@ -1,6 +1,7 @@
 <template>
-  <div class="order">
-    <!-- 顶部导航 -->
+  <div class="order wrapper" ref="wrapper">
+    <div  class="content">
+  <!-- 顶部导航 -->
     <div class="top">
       <router-link tag="div" to="/user" class="jump">&lt</router-link>
       <div class="title">我的订单</div>
@@ -14,12 +15,40 @@
       <router-link tag="li" to="/order/refund">退款</router-link>
     </ul>
     <router-view></router-view>
+    </div>
+  
   </div>
 </template>
+<script>
+import BScroll from "@better-scroll/core";
+export default {
+  // 检验是否登录
+  beforeRouteEnter(to, from, next) {
+    if (to.path == "/order"||to.path == "/order/whole"||to.path == "/order/obligation"||to.path == "/order/appra"||to.path == "/order/refund") {
+      if (localStorage.getItem("user")) {
+         next();
+      }else {
+        alert('请先登录')
+        next("/login")
+      }
+    } else {
+      next();
+    }
+  },
+   mounted() {
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.wrapper, {
+           click: true
+      });
+    });
+  },
+}
+</script>
 <style lang="scss" scoped>
 .order {
   width: 100%;
   height: 100%;
+  .content {
   //   顶部导航
   .top {
     width: 336px;
@@ -70,5 +99,7 @@
       border-bottom: 1px solid #f9c34a;
     }
   }
+  }
+
 }
 </style>
