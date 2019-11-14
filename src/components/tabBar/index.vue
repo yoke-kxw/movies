@@ -43,6 +43,7 @@ export default {
   background: url("~@/assets/images/图标/编组@3x.png") no-repeat center / 100%
     100%;
   box-sizing: border-box;
+  z-index: 9;
   li {
     width: 40px;
     &.router-link-active {

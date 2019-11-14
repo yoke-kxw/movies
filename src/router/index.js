@@ -24,41 +24,36 @@ const routes = [{
   component: () => import('../views/home/sign-in/index.vue'),
 
 },
-// 电影页面
 {
-  path: "/movie",
-  name: "movie",
-  component: () => import("@/views/movie/index.vue"),
-  redirect: "/movie/hotmovie",
-  children: [
-    // 热映电影
-    {
-      path: "hotmovie",
-      name: "hotmovie",
-      component: () => import("@/views/movie/hotmovie/index.vue")
-    },
-    // 即将上映的电影
-    {
-      path: "upcoming",
-      name: "upcoming",
-      component: () => import("@/views/movie/upcoming/index.vue"),
-      redirect: "/movie/upcoming/childpage",
-      children: [
-        // 即将上映电影的切换
-        {
-          path: "childpage",
-          path: "childpage",
-          component: () =>
-            import("@/views/movie/upcoming/childpages/index.vue")
-        }
-      ]
-    }
-  ]
+  path: '/user/setting',
+  name: 'userSetting',
+  component: () => import('@/views/user/setting/index.vue'),
 },
 {       //票房
   path: '/movie/boxoffice',
   name: 'boxOffice',
   component: () => import('../views/movie/box-office/index.vue')
+},
+// 电影页面
+{
+  path: "/movie",
+  name: "movie",
+  component: () => import("@/views/movie"),
+  redirect: "/movie/showing",
+  children: [
+    // 正在热映
+    {
+      path: "showing",
+      name: "showing",
+      component: () => import("@/views/movie/showing")
+    },
+    // 即将上映
+    {
+      path: "coming",
+      name: "coming",
+      component: () => import("@/views/movie/coming")
+    },
+  ]
 },
 {
   path: "/ticket",
@@ -69,12 +64,6 @@ const routes = [{
   path: '/cityList',
   name: 'cityList',
   component: () => import('@/views/cityList')
-},
-
-{
-  path: '/user/setting',
-  name: 'userSetting',
-  component: () => import('@/views/user/setting/index.vue'),
 },
 {
   path: "/cinema",
@@ -148,6 +137,7 @@ const routes = [{
   name: 'purchase_tickets',
   component: () => import('@/views/user/page/purchase_tickets.vue')
 },
+
 {
   // coupon: 优惠券页面
   path: "/user/coupon",
@@ -186,7 +176,8 @@ const routes = [{
   name: "talk",
   component: () => import("@/views/user/page/talk.vue")
 }
-];
+]
+
 
 const router = new VueRouter({
   mode: "history",

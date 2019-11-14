@@ -4,7 +4,7 @@ const BaiduMap = {
         BMap: null,
         map: null,
         city: '',
-        location: null,
+        location: '',
         cinemaList: []
     },
     mutations: {},
