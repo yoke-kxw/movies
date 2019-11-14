@@ -75,6 +75,16 @@ const routes = [{
     name: "user",
     component: () => import("@/views/user")
   },
+
+
+////////////////////////////////////////////////
+
+  { // coupon: 优惠券页面
+    path: '/user/coupon',
+    name: 'coupon',
+    component: () => import('@/views/user/page/coupon.vue')
+  },
+
   {
     // 用户信息页面
     path: "/detailed",
@@ -113,6 +123,18 @@ const routes = [{
       }
     ]
   },
+
+  // purchase_tickets: 购票页面
+  {
+    path: '/user/purchase_tickets',
+    name: 'purchase_tickets',
+    component: () => import('@/views/user/page/purchase_tickets.vue')
+  },
+
+////////////////////////////////////////////////////
+
+
+
   {
     // coupon: 优惠券页面
     path: "/user/coupon",
@@ -126,6 +148,8 @@ const routes = [{
     name: "message",
     component: () => import("@/views/user/page/message.vue")
   },
+
+  
   {
     path: "/cinecism",
     name: "cinecism",
