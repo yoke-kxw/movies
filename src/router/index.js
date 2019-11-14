@@ -1,44 +1,55 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = [{
-    path: '/',
-    name: 'index',
-    redirect: '/home',
+const routes = [
+  {
+    path: "/",
+    name: "index",
+    redirect: "/home"
   },
   {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/home')
+    path: "/home",
+    name: "home",
+    component: () => import("@/views/home")
   },
   {
-    path: '/movie',
-    name: 'movie',
-    component: () => import('@/views/movie')
+    path: "/movie",
+    name: "movie",
+    component: () => import("@/views/movie")
   },
   {
-    path: '/ticket',
-    name: 'ticket',
-    component: () => import('@/views/ticket'),
+    path: "/ticket",
+    name: "ticket",
+    component: () => import("@/views/ticket")
   },
   {
-    path: '/cinema',
-    name: 'cinema',
-    component: () => import('@/views/cinema'),
+    path: "/cinema",
+    name: "cinema",
+    component: () => import("@/views/cinema")
   },
   {
-    path: '/user',
-    name: 'user',
-    component: () => import('@/views/user'),
+    path: "/user",
+    name: "user",
+    component: () => import("@/views/user")
+  },
+  {
+    path: "/buyticket",
+    name: "buyticket",
+    component: () => import("@/views/buyticket")
+  },
+  {
+    path: "/confirmorder",
+    name: "confirmorder",
+    component: () => import("@/views/confirmorder")
   }
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
