@@ -59,6 +59,8 @@ const routes = [{
 
 
 
+////////////////////////////////////////////////
+
   { // coupon: 优惠券页面
     path: '/user/coupon',
     name: 'coupon',
@@ -70,6 +72,17 @@ const routes = [{
     name: 'message',
     component: () => import('@/views/user/page/message.vue')
   },
+
+  // purchase_tickets: 购票页面
+  {
+    path: '/user/purchase_tickets',
+    name: 'purchase_tickets',
+    component: () => import('@/views/user/page/purchase_tickets.vue')
+  },
+
+////////////////////////////////////////////////////
+
+
 
   {
 
