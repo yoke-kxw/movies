@@ -9,7 +9,7 @@ body {
         font-family: PingFangSC-Regular, PingFang SC;
     }
 
-    // 内容一行显示，超出显示滚动条,子项目要添加item类名
+    // 内容在一行显示，超出显示滚动条,子项目要添加item类名
     .oneline {
         width: 100%;
         overflow-x: auto;
@@ -31,5 +31,28 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    // 搜索框样式
+    .search-eara {
+        display: flex;
+        align-items: center;
+        height: 36px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #33363d;
+
+        img {
+            width: 17px;
+            margin: 0 6px 0 12px;
+        }
+
+        input {
+            flex: 1;
+            border: 0; // 去除未选中状态边框
+            outline: none; // 去除选中状态边框
+            background-color: #33363d;
+            color: #dfdfdf;
+        }
     }
 }

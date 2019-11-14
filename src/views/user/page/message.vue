@@ -199,7 +199,7 @@ export default {
 
   .message-content {
     width: 100%;
-    height: 800px;
+    height: 688px;
     color: #fff;
     font-size: 12px;
 

@@ -3,8 +3,7 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "index",
     redirect: "/home"
@@ -51,6 +50,11 @@ const routes = [
     component: () => import("@/views/ticket")
   },
   {
+    path: '/cityList',
+    name: 'cityList',
+    component: () => import('@/views/cityList')
+  },
+  {
     path: "/cinema",
     name: "cinema",
     component: () => import("@/views/cinema")
@@ -71,6 +75,16 @@ const routes = [
     name: "user",
     component: () => import("@/views/user")
   },
+
+
+////////////////////////////////////////////////
+
+  { // coupon: 优惠券页面
+    path: '/user/coupon',
+    name: 'coupon',
+    component: () => import('@/views/user/page/coupon.vue')
+  },
+
   {
     // 用户信息页面
     path: "/detailed",
@@ -83,8 +97,7 @@ const routes = [
     name: "order",
     redirect: "/order/whole",
     component: () => import("@/views/user/order/index.vue"),
-    children: [
-      {
+    children: [{
         // 全部
         path: "whole",
         name: "whole",
@@ -110,6 +123,18 @@ const routes = [
       }
     ]
   },
+
+  // purchase_tickets: 购票页面
+  {
+    path: '/user/purchase_tickets',
+    name: 'purchase_tickets',
+    component: () => import('@/views/user/page/purchase_tickets.vue')
+  },
+
+////////////////////////////////////////////////////
+
+
+
   {
     // coupon: 优惠券页面
     path: "/user/coupon",
@@ -123,6 +148,8 @@ const routes = [
     name: "message",
     component: () => import("@/views/user/page/message.vue")
   },
+
+  
   {
     path: "/cinecism",
     name: "cinecism",
