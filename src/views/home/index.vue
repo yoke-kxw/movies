@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <router-view></router-view>
     <!-- nav开始 -->
     <nav-Bar left="location" class="nav">
       <template v-slot:center>
@@ -28,7 +29,9 @@
     <div class="hot">
       <div class="title">
         <span class="text">热映影片</span>
-        <router-link to="/movie" tag="span" class="all">全部&nbsp;&gt;</router-link>
+        <router-link to="/movie" tag="span" class="all"
+          >全部&nbsp;&gt;</router-link
+        >
       </div>
       <ul class="hot-list oneline">
         <li class="item" v-for="item in hotList" :key="item.id">
@@ -42,7 +45,9 @@
     <div class="coming">
       <div class="title">
         <span class="text">即将上映</span>
-        <router-link to="/movie/coming" tag="span" class="all">全部&nbsp;&gt;</router-link>
+        <router-link to="/movie/coming" tag="span" class="all"
+          >全部&nbsp;&gt;</router-link
+        >
       </div>
       <ul class="coming-list oneline">
         <li class="item" v-for="item in comingList" :key="item.id">
@@ -56,12 +61,14 @@
     <div class="trailer">
       <div class="title">
         <span class="text">精选预告</span>
-        <router-link to="/movie/coming" tag="span" class="all">全部&nbsp;&gt;</router-link>
+        <router-link to="/movie/coming" tag="span" class="all"
+          >全部&nbsp;&gt;</router-link
+        >
       </div>
       <ul class="trailer-list oneline">
         <li class="item" v-for="item in trailerList" :key="item.id">
           <img :src="imgUrl(item.img)" alt />
-          <p class="info">{{ item.info}}</p>
+          <p class="info">{{ item.info }}</p>
         </li>
       </ul>
     </div>
@@ -71,9 +78,12 @@
 </template>
 
 <script>
+
 export default {
   name: "home",
   components: {
+    tabBar: () => import("@/components/tabBar/index.vue"),
+
     navBar: () => import("@/components/navBar"),
     tabBar: () => import("@/components/tabBar")
   },
