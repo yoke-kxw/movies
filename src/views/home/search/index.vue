@@ -2,6 +2,7 @@
     <div class="search">
         <!-- 搜索页面 -->
         <div class="search-head">
+            <span @click="$router.go(-1)">&lt;</span>
             <div class="search-box">
                 <img src="~@/assets/images/首页_slices/搜索.png" alt="">
                 <input @blur="record" type="text" placeholder="搜索影片,影院,明星">
@@ -101,7 +102,7 @@
         justify-content: space-between;
         align-items: center;
         .search-box{
-            width: 90%;
+            width: 80%;
             height:36px;
             display: flex;
             // justify-content: space-between;

@@ -7,6 +7,7 @@ import BaiduMap from 'vue-baidu-map' //引入百度地图依赖
 import VueAwesomeSwiper from 'vue-awesome-swiper' // 引入swiper依赖
 import 'swiper/dist/css/swiper.css' // 引入swiper css
 import '@/assets/css/reset.css'
+import '@/assets/css/common.scss'
 
 Vue.config.productionTip = false
 

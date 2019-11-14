@@ -45,6 +45,11 @@ export default {
   box-sizing: border-box;
   li {
     width: 40px;
+    &.router-link-active {
+      animation-name: rubberBand;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
     &:nth-child(3) {
       width: 65px;
       height: 65px;
@@ -62,11 +67,6 @@ export default {
     &.router-link-active img:last-child {
       display: block;
     }
-  }
-  .rubberBand {
-    animation-name: rubberBand;
-    animation-duration: 1s;
-    animation-fill-mode: both;
   }
 }
 @keyframes rubberBand {
