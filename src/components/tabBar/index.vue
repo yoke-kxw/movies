@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss" scoped>
 .tab-bar {
-<<<<<<< HEAD
     position: fixed;
     bottom: 0;
     left: 0;
@@ -44,6 +43,7 @@ export default {
     background: url("~@/assets/images/图标/编组@3x.png") no-repeat center / 100%
         100%;
     box-sizing: border-box;
+    z-index: 9;
     li {
         width: 40px;
         &:nth-child(3) {
@@ -63,31 +63,6 @@ export default {
         &.router-link-active img:last-child {
             display: block;
         }
-=======
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding-bottom: 14px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  width: 100%;
-  height: 99px;
-  background: url("~@/assets/images/图标/编组@3x.png") no-repeat center / 100%
-    100%;
-  box-sizing: border-box;
-  z-index: 9;
-  li {
-    width: 40px;
-    &.router-link-active {
-      animation-name: rubberBand;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-    }
-    &:nth-child(3) {
-      width: 65px;
-      height: 65px;
->>>>>>> e8210552e75303c7121732fd702066a034bf4b83
     }
 }
 @keyframes rubberBand {

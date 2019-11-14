@@ -178,16 +178,6 @@ const routes = [
     name: "talk",
     component: () => import("@/views/user/page/talk.vue")
   },
-  {
-    path: "/chooseseat",
-    name: "chooseseat",
-    component: () => import("@/views/chooseseat")
-  },
-  {
-    path: "/confirmorder",
-    name: "confirmorder",
-    component: () => import("@/views/confirmorder")
-  }
 ];
 
 const router = new VueRouter({
