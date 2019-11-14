@@ -181,12 +181,12 @@ const routes = [
   {
     path: "/chooseseat",
     name: "chooseseat",
-    component: () => import("@/views/chooseseat")
+    component: () => import("@/views/cinema/chooseseat")
   },
   {
     path: "/confirmorder",
     name: "confirmorder",
-    component: () => import("@/views/confirmorder")
+    component: () => import("@/views/cinema/confirmorder")
   }
 ];
 

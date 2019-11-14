@@ -2,7 +2,7 @@
   <div class="buyticket">
     <!-- 头部开始 -->
     <div class="header">
-      <img :src="imgs[0].src" alt="" @click="$router.push('/cinemadetails')" />
+      <img :src="imgs[0].src" alt="" @click="$router.go(-1)" />
       <p>耀莱成龙影城(建业店)</p>
       <img :src="imgs[1].src" alt="" />
     </div>

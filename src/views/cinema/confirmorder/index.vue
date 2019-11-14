@@ -2,7 +2,7 @@
   <div class="confirmorder">
     <!-- 头部 -->
     <div class="header">
-      <img :src="imgs[1].url" alt="" @click="$router.push('/buyticket')" />
+      <img :src="imgs[1].url" alt="" @click="$router.go(-1)" />
     </div>
     <!-- 上部 -->
     <div class="top">
@@ -72,9 +72,8 @@
 </template>
 <style lang="scss" scoped>
 .confirmorder {
-  background: #23262d
-    url("~@/assets/images/确认订单_slices/banner.png") no-repeat
-    0 0;
+  background: #23262d url("~@/assets/images/确认订单_slices/banner.png")
+    no-repeat 0 0;
   background-size: 100%;
   color: #dfdfdf;
   font-size: 16px;
