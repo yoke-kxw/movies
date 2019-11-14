@@ -1,15 +1,63 @@
 <template>
-  <div>
-    movie页面
+  <div class="movie">
+    <nav-bar left="location" class="nav">
+      <template v-slot:center>
+        <ul class="movie-toggle">
+          <router-link to="/movie/showing" tag="li">正在热映</router-link>
+          <router-link to="/movie/coming" tag="li">即将上映</router-link>
+        </ul>
+      </template>
+      <template v-slot:right>
+        <img src="@/assets/images/首页_slices/搜索@3x.png" alt @click="$router.push('/search')" />
+      </template>
+    </nav-bar>
+    <router-view></router-view>
     <tab-bar></tab-bar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "movie",
   components: {
+    navBar: () => import("@/components/navBar"),
     tabBar: () => import("@/components/tabBar")
+  },
+  data() {
+    return {};
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.movie {
+  padding: 44px 0 100px;
+  .nav {
+    background-color: #33363d;
+  }
+  .movie-toggle {
+    width: 124px;
+    height: 25px;
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-image: linear-gradient(314deg, #f19e65, #f2697f);
+    li {
+      flex: 1;
+      font-size: 14px;
+      text-align: center;
+      line-height: 25px;
+      background-color: #33363d;
+      &.router-link-active {
+        background-color: transparent;
+        color: #fff;
+      }
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+  }
+}
+</style>

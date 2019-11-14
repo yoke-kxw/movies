@@ -1,10 +1,12 @@
 <template>
   <div class="buyticket">
+    <!-- 头部开始 -->
     <div class="header">
       <img :src="imgs[0].src" alt="" @click="$router.push('/cinemadetails')" />
       <p>耀莱成龙影城(建业店)</p>
       <img :src="imgs[1].src" alt="" />
     </div>
+    <!-- 内容 -->
     <div class="content">
       <h3 class="content-title">后来的我们</h3>
       <div class="content-time">
@@ -25,6 +27,7 @@
           <p>已选</p>
         </div>
       </div>
+      <!-- 座位图 -->
       <div v-if="seatArray.length > 0" class="content-main">
         <div class="nav-center"><span>2号厅(冠名招商中)</span></div>
         <div class="nav-side">
@@ -56,6 +59,7 @@
           </div>
         </div>
       </div>
+      <!-- 推荐座位部分 -->
       <div class="content-recommend">
         <div class="content-recommend-numofp">
           <p>推荐座位</p>
@@ -94,7 +98,7 @@
 </template>
 <style lang="scss" scoped>
 .buyticket {
-  background: #23262d url("../../assets/images/选座/seat_bg.9f25a857.png")
+  background: #23262d url("~@/assets/images/选座/seat_bg.9f25a857.png")
     no-repeat 0 0;
   background-size: 100% 30%;
   width: 375px;

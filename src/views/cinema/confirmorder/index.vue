@@ -1,8 +1,10 @@
 <template>
   <div class="confirmorder">
+    <!-- 头部 -->
     <div class="header">
       <img :src="imgs[1].url" alt="" @click="$router.push('/buyticket')" />
     </div>
+    <!-- 上部 -->
     <div class="top">
       <p>后来的我们</p>
       <p>今天2月1日 15:30 原版3D</p>
@@ -15,6 +17,7 @@
       </p>
     </div>
     <hr />
+    <!-- 中部 -->
     <div class="center">
       <div class="center-item">
         <p>电影优惠券</p>
@@ -47,6 +50,7 @@
         </div>
       </div>
     </div>
+    <!-- 底部 -->
     <div class="bottom">
       <div class="bottom-text">
         <div class="bottom-text-l">
@@ -69,7 +73,7 @@
 <style lang="scss" scoped>
 .confirmorder {
   background: #23262d
-    url("../..//assets/images/确认订单_slices/点击查看源网页复制.png") no-repeat
+    url("~@/assets/images/确认订单_slices/banner.png") no-repeat
     0 0;
   background-size: 100%;
   color: #dfdfdf;
