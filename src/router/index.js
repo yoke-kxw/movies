@@ -26,10 +26,10 @@ const routes = [
         component: () => import("@/views/movie/hotmovie/index.vue")
       },
       {
-        path: "upcoming",
-        name: "upcoming",
-        component: () => import("@/views/movie/upcoming/index.vue"),
-        redirect: "/movie/upcoming/childpage",
+        // path: "upcoming",
+        // name: "upcoming",
+        // component: () => import("@/views/movie/upcoming/index.vue"),
+        // redirect: "/movie/upcoming/childpage",
         children: [
           {
             path: "childpage",
