@@ -1,17 +1,16 @@
 <template>
-  <div class="movie-header">
-    <headerNav></headerNav>
-    <ul class="movie-uls">
-      <router-link
-        class="movie-item"
-        tag="li"
-        :to="item.path"
-        v-for="item in list"
-        :key="item.path"
-      >
-        {{ item.name }}
-      </router-link>
-    </ul>
+  <div class="movie">
+    <nav-bar left="location" class="nav">
+      <template v-slot:center>
+        <ul class="movie-toggle">
+          <router-link to="/movie/showing" tag="li">正在热映</router-link>
+          <router-link to="/movie/coming" tag="li">即将上映</router-link>
+        </ul>
+      </template>
+      <template v-slot:right>
+        <img src="@/assets/images/首页_slices/搜索@3x.png" alt @click="$router.push('/search')" />
+      </template>
+    </nav-bar>
     <router-view></router-view>
     <tab-bar></tab-bar>
   </div>
@@ -19,62 +18,45 @@
 
 <script>
 export default {
-  name: "movie",
-  data() {
-    return {
-      list: [
-        {
-          path: "/movie/hotmovie",
-          name: "正在热映"
-        },
-        {
-          path: "/movie/upcoming",
-          name: "即将上映"
-        }
-      ]
-    };
-  },
   components: {
-    tabBar: () => import("@/components/tabBar/index.vue"),
-    headerNav: () => import("@/components/movieHeaderNav/index.vue")
+    navBar: () => import("@/components/navBar"),
+    tabBar: () => import("@/components/tabBar")
   },
-  methods: {}
+  data() {
+    return {};
+  }
 };
 </script>
+
 <style lang="scss" scoped>
-.movie-header {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #22262d;
-  .movie-uls {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 164px;
-    height: 26px;
+.movie {
+  padding: 44px 0 100px;
+  .nav {
+    background-color: #33363d;
+  }
+  .movie-toggle {
+    width: 124px;
+    height: 25px;
     display: flex;
-    font-size: 14px;
-    line-height: 26px;
-    text-align: center;
-    border: 1px solid orange;
-    background: #23262d;
-    z-index: 10;
-    margin-top: 10px;
-    border-radius: 5px;
-    color: #969393;
-    .movie-item {
-      width: 84px;
-      height: 26.5px;
-      border-radius: 2px 0 0 2px;
-    }
-    .router-link-active {
-      background: linear-gradient(135deg, #f26680, #f1a561);
-      color: #fff;
-    }
-    .movie-item:nth-child(2) {
-      border-radius: 0 2px 2px 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-image: linear-gradient(314deg, #f19e65, #f2697f);
+    li {
+      flex: 1;
+      font-size: 14px;
+      text-align: center;
+      line-height: 25px;
+      background-color: #33363d;
+      &.router-link-active {
+        background-color: transparent;
+        color: #fff;
+      }
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
     }
   }
 }

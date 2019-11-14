@@ -17,31 +17,21 @@ const routes = [{
   {
     path: "/movie",
     name: "movie",
-    component: () => import("@/views/movie/index.vue"),
-    redirect: "/movie/hotmovie",
+    component: () => import("@/views/movie"),
+    redirect: "/movie/showing",
     children: [
-      // 热映电影
+      // 正在热映
       {
-        path: "hotmovie",
-        name: "hotmovie",
-        component: () => import("@/views/movie/hotmovie/index.vue")
+        path: "showing",
+        name: "showing",
+        component: () => import("@/views/movie/showing")
       },
-      // 即将上映的电影
+      // 即将上映
       {
-        path: "upcoming",
-        name: "upcoming",
-        component: () => import("@/views/movie/upcoming/index.vue"),
-        redirect: "/movie/upcoming/childpage",
-        children: [
-          // 即将上映电影的切换
-          {
-            path: "childpage",
-            path: "childpage",
-            component: () =>
-              import("@/views/movie/upcoming/childpages/index.vue")
-          }
-        ]
-      }
+        path: "coming",
+        name: "coming",
+        component: () => import("@/views/movie/coming")
+      },
     ]
   },
   {
@@ -77,7 +67,7 @@ const routes = [{
   },
 
 
-////////////////////////////////////////////////
+  ////////////////////////////////////////////////
 
   { // coupon: 优惠券页面
     path: '/user/coupon',
@@ -131,7 +121,7 @@ const routes = [{
     component: () => import('@/views/user/page/purchase_tickets.vue')
   },
 
-////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////
 
 
 
@@ -149,7 +139,7 @@ const routes = [{
     component: () => import("@/views/user/page/message.vue")
   },
 
-  
+
   {
     path: "/cinecism",
     name: "cinecism",
