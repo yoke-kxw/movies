@@ -18,7 +18,7 @@
     <ul class="cinema-list clearfix">
       <router-link
         class="item"
-        :to="`/cinemaDetails/${item.uid}`"
+        :to="`/cinema/cinemaDetails/${item.uid}`"
         tag="li"
         v-for="item in cinemaList"
         :key="item.uid"

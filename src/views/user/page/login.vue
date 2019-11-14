@@ -11,13 +11,13 @@
       />
       <div class="user">
         <img src="@/assets/images/登录页_slices (1)/编组 2@3x.png" alt="" />
-        <input type="text" placeholder="请输入手机号" />
+        <input type="text" placeholder="请输入手机号" v-model.trim="user" />
       </div>
       <div class="password">
         <img src="@/assets/images/登录页_slices (1)/编组@3x.png" alt="" />
-        <input type="text" placeholder="请输入密码" />
+        <input type="password" placeholder="请输入密码" v-model.trim="password"/>
       </div>
-      <div class="btn">
+      <div class="btn" @click="login">
         登陆
       </div>
       <div class="bottom">
@@ -29,7 +29,36 @@
 </template>
 
 <script>
-export default {};
+import Vue from 'vue'
+import { Toast } from 'vant';   
+// 按需导入组件  之后要引用对应的css样式才能出来
+import 'vant/lib/toast/style';
+
+// Vue.use(Toast);
+export default {
+  data () {
+    return {
+      user: '',
+      password: '',
+    }
+  },
+  methods: {
+    login(){
+      // console.log(Toast)
+      // console.log('点击成功')
+      if(this.user == '' || this.password == '' ){
+        // console.log('失败')
+        // alert('请输入账户或密码')
+        Toast('请输入账户或密码');
+      }else {
+        localStorage.setItem('user',JSON.stringify({user:this.user, password: this.password}));
+        // console.log('成功')
+        Toast('登陆成功');
+        this.$router.push('/user')
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

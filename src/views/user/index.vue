@@ -1,7 +1,7 @@
 <template>
   <div class="user">
     <!-- 顶部 -->
-    <div class="top">
+    <router-link tag="div" to="/detailed" class="top">
       <!-- 顶部设置评论栏 -->
       <div class="install">
         <img :src="img1" alt class="install-img1" />
@@ -22,7 +22,7 @@
         <!-- 跳转图标 -->
         <div class="jump">&gt</div>
       </div>
-    </div>
+    </router-link>
     <!-- 会员中心 -->
     <div class="member">
       <!-- 会员中心标题 -->
@@ -38,7 +38,7 @@
       <img :src="img4" alt class="package" />
     </div>
     <!-- 我的订单 -->
-    <div class="order">
+    <router-link tag="div" to="/order" class="order">
       <!-- 导航栏 -->
       <div class="navigator">
         <div class="navigator-from">我的订单</div>
@@ -66,7 +66,7 @@
           <div>付款</div>
         </li>
       </ul>
-    </div>
+    </router-link>
     <!-- 底部 -->
     <ul class="bottom">
       <li>
@@ -132,7 +132,7 @@ export default {
 <style lang="scss" scoped>
 .user {
   width: 100%;
-  height: 813px;
+  height: 760px;
   // 顶部
   .top {
     width: 100%;
