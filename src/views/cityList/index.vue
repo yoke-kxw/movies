@@ -94,14 +94,14 @@ export default {
       }
     }),
     hotCitys() {
-      this.refreshScoll();
+      this.refreshScoll(this);
       return cityList.find(el => el.name === "hot");
     },
     allCity() {
       return cityList.filter(el => el.name !== "hot");
     },
     searchList() {
-      this.refreshScoll();
+      this.refreshScoll(this);
       if (!this.keywords) {
         return;
       }
@@ -115,7 +115,8 @@ export default {
   methods: {
     ...mapActions({
       switchCity: "BaiduMap/switchCity",
-      getLocation: "BaiduMap/getLocation"
+      getLocation: "BaiduMap/getLocation",
+      refreshScoll: "refreshScoll"
     }),
     syncSwitchCity(val) {
       if (this.historyCitys.some(el => el === val)) {
@@ -126,7 +127,7 @@ export default {
       }
       this.historyCitys.unshift(val);
       this.switchCity(val);
-      this.refreshScoll();
+      this.refreshScoll(this);
     },
     scollStart(e) {
       var el = document.elementFromPoint(
@@ -142,14 +143,6 @@ export default {
     scollEnd() {
       this.letter = "";
       this.scroll.enable();
-    },
-    refreshScoll() {
-      if (!this.scroll) {
-        return;
-      }
-      this.$nextTick(() => {
-        this.scroll.refresh();
-      });
     }
   },
   mounted() {

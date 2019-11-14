@@ -136,13 +136,13 @@ export default {
           id: Math.random(),
           title: "THE WORLD aaaaaaaaa",
           img: "NicoleVivico采集到经典电影海报@3x.png",
-          date: "1月25日"
+          date: "2月25日"
         },
         {
           id: Math.random(),
           title: "BABBIT HOLE",
           img: "嘿看这采集到Graphic Design ☆ 广告、海报复制@3x.png",
-          date: "1月25日"
+          date: "1月20日"
         }
       ],
       trailerList: [
