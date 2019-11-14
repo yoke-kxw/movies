@@ -69,6 +69,19 @@ export default {
       display: block;
     }
   }
+  img {
+    display: block;
+    width: 100%;
+  }
+  img:last-child {
+    display: none;
+  }
+  &.router-link-active img:first-child {
+    display: none;
+  }
+  &.router-link-active img:last-child {
+    display: block;
+  }
 }
 @keyframes rubberBand {
   from {

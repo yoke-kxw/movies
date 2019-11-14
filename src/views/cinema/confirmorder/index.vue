@@ -2,7 +2,7 @@
   <div class="confirmorder">
     <!-- 头部 -->
     <div class="header">
-      <img :src="imgs[1].url" alt="" @click="$router.push('/buyticket')" />
+      <img :src="imgs[1].url" alt="" @click="$router.go(-1)" />
     </div>
     <!-- 上部 -->
     <div class="top">
@@ -22,7 +22,7 @@
       <div class="center-item">
         <p>电影优惠券</p>
         <div class="center-item-row">
-          <p>一张优惠券可用</p>
+          <p @click="$router.push('/user/coupon')">有优惠券可用</p>
           <img :src="imgs[2].url" alt="" />
         </div>
       </div>
@@ -72,9 +72,8 @@
 </template>
 <style lang="scss" scoped>
 .confirmorder {
-  background: #23262d
-    url("~@/assets/images/确认订单_slices/banner.png") no-repeat
-    0 0;
+  background: #23262d url("~@/assets/images/确认订单_slices/banner.png")
+    no-repeat 0 0;
   background-size: 100%;
   color: #dfdfdf;
   font-size: 16px;

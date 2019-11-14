@@ -118,7 +118,7 @@ export default {
     tabBar: () => import("@/components/tabBar")
   },
  created () {
-  //  检验是否登录
+  //  检验是否登录aa
     if(localStorage.getItem('user')){
           this.issign = true;
           this.iscoupon = true
