@@ -160,11 +160,22 @@ const routes = [
     name: "message",
     component: () => import("@/views/user/page/message.vue")
   },
-
   {
     path: "/cinecism",
     name: "cinecism",
     component: () => import("@/views/movie/cinecism")
+  },
+  // 演员详情
+  {
+    path: '/actorDetail',
+    name: 'actorDetail',
+    component:()=>import('@/views/movie/actorDetail')
+  },
+  // 电影评分
+  {
+    path: '/movieScore',
+    name: 'movieScore',
+    component:()=>import('@/views/movie/movieScore')
   },
   {
     //登陆界面
