@@ -184,11 +184,13 @@ const routes = [
     name: "talk",
     component: () => import("@/views/user/page/talk.vue")
   },
+  // 选座
   {
     path: "/chooseseat",
     name: "chooseseat",
     component: () => import("@/views/cinema/chooseseat")
   },
+  // 确认订单
   {
     path: "/confirmorder",
     name: "confirmorder",
