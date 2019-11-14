@@ -4,7 +4,7 @@ const BaiduMap = {
         BMap: null,
         map: null,
         city: '',
-        location: '',
+        location: {},
         cinemaList: []
     },
     mutations: {},
@@ -17,6 +17,12 @@ const BaiduMap = {
             state.city = city;
             state.map.centerAndZoom(city, 15); // ,用城市名设置地图中心点
             state.map.addEventListener("tilesloaded", () => dispatch('getCinema'));
+        },
+        // 聚焦
+        mapFouce({
+            state
+        }, point) {
+            state.map.centerAndZoom(point, 18);
         },
         // 百度地图定位
         getLocation({
@@ -71,7 +77,8 @@ const BaiduMap = {
                     if (this.getStatus() == BMAP_STATUS_SUCCESS) {
                         console.log(r);
                         state.city = r.address.city.replace(/市$/, "");
-                        state.location = r;
+                        state.location.point = r.point;
+                        state.location.address = r.address.city;
                         var [lng, lat] = [r.point.lng, r.point.lat];
                         var userPoint = new BMap.Point(lng, lat);
                         map.centerAndZoom(userPoint, 18);
