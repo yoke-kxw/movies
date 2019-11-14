@@ -22,7 +22,7 @@
       <div class="center-item">
         <p>电影优惠券</p>
         <div class="center-item-row">
-          <p>一张优惠券可用</p>
+          <p @click="$router.push('/user/coupon')">有优惠券可用</p>
           <img :src="imgs[2].url" alt="" />
         </div>
       </div>
