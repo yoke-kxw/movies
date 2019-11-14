@@ -1,31 +1,31 @@
 <template>
-    <ul class="tab-bar">
-        <router-link to="/home" tag="li">
-            <img src="@/assets/images/图标/形状结合e@3x.png" alt />
-            <img src="@/assets/images/图标/形状结合@3x.png" alt />
-        </router-link>
-        <router-link to="/movie" tag="li">
-            <img src="@/assets/images/图标/编组 4@3x.png" alt />
-            <img src="@/assets/images/图标/编组 4复制@3x.png" alt />
-        </router-link>
-        <router-link to="/ticket" tag="li">
-            <img src="@/assets/images/图标/编组 6@3x.png" alt />
-            <img src="@/assets/images/图标/编组 6@3x.png" alt />
-        </router-link>
-        <router-link to="/cinema" tag="li">
-            <img src="@/assets/images/图标/编组 8@3x.png" alt />
-            <img src="@/assets/images/图标/编组 811@3x.png" alt />
-        </router-link>
-        <router-link to="/user" tag="li">
-            <img src="@/assets/images/图标/编组 3@3x.png" alt />
-            <img src="@/assets/images/图标/编组 31@3x.png" alt />
-        </router-link>
-    </ul>
+  <ul class="tab-bar">
+    <router-link to="/home" tag="li">
+      <img src="@/assets/images/图标/形状结合e@3x.png" alt />
+      <img src="@/assets/images/图标/形状结合@3x.png" alt />
+    </router-link>
+    <router-link to="/movie" tag="li">
+      <img src="@/assets/images/图标/编组 4@3x.png" alt />
+      <img src="@/assets/images/图标/编组 4复制@3x.png" alt />
+    </router-link>
+    <router-link to="/ticket" tag="li">
+      <img src="@/assets/images/图标/编组 6@3x.png" alt />
+      <img src="@/assets/images/图标/编组 6@3x.png" alt />
+    </router-link>
+    <router-link to="/cinema" tag="li">
+      <img src="@/assets/images/图标/编组 8@3x.png" alt />
+      <img src="@/assets/images/图标/编组 811@3x.png" alt />
+    </router-link>
+    <router-link to="/user" tag="li">
+      <img src="@/assets/images/图标/编组 3@3x.png" alt />
+      <img src="@/assets/images/图标/编组 31@3x.png" alt />
+    </router-link>
+  </ul>
 </template>
 
 <script>
 export default {
-    name: "tabBar"
+  name: "tabBar"
 };
 </script>
 
@@ -64,7 +64,8 @@ export default {
             display: block;
         }
     }
-}
+  }
+
 @keyframes rubberBand {
   from {
     transform: scale3d(1, 1, 1);
