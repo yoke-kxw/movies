@@ -11,7 +11,6 @@
 </template>
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-
 export default {
   methods: {
     ...mapActions({ getLocation: "BaiduMap/getLocation" })
