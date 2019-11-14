@@ -90,8 +90,8 @@ export default {
       position: relative;
       .content-item-img {
         width: 105px;
-        height: 156px;
-        transform: translate(-5px, -10px);
+        height: 160px;
+        transform: translate(-5px, -5px);
         position: relative;
 
         img {

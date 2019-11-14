@@ -41,6 +41,12 @@ const routes = [
       }
     ]
   },
+  // movie 页面下的 影片详情 
+  {
+    path: "/movie/hotmovie/film",
+    name: "film",
+    component: () => import("@/views/movie/hotmovie/filmdetails/index.vue")
+  },
   {
     path: "/ticket",
     name: "ticket",

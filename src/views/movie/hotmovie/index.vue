@@ -27,12 +27,18 @@
         <div class="content-main">
           <div class="content-main-c">
             <div class="content-item" v-for="item in list" :key="item.id">
-              <div class="content-item-img">
-                <img :src="item.bigImg" alt="" />
-                <a href="https://www.baidu.com">
-                  <img :src="item.smallImg" alt="" />
-                </a>
-              </div>
+              <router-link
+                tag="div"
+                class="router-link"
+                to="/movie/hotmovie/film"
+              >
+                <div class="content-item-img">
+                  <img :src="item.bigImg" alt="" />
+                  <span>
+                    <img :src="item.smallImg" alt="" />
+                  </span>
+                </div>
+              </router-link>
               <div class="content-item-text">
                 <h2>{{ item.oneTitle }}</h2>
                 <h3>
@@ -49,6 +55,7 @@
             </div>
           </div>
         </div>
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -126,61 +133,62 @@ export default {
   background: #22262d;
   .wrappe {
     width: 100%;
+    height: 667px;
     .content {
       width: 100%;
-      height: 100%;
-      .header {
-        width: 100%;
-        background: #33363d;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        .header-c {
-          width: 337px;
-          height: 45px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          .header-text {
-            width: 83px;
-            height: 45px;
-            a {
-              display: block;
-              width: 100%;
-              height: 45px;
-              font-size: 16px;
-              line-height: 45px;
-              text-decoration: none;
-              color: #d5d5d5;
-            }
-          }
-          .header-hotmovie {
-            width: 167px;
-            height: 100%;
-            position: relative;
-            img {
-              display: block;
-              width: 100%;
-              height: 35px;
-              margin-top: 5px;
-            }
-          }
-          .header-search {
-            width: 89px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            img {
-              display: block;
-              width: 17px;
-              height: 17px;
-              margin-right: 10px;
-            }
-          }
-        }
-      }
+      height: 1000px;
+      // .header {
+      //   width: 100%;
+      //   background: #33363d;
+      //   position: fixed;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: 10;
+      //   .header-c {
+      //     width: 337px;
+      //     height: 45px;
+      //     margin: 0 auto;
+      //     display: flex;
+      //     justify-content: space-between;
+      //     .header-text {
+      //       width: 83px;
+      //       height: 45px;
+      //       a {
+      //         display: block;
+      //         width: 100%;
+      //         height: 45px;
+      //         font-size: 16px;
+      //         line-height: 45px;
+      //         text-decoration: none;
+      //         color: #d5d5d5;
+      //       }
+      //     }
+      //     .header-hotmovie {
+      //       width: 167px;
+      //       height: 100%;
+      //       position: relative;
+      //       img {
+      //         display: block;
+      //         width: 100%;
+      //         height: 35px;
+      //         margin-top: 5px;
+      //       }
+      //     }
+      //     .header-search {
+      //       width: 89px;
+      //       height: 100%;
+      //       display: flex;
+      //       align-items: center;
+      //       justify-content: flex-end;
+      //       img {
+      //         display: block;
+      //         width: 17px;
+      //         height: 17px;
+      //         margin-right: 10px;
+      //       }
+      //     }
+      //   }
+      // }
       .content-main {
         .content-main-c {
           width: 100%;
@@ -200,27 +208,28 @@ export default {
             justify-content: space-between;
             align-items: center;
             position: relative;
-            .content-item-img {
-              width: 105px;
-              height: 156px;
-              transform: translate(-5px, -10px);
-              position: relative;
+            .router-link {
+              .content-item-img {
+                width: 105px;
+                height: 166px;
+                transform: translate(-5px, -5px);
 
-              img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                border-radius: 22%;
-              }
-              a {
-                position: absolute;
-                top: 30%;
-                left: 35%;
-                width: 38px;
-                height: 38px;
-                &.img {
+                img {
+                  display: block;
                   width: 100%;
                   height: 100%;
+                  border-radius: 22%;
+                }
+                span {
+                  position: absolute;
+                  top: 30%;
+                  left: 35%;
+                  width: 38px;
+                  height: 38px;
+                  &.img {
+                    width: 100%;
+                    height: 100%;
+                  }
                 }
               }
             }

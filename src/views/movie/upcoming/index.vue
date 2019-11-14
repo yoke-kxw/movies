@@ -121,9 +121,10 @@ export default {
   margin-top: 45px;
   .wrappe {
     width: 100%;
+    height: 667px;
     .content {
       width: 100%;
-      height: 100%;
+      height: 800px;
       position: relative;
       .header-swiper {
         position: absolute;
