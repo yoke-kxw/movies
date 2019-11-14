@@ -1,28 +1,43 @@
 <template>
   <div class="user">
     <!-- 顶部 -->
-    <router-link tag="div" to="/detailed" class="top">
+    <div class="top">
       <!-- 顶部设置评论栏 -->
       <div class="install">
-        <img :src="img1" alt class="install-img1" />
-        <img :src="img2" alt class="install-img2"  @click="toMessage" />
+         <img :src="require('@/assets/images/我的_slices/install-2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
+        <img :src="require('@/assets/images/我的_slices/install-1.png')" alt class="install-img2"  @click="toMessage"/>
       </div>
-      <!--  头像栏 -->
-      <div class="head">
+      <!--  头像栏登录状态-->
+      <div v-if="issign" class="head">
         <!-- 头像 -->
-        <img :src="img3" alt class="head-img1" />
+        <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
         <!-- 名字 -->
         <div class="head-content">
           <div class="head-content-1">yujia1130</div>
-          <div class="head-content-2">
+          <router-link tag="div" to="/detailed"  class="head-content-2">
             <div class="head-content-2a">青铜会员</div>
-            <div class="head-content-2bb">&gt</div>
-          </div>
+            <div class="head-content-2bb">&gt;</div>
+          </router-link>
         </div>
         <!-- 跳转图标 -->
-        <div class="jump">&gt</div>
+        <router-link tag="div" to="/detailed" class="jump">&gt;</router-link>
       </div>
-    </router-link>
+        <!--  头像栏未登录状态 -->
+      <div v-else class="head">
+        <!-- 头像 -->
+        <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
+        <!-- 名字 -->
+        <div class="head-content">
+          <div class="head-content-1">请先登录</div>
+          <router-link tag="div" to="/detailed"  class="head-content-2">
+            <div class="head-content-2a">暂无信息</div>
+            <div class="head-content-2bb">&gt;</div>
+          </router-link>
+        </div>
+        <!-- 跳转图标 -->
+        <router-link tag="div" to="/detailed" class="jump">&gt;</router-link>
+      </div>
+    </div>
     <!-- 会员中心 -->
     <div class="member">
       <!-- 会员中心标题 -->
@@ -35,88 +50,80 @@
         <div class="content-2">50元通兑券天天送</div>
       </div>
       <!-- 图片 -->
-      <img :src="img4" alt class="package" />
+      <img :src="require('@/assets/images/我的_slices/红包.png')" alt class="package" />
     </div>
     <!-- 我的订单 -->
-    <router-link tag="div" to="/order" class="order">
+    <div  class="order">
       <!-- 导航栏 -->
       <div class="navigator">
         <div class="navigator-from">我的订单</div>
-        <div class="navigator-whole">
+        <router-link tag="div" to="/order"  class="navigator-whole">
           <div class="navigator-whole1">全部</div>
-          <div class="navigator-whole2">&gt</div>
-        </div>
+          <div class="navigator-whole2">&gt;</div>
+        </router-link>
       </div>
       <!-- 分类 -->
       <ul class="classify">
-        <li>
-          <img :src="img5" alt />
+        <router-link  tag="li" to="/order" >
+          <img :src="require('@/assets/images/我的_slices/编组@3x.png')" alt />
           <div>未消费</div>
-        </li>
-        <li>
-          <img :src="img6" alt />
+        </router-link>
+        <router-link  tag="li" to="/order/obligation">
+          <img :src="require('@/assets/images/我的_slices/编组@3x(1).png')" alt />
           <div>待付款</div>
-        </li>
-        <li>
-          <img :src="img7" alt />
+        </router-link>
+         <router-link  tag="li" to="/order/appra">
+          <img :src="require('@/assets/images/我的_slices/编组@3x(2).png')" alt />
           <div>待评价</div>
-        </li>
-        <li>
-          <img :src="img8" alt />
+         </router-link>
+        <li >
+          <img :src="require('@/assets/images/我的_slices/编组@3x(3).png')" alt />
           <div>付款</div>
         </li>
       </ul>
-    </router-link>
+    </div>
     <!-- 底部 -->
     <ul class="bottom">
       <li>
         <div class="card">影城会员卡</div>
-        <div class="jump">&gt</div>
+        <div class="jump">&gt;</div>
       </li>
-      <li @click="toCoupon">
+      <li @click="toCoupon" v-if="iscoupon">
         <div class="card" >优惠券</div>
-        <div class="jump" >&gt</div>
+        <div class="jump" >&gt;</div>
       </li>
       <li>
         <div class="card">我的收藏</div>
-        <div class="jump">&gt</div>
+        <div class="jump">&gt;</div>
       </li>
       <li>
         <div class="card">帮助与反馈</div>
-        <div class="jump">&gt</div>
+        <div class="jump">&gt;</div>
       </li>
     </ul>
     <tab-bar></tab-bar>
-  </div>
+</div>
 </template>
 
 <script>
-import img1 from "@/assets/images/我的_slices/设置.png";
-import img2 from "@/assets/images/我的_slices/评论.png";
-import img3 from "@/assets/images/我的_slices/点击查看源网页.png";
-import img4 from "@/assets/images/我的_slices/红包.png";
-import img5 from "@/assets/images/我的_slices/编组@3x.png";
-import img6 from "@/assets/images/我的_slices/编组@3x(1).png";
-import img7 from "@/assets/images/我的_slices/编组@3x(2).png";
-import img8 from "@/assets/images/我的_slices/编组@3x(3).png";
 export default {
   name: "user",
-  data() {
+  data () {
     return {
-      img1,
-      img2,
-      img3,
-      img4,
-      img5,
-      img6,
-      img7,
-      img8
-    };
+      issign:false,
+      iscoupon:false
+    }
   },
   components: {
     tabBar: () => import("@/components/tabBar")
   },
-
+ created () {
+  //  检验是否登录aa
+    if(localStorage.getItem('user')){
+          this.issign = true;
+          this.iscoupon = true
+    }
+  },
   methods: {
 
     toCoupon(){ // 点击跳转优惠券页面
