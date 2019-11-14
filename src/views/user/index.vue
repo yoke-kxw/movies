@@ -3,8 +3,8 @@
     <!-- 顶部 -->
     <div class="top">
       <!-- 顶部设置评论栏 -->
-      <div class="install" @click="$router.push('/user/setting')">
-         <img :src="require('@/assets/images/我的_slices/install-2.png')" alt class="install-img1"  />
+      <div class="install">
+         <img :src="require('@/assets/images/我的_slices/install-2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
         <img :src="require('@/assets/images/我的_slices/install-1.png')" alt class="install-img2"  @click="toMessage"/>
       </div>
       <!--  头像栏 -->
