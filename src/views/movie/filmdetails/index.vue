@@ -344,7 +344,7 @@ export default {
     height: 667px;
     .content {
       width: 100%;
-      height: 1230px;
+      height: 1260px;
       position: relative;
       //  页面的 顶部 图片
       .film-header {
