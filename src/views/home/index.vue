@@ -3,7 +3,10 @@
     <!-- nav开始 -->
     <nav-Bar left="location" class="nav">
       <template v-slot:center>
-        <search-bar ph="搜影片、影院、影人"></search-bar>
+        <div class="search-eara">
+          <img src="@/assets/images/首页_slices/搜索@3x.png" alt />
+          <input type="text" placeholder="搜影片、影院、影人" />
+        </div>
       </template>
       <template v-slot:right>
         <img src="@/assets/images/首页_slices/打卡@3x.png" alt />
@@ -72,7 +75,6 @@ export default {
   name: "home",
   components: {
     navBar: () => import("@/components/navBar"),
-    searchBar: () => import("@/components/searchBar"),
     tabBar: () => import("@/components/tabBar")
   },
   data() {
