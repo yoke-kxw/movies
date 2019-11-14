@@ -18,13 +18,13 @@
           <span class="text">热映影片</span>
           <router-link to="/movie" tag="span" class="all">全部&nbsp;&gt;</router-link>
         </div>
-        <ul class="hot-list oneline">
-          <li class="item" v-for="item in hotList" :key="item.id">
+        <swiper :options="crossOption" class="hot-list">
+          <swiper-slide class="item" v-for="item in hotList" :key="item.id">
             <img :src="imgUrl(item.img)" alt />
             <p class="text-ellipsis">{{ item.title }}</p>
             <div class="buy">购票</div>
-          </li>
-        </ul>
+          </swiper-slide>
+        </swiper>
       </div>
       <!-- 即将上映开始 -->
       <div class="coming">
@@ -32,13 +32,13 @@
           <span class="text">即将上映</span>
           <router-link to="/movie/coming" tag="span" class="all">全部&nbsp;&gt;</router-link>
         </div>
-        <ul class="coming-list oneline">
-          <li class="item" v-for="item in comingList" :key="item.id">
+        <swiper :options="crossOption" class="coming-list">
+          <swiper-slide class="item" v-for="item in comingList" :key="item.id">
             <img :src="imgUrl(item.img)" alt />
             <p class="text-ellipsis">{{ item.title }}</p>
             <p class="date">{{ item.date }}</p>
-          </li>
-        </ul>
+          </swiper-slide>
+        </swiper>
       </div>
       <!-- 预告开始 -->
       <div class="trailer">
@@ -46,12 +46,12 @@
           <span class="text">精选预告</span>
           <router-link to="/movie/coming" tag="span" class="all">全部&nbsp;&gt;</router-link>
         </div>
-        <ul class="trailer-list oneline">
-          <li class="item" v-for="item in trailerList" :key="item.id">
+        <swiper :options="crossOption" class="trailer-list">
+          <swiper-slide class="item" v-for="item in trailerList" :key="item.id">
             <img :src="imgUrl(item.img)" alt />
             <p class="info">{{ item.info }}</p>
-          </li>
-        </ul>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
     <!-- nav开始 -->
@@ -92,6 +92,11 @@ export default {
           bulletClass: "banner-bullet",
           bulletActiveClass: "banner-bullet-active"
         }
+      },
+      crossOption: {
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        freeMode: true
       },
       bannerSlides: [
         "爱学习不解释采集到大护法相关@3x.png",
@@ -220,12 +225,10 @@ export default {
     .hot-list,
     .coming-list,
     .trailer-list {
+      padding-left: 20px;
       .item {
         font-size: 12px;
         text-align: left;
-        // img {
-        // width: 100%;
-        // }
         .text-ellipsis {
           padding: 10px 0 6px;
         }
@@ -233,7 +236,7 @@ export default {
     }
     .hot {
       .item {
-        // width: 90px;
+        width: 90px;
         img {
           width: 90px;
           height: 122px;
