@@ -1,8 +1,9 @@
 <template>
+<div class="wrapper" ref="wrapper">
   <div class="cinecism">
     <!-- 头部 -->
     <div class="topbar">
-      <img src="@/assets/images/影评_slices/arrowl.png" alt />
+      <img @click="$router.go(-1)" src="@/assets/images/影评_slices/arrowl.png" alt />
       <img src="@/assets/images/签到_slices/分 享.png" alt />
     </div>
     <!-- 内容区 -->
@@ -60,7 +61,7 @@
         </div>
       </div>
       <!-- 详细影评区 -->
-      <ul class="comments">
+      <ul class="comments"> 
         <li class="comment-item">
           <!-- 头像和评分 -->
           <div class="item-head">
@@ -196,19 +197,41 @@
       </ul>
     </div>
     <!-- button按钮 -->
-    <div class="bottom-btn">
+    <div class="bottom-btn" @click="$router.push('/chooseseat')">
       特惠选座
     </div>
   </div>
+</div>
 </template>
 
 <script>
-export default {};
+import BScroll from "@better-scroll/core";
+export default {
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+
+  },
+  mounted(){
+    this.$nextTick(() => {
+          this.scroll = new BScroll(this.$refs.wrapper, { click: true });
+        });
+  }
+};
 </script>
 
 <style lang='scss' scoped>
+.wrapper{
+  height: 675px;
+}
 .cinecism {
+  overflow: hidden;
   .topbar {
+    height: 20px;
+    margin-top: 25px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
@@ -306,6 +329,10 @@ export default {};
             align-items: center;
             .avatar {
               margin-right: 14px;
+              img{
+                width: 50px;
+                height: 50px;
+              }
             }
             .user-point {
               p {
