@@ -14,7 +14,6 @@
     <transition :name="transitionName">
       <router-view class="main-view"></router-view>
     </transition>
-    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -23,8 +22,7 @@ import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   components: {
-    navBar: () => import("@/components/navBar"),
-    tabBar: () => import("@/components/tabBar")
+    navBar: () => import("@/components/navBar")
   },
   data() {
     return {};

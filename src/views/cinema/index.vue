@@ -52,7 +52,6 @@
         <img src="@/assets/imgs/cinema/search.png" alt @click="$router.push('/search')" />
       </template>
     </nav-bar>
-    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -63,7 +62,6 @@ import BScroll from "@better-scroll/core";
 export default {
   name: "cinema",
   components: {
-    tabBar: () => import("@/components/tabBar"),
     navBar: () => import("@/components/navBar")
   },
   data() {

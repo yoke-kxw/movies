@@ -4,17 +4,33 @@
     <div class="top">
       <!-- 顶部设置评论栏 -->
       <div class="install">
-         <img :src="require('@/assets/imgs/user/img2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
-        <img :src="require('@/assets/imgs/user/img1.png')" alt class="install-img2"  @click="toMessage"/>
+        <img
+          :src="require('@/assets/imgs/user/img2.png')"
+          alt
+          class="install-img1"
+          @click="$router.push('/user/setting')"
+        />
+        <img
+          :src="require('@/assets/imgs/user/img1.png')"
+          alt
+          class="install-img2"
+          @click="toMessage"
+        />
       </div>
       <!--  头像栏登录状态-->
       <div v-if="issign" class="head">
         <!-- 头像 -->
-        <router-link tag="img" to="/detailed" :src="require('@/assets/imgs/user/img7.png')" alt class="head-img1" />
+        <router-link
+          tag="img"
+          to="/detailed"
+          :src="require('@/assets/imgs/user/img7.png')"
+          alt
+          class="head-img1"
+        />
         <!-- 名字 -->
         <div class="head-content">
           <div class="head-content-1">yujia1130</div>
-          <router-link tag="div" to="/detailed"  class="head-content-2">
+          <router-link tag="div" to="/detailed" class="head-content-2">
             <div class="head-content-2a">青铜会员</div>
             <div class="head-content-2bb">&gt;</div>
           </router-link>
@@ -22,14 +38,20 @@
         <!-- 跳转图标 -->
         <router-link tag="div" to="/detailed" class="jump">&gt;</router-link>
       </div>
-        <!--  头像栏未登录状态 -->
+      <!--  头像栏未登录状态 -->
       <div v-else class="head">
         <!-- 头像 -->
-        <router-link tag="img" to="/detailed" :src="require('@/assets/imgs/user/img7.png')" alt class="head-img1" />
+        <router-link
+          tag="img"
+          to="/detailed"
+          :src="require('@/assets/imgs/user/img7.png')"
+          alt
+          class="head-img1"
+        />
         <!-- 名字 -->
         <div class="head-content">
           <div class="head-content-1">请先登录</div>
-          <router-link tag="div" to="/detailed"  class="head-content-2">
+          <router-link tag="div" to="/detailed" class="head-content-2">
             <div class="head-content-2a">暂无信息</div>
             <div class="head-content-2bb">&gt;</div>
           </router-link>
@@ -53,30 +75,30 @@
       <img :src="require('@/assets/imgs/user/img8.png')" alt class="package" />
     </div>
     <!-- 我的订单 -->
-    <div  class="order">
+    <div class="order">
       <!-- 导航栏 -->
       <div class="navigator">
         <div class="navigator-from">我的订单</div>
-        <router-link tag="div" to="/order"  class="navigator-whole">
+        <router-link tag="div" to="/order" class="navigator-whole">
           <div class="navigator-whole1">全部</div>
           <div class="navigator-whole2">&gt;</div>
         </router-link>
       </div>
       <!-- 分类 -->
       <ul class="classify">
-        <router-link  tag="li" to="/order" >
+        <router-link tag="li" to="/order">
           <img :src="require('@/assets/imgs/user/img6.png')" alt />
           <div>未消费</div>
         </router-link>
-        <router-link  tag="li" to="/order/obligation">
+        <router-link tag="li" to="/order/obligation">
           <img :src="require('@/assets/imgs/user/img3.png')" alt />
           <div>待付款</div>
         </router-link>
-         <router-link  tag="li" to="/order/appra">
+        <router-link tag="li" to="/order/appra">
           <img :src="require('@/assets/imgs/user/img4.png')" alt />
           <div>待评价</div>
-         </router-link>
-        <li >
+        </router-link>
+        <li>
           <img :src="require('@/assets/imgs/user/img5.png')" alt />
           <div>付款</div>
         </li>
@@ -89,8 +111,8 @@
         <div class="jump">&gt;</div>
       </li>
       <li @click="toCoupon" v-if="iscoupon">
-        <div class="card" >优惠券</div>
-        <div class="jump" >&gt;</div>
+        <div class="card">优惠券</div>
+        <div class="jump">&gt;</div>
       </li>
       <li>
         <div class="card">我的收藏</div>
@@ -101,37 +123,34 @@
         <div class="jump">&gt;</div>
       </li>
     </ul>
-    <tab-bar></tab-bar>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "user",
-  data () {
+  data() {
     return {
-      issign:false,
-      iscoupon:false
-    }
+      issign: false,
+      iscoupon: false
+    };
   },
-  components: {
-    tabBar: () => import("@/components/tabBar")
-  },
- created () {
-  //  检验是否登录aa
-    if(localStorage.getItem('user')){
-          this.issign = true;
-          this.iscoupon = true
+  created() {
+    //  检验是否登录aa
+    if (localStorage.getItem("user")) {
+      this.issign = true;
+      this.iscoupon = true;
     }
   },
   methods: {
-
-    toCoupon(){ // 点击跳转优惠券页面
-      this.$router.push('/user/coupon')
+    toCoupon() {
+      // 点击跳转优惠券页面
+      this.$router.push("/user/coupon");
     },
 
-    toMessage(){  // 点击跳到消息页面
-      this.$router.push('/user/message')
+    toMessage() {
+      // 点击跳到消息页面
+      this.$router.push("/user/message");
     }
   }
 };
@@ -381,9 +400,9 @@ export default {
     background: rgba(51, 54, 61, 1);
     border-radius: 6px;
     margin-top: 24px;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     li {
       width: 336px;
       height: 22px;
@@ -404,7 +423,7 @@ export default {
         width: 5px;
         height: 8px;
         color: #ffffff;
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }

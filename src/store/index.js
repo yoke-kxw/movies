@@ -6,13 +6,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    //初始使用动画
-    animateName: 'slide-left'
+    //初始使用动的
+    animateName: 'slide-left',
+    // 是否显示tabBar
+    tabIsShow: true
   },
   mutations: {
-    //用于修改vuex的动画名
     newAnimateName(state, val) {
       state.animateName = val
+    },
+    switchTab(state, bool) {
+      state.tabIsShow = bool
     }
   },
   actions: {
