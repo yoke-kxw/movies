@@ -18,18 +18,22 @@ Vue.use(BaiduMap, {
 
 // 过渡动画
 
-// 一、执行返回动画
+// 一、更改动画状态
 window.addEventListener("popstate", function (e) {
   //popestate 用于监听浏览器url为返回或forward
   //isBack值 用于判断用户 是点击（页面链接跳转） 还是（点击浏览器返回键或点击返回按钮）
   sessionStorage.isBack = true
 }, false);
 
-//二、执行前进动画
+//二、更改动画
 router.beforeEach(function (to, form, next) {
-
+  if (to.meta.mainIndex) {
+    store.commit('switchTab', true)
+  } else {
+    store.commit('switchTab', false)
+  }
   setTimeout(function () { //加延时使上面的popstate先走  哈希模式 则不需要加延时
-
+    // 给主页面添加mainIndex标签，用来判断是否是主页面间切换
     if (to.meta.mainIndex && form.meta.mainIndex) {
       var isBack = to.meta.mainIndex < form.meta.mainIndex;
     } else {

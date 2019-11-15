@@ -5,14 +5,19 @@
     <transition :name="transitionName">
       <router-view class="main-view"></router-view>
     </transition>
+    <tab-bar v-if="tabIsShow"></tab-bar>
   </div>
 </template>
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 export default {
+  components: {
+    tabBar: () => import("@/components/tabBar")
+  },
   computed: {
     ...mapState({
-      transitionName: state => state.animateName
+      transitionName: state => state.animateName,
+      tabIsShow: state => state.tabIsShow
     })
   },
   methods: {

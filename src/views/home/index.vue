@@ -77,8 +77,6 @@
         <img @click="$router.push('/home/signIn')" src="@/assets/imgs/home/punch.png" alt />
       </template>
     </nav-Bar>
-    <!-- tab栏 -->
-    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -88,8 +86,7 @@ import BScroll from "@better-scroll/core";
 export default {
   name: "home",
   components: {
-    navBar: () => import("@/components/navBar"),
-    tabBar: () => import("@/components/tabBar")
+    navBar: () => import("@/components/navBar")
   },
   data() {
     return {
