@@ -9,12 +9,12 @@
         <!-- 头像 -->
         <div class="personal">
           <!-- 头像 -->
-          <img :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="personal-img" />
+          <img :src="require('@/assets/imgs/user/detailed/img7.png')" alt class="personal-img" />
           <!-- LV等级 -->
           <div class="personal-title">
             <div class="personal-title1">yujia1130</div>
             <div class="personal-title2">
-              <img :src="require('@/assets/images/用户信息_slices/会员.png')" alt />
+              <img :src="require('@/assets/imgs/user/detailed/img1.png')" alt />
               <div>LV1</div>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <!-- 影片 -->
             <div class="details">
               <img
-                :src="require('@/assets/images/用户信息_slices/大表姐CC采集到电影｜海报｜记忆复制 2(1).png')"
+                :src="require('@/assets/imgs/user/detailed/img2.png')"
                 alt
                 class="details1"
               />
@@ -68,7 +68,7 @@
             <!-- 影片 -->
             <div class="details">
               <img
-                :src="require('@/assets/images/用户信息_slices/大表姐CC采集到电影｜海报｜记忆复制 2(1).png')"
+                :src="require('@/assets/imgs/user/detailed/img2.png')"
                 alt
                 class="details1"
               />
@@ -89,7 +89,7 @@
             <!-- 影片 -->
             <div class="details">
               <img
-                :src="require('@/assets/images/用户信息_slices/大表姐CC采集到电影｜海报｜记忆复制 2(1).png')"
+               :src="require('@/assets/imgs/user/detailed/img2.png')"
                 alt
                 class="details1"
               />
@@ -110,7 +110,7 @@
             <!-- 影片 -->
             <div class="details">
               <img
-                :src="require('@/assets/images/用户信息_slices/大表姐CC采集到电影｜海报｜记忆复制 2(1).png')"
+               :src="require('@/assets/imgs/user/detailed/img2.png')"
                 alt
                 class="details1"
               />

@@ -4,13 +4,13 @@
     <div class="top">
       <!-- 顶部设置评论栏 -->
       <div class="install">
-         <img :src="require('@/assets/images/我的_slices/install-2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
-        <img :src="require('@/assets/images/我的_slices/install-1.png')" alt class="install-img2"  @click="toMessage"/>
+         <img :src="require('@/assets/imgs/user/img2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
+        <img :src="require('@/assets/imgs/user/img1.png')" alt class="install-img2"  @click="toMessage"/>
       </div>
       <!--  头像栏登录状态-->
       <div v-if="issign" class="head">
         <!-- 头像 -->
-        <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
+        <router-link tag="img" to="/detailed" :src="require('@/assets/imgs/user/img7.png')" alt class="head-img1" />
         <!-- 名字 -->
         <div class="head-content">
           <div class="head-content-1">yujia1130</div>
@@ -25,7 +25,7 @@
         <!--  头像栏未登录状态 -->
       <div v-else class="head">
         <!-- 头像 -->
-        <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
+        <router-link tag="img" to="/detailed" :src="require('@/assets/imgs/user/img7.png')" alt class="head-img1" />
         <!-- 名字 -->
         <div class="head-content">
           <div class="head-content-1">请先登录</div>
@@ -50,7 +50,7 @@
         <div class="content-2">50元通兑券天天送</div>
       </div>
       <!-- 图片 -->
-      <img :src="require('@/assets/images/我的_slices/红包.png')" alt class="package" />
+      <img :src="require('@/assets/imgs/user/img8.png')" alt class="package" />
     </div>
     <!-- 我的订单 -->
     <div  class="order">
@@ -65,19 +65,19 @@
       <!-- 分类 -->
       <ul class="classify">
         <router-link  tag="li" to="/order" >
-          <img :src="require('@/assets/images/我的_slices/编组@3x.png')" alt />
+          <img :src="require('@/assets/imgs/user/img6.png')" alt />
           <div>未消费</div>
         </router-link>
         <router-link  tag="li" to="/order/obligation">
-          <img :src="require('@/assets/images/我的_slices/编组@3x(1).png')" alt />
+          <img :src="require('@/assets/imgs/user/img3.png')" alt />
           <div>待付款</div>
         </router-link>
          <router-link  tag="li" to="/order/appra">
-          <img :src="require('@/assets/images/我的_slices/编组@3x(2).png')" alt />
+          <img :src="require('@/assets/imgs/user/img4.png')" alt />
           <div>待评价</div>
          </router-link>
         <li >
-          <img :src="require('@/assets/images/我的_slices/编组@3x(3).png')" alt />
+          <img :src="require('@/assets/imgs/user/img5.png')" alt />
           <div>付款</div>
         </li>
       </ul>
