@@ -15,7 +15,7 @@
     </baidu-map>
     <!-- 影院列表开始 -->
     <ul class="cinema-list oneline">
-      <li class="item" v-for="item in cinemaList" :key="item.uid">
+      <li class="item" v-for="item in cinemaList" :key="item.uid" @click="fouce(item.point)">
         <img class="cinema-img" src="@/assets/images/影院地图_slices/影院门头_百度图片搜索@3x.png" alt />
         <div class="cinema-info">
           <router-link :to="`/cinema/cinemaDetails/${item.uid}`" class="view" tag="div">查看</router-link>
@@ -37,11 +37,18 @@ export default {
     ...mapState({
       cinemaList: function(state) {
         return state.BaiduMap.cinemaList;
-      }
+      },
+      BMap: state => state.BaiduMap.BMap
     })
   },
   methods: {
-    ...mapActions({ getLocation: "BaiduMap/getLocation" })
+    ...mapActions({
+      getLocation: "BaiduMap/getLocation",
+      mapFouce: "BaiduMap/mapFouce"
+    }),
+    fouce(point) {
+      this.mapFouce(new this.BMap.Point(point.lng, point.lat));
+    }
   }
 };
 </script>

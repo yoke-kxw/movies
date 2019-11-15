@@ -79,8 +79,8 @@
       </ul>
     </div>
     <footer>
-      <p>去购票</p>
-      <span></span>
+      <p @click="toPurchase_tickets">去购票</p>
+      <span  @click="toPurchase_tickets"></span>
     </footer>
   </div>
 </template>
@@ -99,6 +99,12 @@ export default {
         click: true
       });
     });
+  },
+
+  methods:{
+       toPurchase_tickets(){
+        this.$router.push('/user/purchase_tickets')
+    }
   }
 };
 </script>
@@ -113,7 +119,7 @@ export default {
 
   .coupon-content {
     width: 100%;
-    height: 800px;
+    // height: 800px;
     color: #fff;
 
     // 头部

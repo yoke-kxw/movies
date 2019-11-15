@@ -43,6 +43,7 @@ export default {
   background: url("~@/assets/images/图标/编组@3x.png") no-repeat center / 100%
     100%;
   box-sizing: border-box;
+  z-index: 9;
   li {
     width: 40px;
     &.router-link-active {
@@ -67,6 +68,19 @@ export default {
     &.router-link-active img:last-child {
       display: block;
     }
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+  img:last-child {
+    display: none;
+  }
+  &.router-link-active img:first-child {
+    display: none;
+  }
+  &.router-link-active img:last-child {
+    display: block;
   }
 }
 @keyframes rubberBand {
