@@ -137,7 +137,7 @@ export default {
       }
 
       span:nth-child(1) {
-        background: url(~@/assets/images/优惠券_slices/arr_left.png) no-repeat
+        background: url(~./imgs/arr_left.png) no-repeat
           center;
         box-sizing: content-box;
         margin-left: 20px;
@@ -166,7 +166,7 @@ export default {
         width: 343px;
         height: 128px;
         margin-top: 10px;
-        background: url(~@/assets/images/优惠券_slices/矩形复制2.png) no-repeat
+        background: url(~./imgs/coupon2.png) no-repeat
           center;
         display: flex;
         justify-content: space-around;
@@ -190,7 +190,7 @@ export default {
             position: absolute;
             top: 43px;
             left: 53px;
-            background: url(~@/assets/images/优惠券_slices/已过期.png) no-repeat
+            background: url(~./imgs/expired.png) no-repeat
               center;
           }
         }
@@ -211,7 +211,7 @@ export default {
 
       li:first-child,
       li:nth-child(2) {
-        background: url(~@/assets/images/优惠券_slices/矩形.png) no-repeat
+        background: url(~./imgs/coupon.png) no-repeat
           center;
       }
     }
@@ -234,7 +234,7 @@ export default {
         width: 32px;
         height: 32px;
         transform: rotate(180deg);
-      background: url(~@/assets/images/优惠券_slices/arr_left.png) no-repeat
+      background: url(~./imgs/arr_left.png) no-repeat
         center;
     }
   }

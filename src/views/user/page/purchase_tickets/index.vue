@@ -265,7 +265,7 @@ export default {
       .header-l {
         width: 32px;
         height: 32px;
-        background: url(~@/assets/images/优惠券_slices/arr_left.png) no-repeat
+        background: url(~./imgs/arr_left.png) no-repeat
           center;
       }
 
@@ -282,7 +282,7 @@ export default {
           width: 33px;
           height: 33px;
           border-radius: 50%;
-          background: url(~@/assets/images/购票_slices/user_photo.png) no-repeat
+          background: url(~./imgs/user_photo.png) no-repeat
             center;
           background-size: 33px 33px;
         }
@@ -330,7 +330,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~@/assets/images/优惠券_slices/arr_left.png)
+            background: url(~./imgs/arr_left.png)
               no-repeat center;
             margin-left: 2px;
           }
@@ -349,7 +349,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~@/assets/images/优惠券_slices/arr_left.png)
+            background: url(~./imgs/arr_left.png)
               no-repeat center;
           }
         }
@@ -358,7 +358,7 @@ export default {
           display: block;
           width: 16px;
           height: 19px;
-          background: url(~@/assets/images/购票_slices/定位复制.png) no-repeat
+          background: url(~./imgs/position.png) no-repeat
             center;
           margin-right: 33px;
         }
@@ -388,7 +388,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~@/assets/images/优惠券_slices/arr_left.png)
+            background: url(~./imgs/arr_left.png)
               no-repeat center;
             margin-right: 10px;
           }
@@ -503,7 +503,7 @@ export default {
              width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~@/assets/images/优惠券_slices/arr_left.png)
+            background: url(~./imgs/arr_left.png)
               no-repeat center;
             margin-left: 3px;
           }
