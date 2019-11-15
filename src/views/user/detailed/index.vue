@@ -5,7 +5,7 @@
       <!-- 顶部导航栏 -->
       <div class="top">
         <!-- 跳转符号 -->
-        <router-link to="/user" tag="div" class="jump">&lt</router-link>
+        <router-link to="/user" tag="div" class="jump">&lt;</router-link>
         <!-- 头像 -->
         <div class="personal">
           <!-- 头像 -->

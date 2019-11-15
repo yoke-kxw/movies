@@ -3,19 +3,19 @@
         <!-- 搜索页面 -->
         <div class="search-head">
             <div class="search-box">
-                <img src="~@/assets/images/首页_slices/搜索.png" alt="">
+                <img src="~@/assets/imgs/search/search.png" alt="">
                 <input @keyup.enter="record" type="text" placeholder="搜索影片,影院,明星">
             </div>
             <span @click="$router.go(-1)">取消</span>
         </div>
         <div class="search-history">
             <div class="search-title">
-                <img src="~@/assets/images/搜索_slices (1)/搜索--1.png" alt="">
+                <img src="~@/assets/imgs/search/search-1.png" alt="">
                 <span>萤火虫热搜</span>
                 <span class="delAll" @click="delAll">全部删除</span>
             </div>
             <ul class="history-list">
-                <li  @click="add(item)" class="history-item" v-for=" (item,index) in historyArr" :key=index>
+                <li  @click="add(item)" class="history-item text-ellipsis" v-for=" (item,index) in historyArr" :key=index>
                     {{item}}
                 </li>
                 <li class="history-item">更多热搜&gt; </li>

@@ -2,7 +2,7 @@
 <!-- 设置页面 -->
     <div class="setting">
         <div class="set-head">
-            <span @click="$router.go(-1)">&lt;</span>
+            <span @click="$router.go(-1)"><img src="~@/assets/imgs/setting/back.png" alt=""></span>
             <span>设置</span>
             <span></span>
         </div>
@@ -10,7 +10,7 @@
             <span></span>
             <dl>
                 <dt>
-                    <img src="~@/assets/images/我的_slices/点击查看源网页.png" alt="">
+                    <img src="~@/assets/imgs/setting/face.png" alt="">
                 </dt>
                 <dd>哈哈哈哈</dd>
             </dl>
@@ -81,7 +81,13 @@
             },
             //清除本地数据
             clearInfo(){
-                localStorage.clear();
+                var con = confirm("确认退出?");
+                if(con == true){
+                    localStorage.clear();
+                    this.$router.go(-1);
+                }else{
+                    return;
+                }
                 console.log("已清除数据,退出登录")
             }
         }

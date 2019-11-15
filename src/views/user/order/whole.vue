@@ -8,7 +8,7 @@
         <div class="whole-title">
           <div class="whole-title1">
             <div>万达国际影城</div>
-            <div>&gt</div>
+            <div>&gt;</div>
           </div>
           <div class="whole-title2">已完成</div>
         </div>
@@ -36,7 +36,7 @@
         <div class="whole-title">
           <div class="whole-title1">
             <div>万达国际影城</div>
-            <div>&gt</div>
+            <div>&gt;</div>
           </div>
           <div class="whole-title2">已完成</div>
         </div>
@@ -64,7 +64,7 @@
         <div class="whole-title">
           <div class="whole-title1">
             <div>万达国际影城</div>
-            <div>&gt</div>
+            <div>&gt;</div>
           </div>
           <div class="whole-title2">已完成</div>
         </div>
@@ -92,7 +92,7 @@
         <div class="whole-title">
           <div class="whole-title1">
             <div>万达国际影城</div>
-            <div>&gt</div>
+            <div>&gt;</div>
           </div>
           <div class="whole-title2">已完成</div>
         </div>
