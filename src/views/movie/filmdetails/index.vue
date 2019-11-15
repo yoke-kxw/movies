@@ -26,7 +26,7 @@
               v-model="show"
               closeable
               position="bottom"
-              :style="{ height: '20%', width: '95%' }"
+              :style="{ height: '20%', width: '100%' }"
               close-icon="close"
               close-icon-position="top-right"
               round
@@ -64,6 +64,7 @@
               void-icon="star"
               void-color="#eee"
               class="the-stars"
+              y
             />
             <!-- 评分分数 -->
             <div class="film-num">
@@ -72,7 +73,13 @@
             </div>
             <!-- 信息 与星星 -->
             <div class="film-item-icon">
-              <img class="film-smsimg" :src="imgs[0].smsImg" alt="" />
+              <router-link
+                tag="img"
+                to="/cinecism"
+                class="film-smsimg"
+                :src="imgs[0].smsImg"
+                alt=""
+              ></router-link>
               <img
                 class="film-starsimg"
                 @click="addStars"
@@ -103,7 +110,7 @@
             >
               <div class="film-text-view" v-if="current == filmText.title">
                 {{ filmText.text }}
-                <router-link class="router-link" to="/actorDetail">
+                <router-link class="router-link" :to="filmText.paths">
                   查看更多 >
                 </router-link>
               </div>
@@ -117,11 +124,12 @@
                   v-for="swipweOne in swiperList"
                   :key="swipweOne.actor"
                 >
-                  <div>
+                  <!-- 单个演员 详情 接口 -->
+                  <router-link tag="div" to="/actorDetail">
                     <img :src="swipweOne.imgs" alt="" />
                     <h3>{{ swipweOne.director }}</h3>
                     <h4>{{ swipweOne.actor }}</h4>
-                  </div>
+                  </router-link>
                 </swiper-slide>
               </swiper>
               <!-- 查看全部演员  接口 -->
@@ -136,16 +144,17 @@
                   v-for="voideSwiper in voideList"
                   :key="voideSwiper.text"
                 >
-                  <div>
+                  <!-- 单个 视频 接口 -->
+                  <router-link tag="div" to="/home">
                     <img :src="voideSwiper.imgs" alt="" />
                     <h3>
                       {{ voideSwiper.text }}
                     </h3>
-                  </div>
+                  </router-link>
                 </swiper-slide>
               </swiper>
               <!-- 查看全部视频 跳转 接口 -->
-              <router-link class="video-h4" tag="h4" to=""
+              <router-link class="video-h4" tag="h4" to="/movie/showing"
                 >全部10个视频</router-link
               >
             </div>
@@ -166,7 +175,7 @@
                 </div>
               </div>
               <!-- 查看票房详情 进行跳转 接口 -->
-              <router-link class="boxoffice-h4" tag="h4" to=""
+              <router-link class="boxoffice-h4" tag="h4" to="/movie/boxoffice"
                 >票房详情</router-link
               >
             </div>
@@ -190,7 +199,7 @@ import { Popup, Rate } from "vant";
 Vue.use(Popup).use(Rate);
 import "vant/lib/popup/style";
 import "vant/lib/rate/style";
-import swiperOneImg from "@/assets/images/电影详情_slices/裴淳华图片_百度百科.png";
+import swiperOneImg from "@/assets/imgs/filmdetails/head-portrait.png";
 export default {
   name: "Film",
 
@@ -202,22 +211,26 @@ export default {
         {
           title: "介绍",
           text:
-            "11111伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）"
+            "11111伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
         },
         {
           title: "影评",
           text:
-            "2222伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）"
+            "2222伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
         },
         {
           title: "讨论",
           text:
-            "3333伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）"
+            "3333伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
         },
         {
           title: "更多",
           text:
-            "4444伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）"
+            "4444伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/movieScore"
         }
       ],
       // 演员 列表 介绍
@@ -281,20 +294,20 @@ export default {
       // 全局的 图片
       imgs: [
         {
-          bgImg: require("@/assets/images/电影详情_slices/《傲慢与偏见》.png"),
-          iconImg: require("@/assets/images/电影详情_slices/分 享@2x.png"),
-          arrowImg: require("@/assets/images/登录页_slices (1)/返回箭头.png"),
-          bigImg: require("@/assets/images/电影详情_slices/傲慢与偏见.png"),
-          playImg: require("@/assets/images/电影详情_slices/编组.png"),
-          smsImg: require("@/assets/images/电影详情_slices/评论复制.png"),
-          starsImg: require("@/assets/images/电影详情_slices/星复制 5.png"),
-          starsImgs: require("@/assets/images/电影详情_slices/星复制 2.png"),
-          actorImgOne: require("@/assets/images/电影详情_slices/裴淳华图片_百度百科.png")
+          bgImg: require("@/assets/imgs/filmdetails/details-bg.png"),
+          iconImg: require("@/assets/imgs/filmdetails/share.png"),
+          arrowImg: require("@/assets/imgs/filmdetails/return-arrow.png"),
+          bigImg: require("@/assets/imgs/filmdetails/movie-pictures.png"),
+          playImg: require("@/assets/imgs/filmdetails/play.png"),
+          smsImg: require("@/assets/imgs/filmdetails/info.png"),
+          starsImg: require("@/assets/imgs/filmdetails/greystar.png"),
+          starsImgs: require("@/assets/imgs/filmdetails/details-brightstars.png"),
+          actorImgOne: require("@/assets/imgs/filmdetails/head-portrait.png")
         }
       ],
       // 点亮单个小星星
       isStars: false,
-      isShowStart: require("@/assets/images/电影详情_slices/星复制 5.png")
+      isShowStart: require("@/assets/imgs/filmdetails/greystar.png")
     };
   },
   mounted() {
@@ -331,7 +344,8 @@ export default {
         event.target.classList.add("checkBgc");
       }
     }
-  }
+  },
+  created() {}
 };
 </script>
 
@@ -344,7 +358,7 @@ export default {
     height: 667px;
     .content {
       width: 100%;
-      height: 1260px;
+      height: 1300px;
       position: relative;
       //  页面的 顶部 图片
       .film-header {
@@ -555,9 +569,11 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
               font-weight: normal;
               color: orange;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的视频
@@ -599,10 +615,14 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
+              // margin-left: -40px;
               font-weight: normal;
               color: orange;
               margin-top: -20px;
+              // background: red;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的 票房
@@ -644,6 +664,9 @@ export default {
               font-weight: normal;
               color: orange;
               margin-top: 20px;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 特惠选座

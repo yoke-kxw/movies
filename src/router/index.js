@@ -3,8 +3,7 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "index",
     redirect: "/home"
@@ -12,7 +11,10 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/views/home")
+    component: () => import("@/views/home"),
+    meta: {
+      mainIndex: 1,
+    }
   },
   {
     path: "/search",
@@ -53,13 +55,19 @@ const routes = [
       {
         path: "showing",
         name: "showing",
-        component: () => import("@/views/movie/showing")
+        component: () => import("@/views/movie/showing"),
+        meta: {
+          mainIndex: 2
+        }
       },
       // 即将上映
       {
         path: "coming",
         name: "coming",
-        component: () => import("@/views/movie/coming")
+        component: () => import("@/views/movie/coming"),
+        meta: {
+          mainIndex: 3
+        }
       }
     ]
   },
@@ -72,7 +80,10 @@ const routes = [
   {
     path: "/ticket",
     name: "ticket",
-    component: () => import("@/views/ticket")
+    component: () => import("@/views/ticket"),
+    meta: {
+      mainIndex: 4
+    }
   },
   {
     path: "/cityList",
@@ -82,7 +93,10 @@ const routes = [
   {
     path: "/cinema",
     name: "cinema",
-    component: () => import("@/views/cinema")
+    component: () => import("@/views/cinema"),
+    meta: {
+      mainIndex: 5
+    }
   },
   {
     path: "/cinema/cinemaMap",
@@ -98,7 +112,10 @@ const routes = [
   {
     path: "/user",
     name: "user",
-    component: () => import("@/views/user")
+    component: () => import("@/views/user"),
+    meta: {
+      mainIndex: 6
+    }
   },
   {
     // coupon: 优惠券页面
@@ -119,8 +136,7 @@ const routes = [
     name: "order",
     redirect: "/order/whole",
     component: () => import("@/views/user/order/index.vue"),
-    children: [
-      {
+    children: [{
         // 全部
         path: "whole",
         name: "whole",
@@ -174,15 +190,15 @@ const routes = [
   },
   // 演员详情
   {
-    path: '/actorDetail',
-    name: 'actorDetail',
-    component:()=>import('@/views/movie/actorDetail')
+    path: "/actorDetail",
+    name: "actorDetail",
+    component: () => import("@/views/movie/actorDetail")
   },
   // 电影评分
   {
-    path: '/movieScore',
-    name: 'movieScore',
-    component:()=>import('@/views/movie/movieScore')
+    path: "/movieScore",
+    name: "movieScore",
+    component: () => import("@/views/movie/movieScore")
   },
   {
     //登陆界面
@@ -217,9 +233,34 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  //设置 点击下一个页面 页面在顶部
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+  },
+
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  //跳转路由页面滚动位置
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 });
+
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  next();
+})
 
 export default router;

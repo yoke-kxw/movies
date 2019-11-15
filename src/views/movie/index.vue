@@ -11,12 +11,16 @@
         <img src="@/assets/imgs/movie/search.png" alt @click="$router.push('/search')" />
       </template>
     </nav-bar>
-    <router-view></router-view>
+    <transition :name="transitionName">
+      <router-view class="main-view"></router-view>
+    </transition>
     <tab-bar></tab-bar>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+
 export default {
   components: {
     navBar: () => import("@/components/navBar"),
@@ -24,6 +28,11 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState({
+      transitionName: state => state.animateName
+    })
   }
 };
 </script>
