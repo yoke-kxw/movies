@@ -307,7 +307,7 @@ export default {
       ],
       // 点亮单个小星星
       isStars: false,
-      isShowStart: require("@/assets/images/电影详情_slices/星复制 5.png")
+      isShowStart: require("@/assets/imgs/filmdetails/greystar.png")
     };
   },
   mounted() {
