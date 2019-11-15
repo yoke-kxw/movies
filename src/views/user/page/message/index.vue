@@ -230,7 +230,7 @@ export default {
       }
 
       span:nth-child(1) {
-        background: url(~@/assets/images/优惠券_slices/arr_left.png) no-repeat
+        background: url(~./imgs/arr_left.png) no-repeat
           center;
         box-sizing: content-box;
         margin-left: 20px;
@@ -275,7 +275,7 @@ export default {
             b {
               width: 22px;
               height: 23px;
-              background: url(~@/assets/images/消息_slices/通知.png);
+              background: url(~./imgs/notice.png);
             }
           }
 
@@ -310,7 +310,7 @@ export default {
           b {
             width: 25px;
             height: 25px;
-            background: url(~@/assets/images/消息_slices/点赞.png);
+            background: url(~./imgs/like.png);
           }
         }
       }
@@ -321,7 +321,7 @@ export default {
           b {
               width: 24px;
               height: 24px;
-            background: url(~@/assets/images/消息_slices/评论.png);
+            background: url(~./imgs/comment.png);
           }
         }
       }
@@ -342,7 +342,8 @@ export default {
         li{
             div{
                 span{
-                background: url(~@/assets/images/消息_slices/椭圆形复制3.png) no-repeat center;
+                background: url(~./imgs/user1.png) no-repeat center;
+                                    background-size: contain;
 
                 b{
                     opacity: 0;
@@ -385,8 +386,9 @@ export default {
         li:nth-child(2){
             div{
                 span{
-                    background: url(~@/assets/images/消息_slices/椭圆形复制4.png) no-repeat center;
-                    
+                    background: url(~./imgs/user2.png) no-repeat center;
+                                        background-size: contain;
+
                 }
             }
         }
@@ -394,8 +396,9 @@ export default {
           li:nth-child(3){
             div{
                 span{
-                    background: url(~@/assets/images/消息_slices/椭圆形复制5.png) no-repeat center;
-                    
+                    background: url(~./imgs/user3.png) no-repeat center;
+                                        background-size: contain;
+
                 }
             }
         }
@@ -403,8 +406,9 @@ export default {
           li:nth-child(4){
             div{
                 span{
-                    background: url(~@/assets/images/消息_slices/椭圆形复制6.png) no-repeat center;
-                    
+                    background: url(~./imgs/user4.png) no-repeat center;
+                                        background-size: contain;
+
                 }
             }
         }
@@ -412,8 +416,9 @@ export default {
           li:nth-child(5){
             div{
                 span{
-                    background: url(~@/assets/images/消息_slices/椭圆形复制7.png) no-repeat center;
-                    
+                    background: url(~./imgs/user5.png) no-repeat center;
+                                        background-size: contain;
+
                 }
             }
         }
