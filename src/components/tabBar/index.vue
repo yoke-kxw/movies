@@ -1,24 +1,24 @@
 <template>
   <ul class="tab-bar">
     <router-link to="/home" tag="li">
-      <img src="@/assets/images/图标/形状结合e@3x.png" alt />
-      <img src="@/assets/images/图标/形状结合@3x.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-home.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-home-act.png" alt />
     </router-link>
     <router-link to="/movie" tag="li">
-      <img src="@/assets/images/图标/编组 4@3x.png" alt />
-      <img src="@/assets/images/图标/编组 4复制@3x.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-movie.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-movie-act.png" alt />
     </router-link>
     <router-link to="/ticket" tag="li">
-      <img src="@/assets/images/图标/编组 6@3x.png" alt />
-      <img src="@/assets/images/图标/编组 6@3x.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-ticket.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-ticket.png" alt />
     </router-link>
     <router-link to="/cinema" tag="li">
-      <img src="@/assets/images/图标/编组 8@3x.png" alt />
-      <img src="@/assets/images/图标/编组 811@3x.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-cinema.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-cinema-act.png" alt />
     </router-link>
     <router-link to="/user" tag="li">
-      <img src="@/assets/images/图标/编组 3@3x.png" alt />
-      <img src="@/assets/images/图标/编组 31@3x.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-user.png" alt />
+      <img src="@/assets/imgs/tabBar/footer-user-act.png" alt />
     </router-link>
   </ul>
 </template>
@@ -40,7 +40,7 @@ export default {
   align-items: flex-end;
   width: 100%;
   height: 99px;
-  background: url("~@/assets/images/图标/编组@3x.png") no-repeat center / 100%
+  background: url("~@/assets/imgs/tabBar/footer-bg.png") no-repeat center / 100%
     100%;
   box-sizing: border-box;
   z-index: 9;
