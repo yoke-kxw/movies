@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     imgUrl(name) {
-      return require(`@/assets/images/首页_slices/${name}`);
+      return require(`@/assets/imgs/movie/${name}`);
     }
   }
 };

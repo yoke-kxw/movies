@@ -34,13 +34,13 @@ export default {
       trailerList: [
         {
           id: Math.random(),
-          img: "爱学习不解释采集到大护法相关@3x.png",
+          img: "banner-01.png",
           info: "变身时尚达人。。。。。。。。",
           duration: "02:12"
         },
         {
           id: Math.random(),
-          img: "电影截图复制@3x.png",
+          img: "banner-02.png",
           info: "变身时尚达人。。。。。。。。",
           duration: "02:20"
         }
@@ -52,7 +52,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠9日1",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -61,7 +61,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠9日2",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -70,7 +70,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠9日3",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -84,7 +84,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠10日1",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -93,7 +93,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠10日2",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -102,7 +102,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠10日3",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -116,7 +116,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠11日1",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -125,7 +125,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠11日2",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -134,7 +134,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠11日3",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -148,7 +148,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠12日1",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -157,7 +157,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠12日2",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -166,7 +166,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠12日3",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -180,7 +180,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠13日1",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -189,7 +189,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠13日2",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -198,7 +198,7 @@ export default {
             {
               id: Math.random(),
               title: "大鱼海棠13日3",
-              img: "傲慢与偏见@3x.png",
+              img: "hot-01.png",
               director: ["梁旋", "季冠霖"],
               duration: "105分钟",
               genre: ["动画", "奇幻"],
@@ -216,7 +216,7 @@ export default {
   },
   methods: {
     imgUrl(name) {
-      return require(`@/assets/images/首页_slices/${name}`);
+      return require(`@/assets/imgs/movie/${name}`);
     }
   }
 };

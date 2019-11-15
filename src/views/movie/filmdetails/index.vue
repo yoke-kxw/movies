@@ -72,7 +72,13 @@
             </div>
             <!-- 信息 与星星 -->
             <div class="film-item-icon">
-              <img class="film-smsimg" :src="imgs[0].smsImg" alt="" />
+              <router-link
+                tag="img"
+                to="/cinecism"
+                class="film-smsimg"
+                :src="imgs[0].smsImg"
+                alt=""
+              ></router-link>
               <img
                 class="film-starsimg"
                 @click="addStars"
@@ -138,7 +144,7 @@
                   :key="voideSwiper.text"
                 >
                   <!-- 单个 视频 接口 -->
-                  <router-link tag="div" to="">
+                  <router-link tag="div" to="/home">
                     <img :src="voideSwiper.imgs" alt="" />
                     <h3>
                       {{ voideSwiper.text }}
@@ -337,7 +343,8 @@ export default {
         event.target.classList.add("checkBgc");
       }
     }
-  }
+  },
+  created() {}
 };
 </script>
 
@@ -350,7 +357,7 @@ export default {
     height: 667px;
     .content {
       width: 100%;
-      height: 1260px;
+      height: 1280px;
       position: relative;
       //  页面的 顶部 图片
       .film-header {
@@ -561,9 +568,11 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
               font-weight: normal;
               color: orange;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的视频
@@ -605,10 +614,14 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
+              // margin-left: -40px;
               font-weight: normal;
               color: orange;
               margin-top: -20px;
+              // background: red;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的 票房

@@ -3,7 +3,7 @@
     <div class="content">
       <!-- 显示地址 -->
       <router-link class="address-bar" to="/cinema/cinemaMap" tag="p">
-        <img class="icon" src="@/assets/images/影院_slices/定位@3x.png" alt />
+        <img class="icon" src="@/assets/imgs/cinema/position.png" alt />
         我在：{{ location.address }}
       </router-link>
       <!-- 影院列表开始 -->
@@ -49,7 +49,7 @@
         <p class="nav-title">影院</p>
       </template>
       <template v-slot:right>
-        <img src="@/assets/images/首页_slices/搜索@3x.png" alt @click="$router.push('/search')" />
+        <img src="@/assets/imgs/cinema/search.png" alt @click="$router.push('/search')" />
       </template>
     </nav-bar>
     <tab-bar></tab-bar>
