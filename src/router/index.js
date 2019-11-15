@@ -183,15 +183,15 @@ const routes = [{
   },
   // 演员详情
   {
-    path: '/actorDetail',
-    name: 'actorDetail',
-    component: () => import('@/views/movie/actorDetail')
+    path: "/actorDetail",
+    name: "actorDetail",
+    component: () => import("@/views/movie/actorDetail")
   },
   // 电影评分
   {
-    path: '/movieScore',
-    name: 'movieScore',
-    component: () => import('@/views/movie/movieScore')
+    path: "/movieScore",
+    name: "movieScore",
+    component: () => import("@/views/movie/movieScore")
   },
   {
     //登陆界面
@@ -226,9 +226,29 @@ const routes = [{
 ];
 
 const router = new VueRouter({
+  //设置 点击下一个页面 页面在顶部
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+  },
+
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  //跳转路由页面滚动位置
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 });
 
 router.beforeEach((to, from, next) => {

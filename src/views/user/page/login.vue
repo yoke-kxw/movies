@@ -1,20 +1,20 @@
 <template>
   <div class="login">
     <div class="head">
-      <img @click="$router.go(-1)" src="@/assets/images/登录页_slices (1)/返回箭头.png" alt="">
+      <img @click="$router.go(-1)" src="@/assets/images/login/arrow-l.png" alt="">
     </div>
     <div class="content">
       <img
         class="logo"
-        src="@/assets/images/登录页_slices (1)/未标题-1@3x.png"
+        src="@/assets/images/login/logo.png"
         alt=""
       />
       <div class="user">
-        <img src="@/assets/images/登录页_slices (1)/编组 2@3x.png" alt="" />
+        <img src="@/assets/images/login/lock.png" alt="" />
         <input type="text" placeholder="请输入手机号" v-model.trim="user" />
       </div>
       <div class="password">
-        <img src="@/assets/images/登录页_slices (1)/编组@3x.png" alt="" />
+        <img src="@/assets/images/login/phone.png" alt="" />
         <input type="password" placeholder="请输入密码" v-model.trim="password"/>
       </div>
       <div class="btn" @click="login">
