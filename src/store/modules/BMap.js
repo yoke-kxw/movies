@@ -102,9 +102,21 @@ const BaiduMap = {
                 onSearchComplete: function (r) {
                     if (local.getStatus() == BMAP_STATUS_SUCCESS) {
                         console.log(r);
-                        state.cinemaList = r.Br;
+                        // 搜索结果去重
+                        r.forEach((ele, index) => {
+                            if (index === 0) {
+                                state.cinemaList = ele.Br;
+                            } else {
+                                ele.Br.forEach(el => {
+                                    if (state.cinemaList.every(e => e.uid !== el.uid)) {
+                                        state.cinemaList.push(el)
+                                    }
+                                })
+                            }
+                        })
+                        console.log(state.cinemaList);
                         // 获取当前位置到电影院的距离，添加到电影院对象的属性中，单位‘米’
-                        r.Br.forEach(el => {
+                        state.cinemaList.forEach(el => {
                             var currentPoint = new BMap.Point(el.point.lng, el.point.lat)
                             el.distance = map.getDistance(userPoint, currentPoint).toFixed(0)
                         })
@@ -116,7 +128,7 @@ const BaiduMap = {
                 }
             }
             var local = new BMap.LocalSearch(map, options);
-            local.search('电影院')
+            local.search(['影院', '电影院'])
         }
     }
 }
