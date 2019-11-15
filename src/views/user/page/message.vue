@@ -177,7 +177,19 @@ import BScroll from "@better-scroll/core";
 
 export default {
   name: "Message", // 消息页面
-
+ // 检验是否登录
+  beforeRouteEnter(to, from, next) {
+    if (to.path == "/user/message") {
+      if (localStorage.getItem("user")) {
+         next();
+      }else {
+        alert('请先登录')
+        next("/login")
+      }
+    } else {
+      next();
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       // 因为获取页面数据一般是异步的, 所以用$nextTick异步执行
