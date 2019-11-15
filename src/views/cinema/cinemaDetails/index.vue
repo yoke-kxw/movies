@@ -34,7 +34,7 @@
               <p>2号厅(冠名招商中)</p>
             </div>
             <p class="movie-price">20.9元</p>
-            <div class="buy">购票</div>
+            <div class="buy" @click="$router.push('/chooseseat')">购票</div>
           </li>
         </ul>
       </div>

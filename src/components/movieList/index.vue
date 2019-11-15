@@ -1,7 +1,7 @@
 <template>
   <div class="movieList">
     <ul class="list clearfix">
-      <li class="item" v-for="item in list" :key="item.id">
+      <li class="item" v-for="item in list" :key="item.id" @click="$router.push('/movie/film')">
         <div class="cover playbutton">
           <img :src="imgUrl(item.img)" alt />
         </div>

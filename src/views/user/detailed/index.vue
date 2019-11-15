@@ -3,7 +3,7 @@
   <div class="detailed wrapper" ref="wrapper">
     <div class="content">
       <!-- 顶部导航栏 -->
-      <div class="top" @click="a">
+      <div class="top">
         <!-- 跳转符号 -->
         <router-link to="/user" tag="div" class="jump">&lt</router-link>
         <!-- 头像 -->
@@ -124,32 +124,36 @@
           </li>
         </ul>
       </div>
-    
     </div>
-      <tab-bar></tab-bar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 <script>
 import BScroll from "@better-scroll/core";
-// import BScroll from 'better-scroll'
 export default {
   name: "detailed",
+  // 检验是否登录
+  beforeRouteEnter(to, from, next) {
+    if (to.path == "/detailed") {
+      if (localStorage.getItem("user")) {
+         next();
+      }else {
+        alert('请先登录')
+        next("/login")
+      }
+    } else {
+      next();
+    }
+  },
   components: {
     tabBar: () => import("@/components/tabBar")
   },
   mounted() {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {
-           click: true
+        click: true
       });
-     
     });
-  },
-  methods: {
-    a(){
-      console.log('111')
-      
-    }
   }
 };
 </script>
@@ -158,7 +162,7 @@ export default {
   width: 100%;
   height: 100%;
   .content {
-    height: 1093px;
+    height: 1080px;
     //   顶部导航栏
     .top {
       width: 100%;

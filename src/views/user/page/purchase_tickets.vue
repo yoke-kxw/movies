@@ -60,7 +60,7 @@
         </li>
 
         <li>
-          <div>购票</div>
+          <div @click="$router.push('/chooseseat')">购票</div>
         </li>
 
         <li>

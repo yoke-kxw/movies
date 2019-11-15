@@ -7,8 +7,8 @@
          <img :src="require('@/assets/images/我的_slices/install-2.png')" alt class="install-img1" @click="$router.push('/user/setting')" />
         <img :src="require('@/assets/images/我的_slices/install-1.png')" alt class="install-img2"  @click="toMessage"/>
       </div>
-      <!--  头像栏 -->
-      <div class="head">
+      <!--  头像栏登录状态-->
+      <div v-if="issign" class="head">
         <!-- 头像 -->
         <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
         <!-- 名字 -->
@@ -16,6 +16,21 @@
           <div class="head-content-1">yujia1130</div>
           <router-link tag="div" to="/detailed"  class="head-content-2">
             <div class="head-content-2a">青铜会员</div>
+            <div class="head-content-2bb">&gt;</div>
+          </router-link>
+        </div>
+        <!-- 跳转图标 -->
+        <router-link tag="div" to="/detailed" class="jump">&gt;</router-link>
+      </div>
+        <!--  头像栏未登录状态 -->
+      <div v-else class="head">
+        <!-- 头像 -->
+        <router-link tag="img" to="/detailed" :src="require('@/assets/images/我的_slices/点击查看源网页.png')" alt class="head-img1" />
+        <!-- 名字 -->
+        <div class="head-content">
+          <div class="head-content-1">请先登录</div>
+          <router-link tag="div" to="/detailed"  class="head-content-2">
+            <div class="head-content-2a">暂无信息</div>
             <div class="head-content-2bb">&gt;</div>
           </router-link>
         </div>
@@ -73,7 +88,7 @@
         <div class="card">影城会员卡</div>
         <div class="jump">&gt;</div>
       </li>
-      <li @click="toCoupon">
+      <li @click="toCoupon" v-if="iscoupon">
         <div class="card" >优惠券</div>
         <div class="jump" >&gt;</div>
       </li>
@@ -93,10 +108,22 @@
 <script>
 export default {
   name: "user",
+  data () {
+    return {
+      issign:false,
+      iscoupon:false
+    }
+  },
   components: {
     tabBar: () => import("@/components/tabBar")
   },
-
+ created () {
+  //  检验是否登录aa
+    if(localStorage.getItem('user')){
+          this.issign = true;
+          this.iscoupon = true
+    }
+  },
   methods: {
 
     toCoupon(){ // 点击跳转优惠券页面
