@@ -130,6 +130,7 @@
 .movie-score {
   overflow: hidden;
   .back-image {
+    // position: relative;
     height: 215px;
     width: 100%;
     background: url("~@/assets/images/电影详情_slices/《傲慢与偏见》.png")
@@ -149,6 +150,9 @@
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
+    img{
+      z-index: 55;
+    }
   }
   //  评分区间样式
   .score-range {
