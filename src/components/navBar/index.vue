@@ -4,13 +4,14 @@
     <div class="left">
       <div class="location" v-if="left==='location'" @click="$router.push('/cityList')">
         <p class="elipsis">{{ city }}</p>
-        <img src="@/assets/images/首页_slices/下 箭头@3x.png" alt />
+        <img src="@/assets/imgs/home/arr-d.png" alt />
       </div>
       <div class="close" v-if="left==='close'">
         <span @click="$router.go(-1)">关闭</span>
       </div>
       <div class="back" v-if="left==='back'">
-        <span @click="$router.go(-1)">&lt;</span>
+        <img src="@/assets/imgs/home/back.png" @click="$router.go(-1)" alt />
+        <!-- <span @click="$router.go(-1)">&lt;</span> -->
       </div>
     </div>
     <!-- 导航栏中间 -->

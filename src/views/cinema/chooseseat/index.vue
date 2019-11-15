@@ -98,7 +98,7 @@
 </template>
 <style lang="scss" scoped>
 .buyticket {
-  background: #23262d url("~@/assets/images/选座/seat_bg.9f25a857.png")
+  background: #23262d url("~@/assets/imgs/chooseseat/seat_bg.9f25a857.png")
     no-repeat 0 0;
   background-size: 100% 30%;
   width: 375px;
@@ -359,10 +359,10 @@ export default {
       ],
       imgs: [
         {
-          src: require("@/assets/images/选座/larrow.png")
+          src: require("@/assets/imgs/chooseseat/larrow.png")
         },
         {
-          src: require("@/assets/images/选座/share.png")
+          src: require("@/assets/imgs/chooseseat/share.png")
         }
       ]
     };
@@ -415,6 +415,7 @@ export default {
       }
       //必须整体更新二维数组，Vue无法检测到数组某一项更新,必须slice复制一个数组才行
       this.seatArray = newArray.slice();
+      console.log(this.seatArray);
     },
 
     //推荐选座

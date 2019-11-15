@@ -1,72 +1,74 @@
 <template>
-  <div class="actor-detail">
-    <div class="intro">
-      <!-- 版心 -->
-      <div class="intro-c">
-        <div class="topbar">
-          <img src="@/assets/images/影评_slices/arrowl.png" alt />
-        </div>
-        <!-- 简介 -->
-        <div class="actor-info">
-          <img src="@/assets/images/演员详情_slices/点击查看源网页2.png" alt />
-          <h3>凯拉·奈特莉</h3>
-          <p>Satomi lshihara</p>
-          <p>关注</p>
-          <p>138585人关注</p>
-        </div>
-        <!-- 详细介绍 -->
-        <div class="info-more">
-          <h3 class="common-title">简介</h3>
-          <p>
-            2002年，15岁的石原里美参加了HORIPRO公司第27回艺人新人 选拔，获得最佳新人“完美少女”奖 。2003年2月15日，参演的爱 情电影《小岛之恋》上映；4月5日，参演的喜剧电影《我的爷爷 》上映，在片中饰演五代家的独生女五代珠子，她则凭借该片获 得了第27届日本…
-            <span>查看更多></span>
-          </p>
-        </div>
-        <!-- 个人作品 -->
-        <div class="self-product">
-          <h3 class="common-title">个人作品</h3>
-          <ul class="product-items">
-            <li class="product-item">
-              <img src="@/assets/images/演员详情_slices/忍者之国图片_百度百科.png" alt />
-              <div class="product-name">
-                <h3>忍者之国</h3>
-                <p>
-                  评分
-                  <span>9.0</span>
-                </p>
-                <p>演员 大野智</p>
-                <p>上映时间 2017年7月1日</p>
+  <div class="wrapper" ref="wrapper">
+    <div class="actor-detail">
+      <div class="intro">
+        <!-- 版心 -->
+        <div class="intro-c">
+          <div class="topbar">
+            <img @click="$router.go(-1)" src="@/assets/images/影评_slices/arrowl.png" alt />
+          </div>
+          <!-- 简介 -->
+          <div class="actor-info">
+            <img src="@/assets/images/演员详情_slices/点击查看源网页2.png" alt />
+            <h3>凯拉·奈特莉</h3>
+            <p>Satomi lshihara</p>
+            <p>关注</p>
+            <p>138585人关注</p>
+          </div>
+          <!-- 详细介绍 -->
+          <div class="info-more">
+            <h3 class="common-title">简介</h3>
+            <p>
+              2002年，15岁的石原里美参加了HORIPRO公司第27回艺人新人 选拔，获得最佳新人“完美少女”奖 。2003年2月15日，参演的爱 情电影《小岛之恋》上映；4月5日，参演的喜剧电影《我的爷爷 》上映，在片中饰演五代家的独生女五代珠子，她则凭借该片获 得了第27届日本…
+              <span>查看更多></span>
+            </p>
+          </div>
+          <!-- 个人作品 -->
+          <div class="self-product">
+            <h3 class="common-title">个人作品</h3>
+            <ul class="product-items">
+              <li class="product-item">
+                <img src="@/assets/images/演员详情_slices/忍者之国图片_百度百科.png" alt />
+                <div class="product-name">
+                  <h3>忍者之国</h3>
+                  <p>
+                    评分
+                    <span>9.0</span>
+                  </p>
+                  <p>演员 大野智</p>
+                  <p>上映时间 2017年7月1日</p>
+                </div>
+              </li>
+              <li class="product-item">
+                <img src="@/assets/images/演员详情_slices/新·哥斯拉图片_百度百科.png" alt />
+                <div class="product-name">
+                  <h3>新·哥斯拉</h3>
+                  <p>
+                    评分
+                    <span>9.0</span>
+                  </p>
+                  <p>演员 大野智</p>
+                  <p>上映时间 2017年7月1日</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 演员照片 -->
+          <div class="actor-photo">
+            <h3 class="common-title">相册</h3>
+            <div class="photos">
+              <div class="photos-l">
+                <div class="inner-top">
+                  <img src="@/assets/images/演员详情_slices/IMG_91637.png" alt />
+                </div>
+                <div class="inner-below">
+                  <img src="@/assets/images/演员详情_slices/IMG_91647.png" alt />
+                  <img src="@/assets/images/演员详情_slices/IMG_91658.png" alt />
+                </div>
               </div>
-            </li>
-            <li class="product-item">
-              <img src="@/assets/images/演员详情_slices/新·哥斯拉图片_百度百科.png" alt />
-              <div class="product-name">
-                <h3>新·哥斯拉</h3>
-                <p>
-                  评分
-                  <span>9.0</span>
-                </p>
-                <p>演员 大野智</p>
-                <p>上映时间 2017年7月1日</p>
+              <div class="photos-r">
+                <img src="@/assets/images/演员详情_slices/IMG_91625.png" alt />
               </div>
-            </li>
-          </ul>
-        </div>
-        <!-- 演员照片 -->
-        <div class="actor-photo">
-          <h3 class="common-title">相册</h3>
-          <div class="photos">
-            <div class="photos-l">
-              <div class="inner-top">
-                <img src="@/assets/images/演员详情_slices/IMG_91637.png" alt />
-              </div>
-              <div class="inner-below">
-                <img src="@/assets/images/演员详情_slices/IMG_91647.png" alt />
-                <img src="@/assets/images/演员详情_slices/IMG_91658.png" alt />
-              </div>
-            </div>
-            <div class="photos-r">
-              <img src="@/assets/images/演员详情_slices/IMG_91625.png" alt />
             </div>
           </div>
         </div>
@@ -76,17 +78,33 @@
 </template>
 
 <script>
-export default {};
+import BScroll from "@better-scroll/core";
+export default {
+  data() {
+    return {};
+  },
+  methods: {},
+  mounted() {
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.wrapper, { click: true });
+    });
+  }
+};
 </script>
 
 <style lang='scss' scoped>
+.wrapper{
+    height: 667px;
+}
 .actor-detail {
+  overflow: hidden;
   .intro {
     // height: 489px;
     width: 100%;
     overflow: hidden;
     background: url("~@/assets/images/演员详情_slices/点击查看源网页.png")
       no-repeat top;
+      background-size: 100%;
     .intro-c {
       padding: 0 20px;
       .topbar {
@@ -169,12 +187,13 @@ export default {};
       }
       //   演员照片样式
       .photos {
+        height: 335px;
         display: flex;
         justify-content: space-between;
         .photos-l {
-            .inner-top{
-                margin-bottom: 7px;
-            }
+          .inner-top {
+            margin-bottom: 7px;
+          }
         }
       }
     }

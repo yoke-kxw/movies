@@ -3,7 +3,7 @@
     <div  class="content">
   <!-- 顶部导航 -->
     <div class="top">
-      <router-link tag="div" to="/user" class="jump">&lt</router-link>
+      <router-link tag="div" to="/user" class="jump">&lt;</router-link>
       <div class="title">我的订单</div>
       <div class="edit">编辑</div>
     </div>

@@ -2,23 +2,22 @@
   <div class="search">
     <!-- 搜索页面 -->
     <div class="search-head">
-      <span @click="$router.go(-1)">&lt;</span>
-      <div class="search-box">
-        <img src="~@/assets/images/首页_slices/搜索.png" alt />
+      <div class="search-eara">
+        <img src="~@/assets/imgs/search/search.png" alt />
         <input @keyup.enter="record" type="text" placeholder="搜索影片,影院,明星" />
       </div>
-      <span @click="cancel">取消</span>
+      <span @click="$router.go(-1)">取消</span>
     </div>
     <div class="search-history">
       <div class="search-title">
-        <img src="~@/assets/images/搜索_slices (1)/搜索--1.png" alt />
+        <img src="~@/assets/imgs/search/search-1.png" alt />
         <span>萤火虫热搜</span>
         <span class="delAll" @click="delAll">全部删除</span>
       </div>
       <ul class="history-list">
         <li
           @click="add(item)"
-          class="history-item"
+          class="history-item text-ellipsis"
           v-for=" (item,index) in historyArr"
           :key="index"
         >{{item}}</li>
@@ -38,10 +37,6 @@ export default {
     };
   },
   methods: {
-    cancel() {
-      var ipt = document.querySelector("input");
-      ipt.value = "";
-    },
     record() {
       var ipt = document.querySelector("input");
       var val = ipt.value;
@@ -96,40 +91,16 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .search-box {
-      width: 80%;
-      height: 36px;
-      display: flex;
-      // justify-content: space-between;
-      align-items: center;
-      border-radius: 30px;
-      background-color: #33363d;
-      img {
-        width: 18px;
-        height: 18px;
-        margin: 0 20px;
-      }
-      input {
-        outline: none;
-        border: none;
-        background-color: #33363d;
-        height: 100%;
-        flex-grow: 0.5;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: rgba(122, 122, 122, 1);
-        line-height: 14px;
-      }
-      span {
-        font-size: 16px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: rgba(247, 247, 247, 1);
-        line-height: 16px;
-      }
+    span {
+      margin: 0 10px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(247, 247, 247, 1);
+      line-height: 16px;
+      white-space: nowrap;
     }
   }
+
   .search-history {
     width: 100%;
     .search-title {
