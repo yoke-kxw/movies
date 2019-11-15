@@ -26,7 +26,7 @@
               v-model="show"
               closeable
               position="bottom"
-              :style="{ height: '20%', width: '95%' }"
+              :style="{ height: '20%', width: '100%' }"
               close-icon="close"
               close-icon-position="top-right"
               round
@@ -64,6 +64,7 @@
               void-icon="star"
               void-color="#eee"
               class="the-stars"
+              y
             />
             <!-- 评分分数 -->
             <div class="film-num">
@@ -198,7 +199,7 @@ import { Popup, Rate } from "vant";
 Vue.use(Popup).use(Rate);
 import "vant/lib/popup/style";
 import "vant/lib/rate/style";
-import swiperOneImg from "@/assets/images/电影详情_slices/裴淳华图片_百度百科.png";
+import swiperOneImg from "@/assets/imgs/filmdetails/head-portrait.png";
 export default {
   name: "Film",
 
@@ -293,15 +294,15 @@ export default {
       // 全局的 图片
       imgs: [
         {
-          bgImg: require("@/assets/images/电影详情_slices/《傲慢与偏见》.png"),
-          iconImg: require("@/assets/images/电影详情_slices/分 享@2x.png"),
-          arrowImg: require("@/assets/images/登录页_slices (1)/返回箭头.png"),
-          bigImg: require("@/assets/images/电影详情_slices/傲慢与偏见.png"),
-          playImg: require("@/assets/images/电影详情_slices/编组.png"),
-          smsImg: require("@/assets/images/电影详情_slices/评论复制.png"),
-          starsImg: require("@/assets/images/电影详情_slices/星复制 5.png"),
-          starsImgs: require("@/assets/images/电影详情_slices/星复制 2.png"),
-          actorImgOne: require("@/assets/images/电影详情_slices/裴淳华图片_百度百科.png")
+          bgImg: require("@/assets/imgs/filmdetails/details-bg.png"),
+          iconImg: require("@/assets/imgs/filmdetails/share.png"),
+          arrowImg: require("@/assets/imgs/filmdetails/return-arrow.png"),
+          bigImg: require("@/assets/imgs/filmdetails/movie-pictures.png"),
+          playImg: require("@/assets/imgs/filmdetails/play.png"),
+          smsImg: require("@/assets/imgs/filmdetails/info.png"),
+          starsImg: require("@/assets/imgs/filmdetails/greystar.png"),
+          starsImgs: require("@/assets/imgs/filmdetails/details-brightstars.png"),
+          actorImgOne: require("@/assets/imgs/filmdetails/head-portrait.png")
         }
       ],
       // 点亮单个小星星
@@ -357,7 +358,7 @@ export default {
     height: 667px;
     .content {
       width: 100%;
-      height: 1280px;
+      height: 1300px;
       position: relative;
       //  页面的 顶部 图片
       .film-header {
@@ -663,6 +664,9 @@ export default {
               font-weight: normal;
               color: orange;
               margin-top: 20px;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 特惠选座

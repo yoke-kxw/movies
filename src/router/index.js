@@ -210,6 +210,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  //设置 点击下一个页面 页面在顶部
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
