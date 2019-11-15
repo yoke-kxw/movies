@@ -22,7 +22,7 @@
           <swiper-slide class="item" v-for="item in hotList" :key="item.id">
             <img :src="imgUrl(item.img)" alt />
             <p class="text-ellipsis">{{ item.title }}</p>
-            <div class="buy">购票</div>
+            <router-link to="/cinema" tag="div" class="buy">购票</router-link>
           </swiper-slide>
         </swiper>
       </div>
