@@ -16,7 +16,7 @@ export default {
         {
           id: Math.random(),
           title: "CRACKS（2018)",
-          img: "傲慢与偏见@3x.png",
+          img: "hot-01.png",
           director: ["赞恩.阿尔.拉菲亚"],
           actor: ["赞恩.阿尔.拉菲亚"],
           score: "9.1",
@@ -34,7 +34,7 @@ export default {
         {
           id: Math.random(),
           title: "大鱼海棠",
-          img: "傲慢与偏见@3x.png",
+          img: "hot-01.png",
           director: ["梁旋", "季冠霖"],
           duration: "105分钟",
           genre: ["动画", "奇幻"],
@@ -49,7 +49,7 @@ export default {
         {
           id: Math.random(),
           title: "大鱼海",
-          img: "傲慢与偏见@3x.png",
+          img: "hot-01.png",
           director: ["梁旋", "季冠霖"],
           duration: "120分钟",
           genre: ["动画", "奇幻"],
@@ -58,7 +58,7 @@ export default {
         {
           id: Math.random(),
           title: "大鱼海",
-          img: "傲慢与偏见@3x.png",
+          img: "hot-01.png",
           director: ["梁旋", "季冠霖"],
           duration: "120分钟",
           genre: ["动画", "奇幻"],

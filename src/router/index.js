@@ -97,7 +97,7 @@ const routes = [
     // coupon: 优惠券页面
     path: "/user/coupon",
     name: "coupon",
-    component: () => import("@/views/user/page/coupon.vue")
+    component: () => import("@/views/user/page/coupon/index.vue")
   },
 
   {
@@ -144,21 +144,21 @@ const routes = [
   {
     path: "/user/purchase_tickets",
     name: "purchase_tickets",
-    component: () => import("@/views/user/page/purchase_tickets.vue")
+    component: () => import("@/views/user/page/purchase_tickets/index.vue")
   },
 
   {
     // coupon: 优惠券页面
     path: "/user/coupon",
     name: "coupon",
-    component: () => import("@/views/user/page/coupon.vue")
+    component: () => import("@/views/user/page/coupon/index.vue")
   },
 
   {
     // message: 消息页面
     path: "/user/message",
     name: "message",
-    component: () => import("@/views/user/page/message.vue")
+    component: () => import("@/views/user/page/message/index.vue")
   },
   {
     path: "/cinecism",
@@ -167,15 +167,15 @@ const routes = [
   },
   // 演员详情
   {
-    path: '/actorDetail',
-    name: 'actorDetail',
-    component:()=>import('@/views/movie/actorDetail')
+    path: "/actorDetail",
+    name: "actorDetail",
+    component: () => import("@/views/movie/actorDetail")
   },
   // 电影评分
   {
-    path: '/movieScore',
-    name: 'movieScore',
-    component:()=>import('@/views/movie/movieScore')
+    path: "/movieScore",
+    name: "movieScore",
+    component: () => import("@/views/movie/movieScore")
   },
   {
     //登陆界面
@@ -195,11 +195,13 @@ const routes = [
     name: "talk",
     component: () => import("@/views/user/page/talk.vue")
   },
+  // 选座
   {
     path: "/chooseseat",
     name: "chooseseat",
     component: () => import("@/views/cinema/chooseseat")
   },
+  // 确认订单
   {
     path: "/confirmorder",
     name: "confirmorder",
@@ -208,6 +210,14 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
+
   mode: "history",
   base: process.env.BASE_URL,
   routes,

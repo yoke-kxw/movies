@@ -6,7 +6,7 @@
         <p class="nav-title">影院地图</p>
       </template>
       <template v-slot:right>
-        <img src="@/assets/images/首页_slices/搜索@3x.png" alt @click="$router.push('/search')" />
+        <img src="@/assets/imgs/cinema/search.png" alt @click="$router.push('/search')" />
       </template>
     </nav-bar>
     <!-- 百度地图开始 -->
@@ -15,8 +15,8 @@
     </baidu-map>
     <!-- 影院列表开始 -->
     <ul class="cinema-list oneline">
-      <li class="item" v-for="item in cinemaList" :key="item.uid">
-        <img class="cinema-img" src="@/assets/images/影院地图_slices/影院门头_百度图片搜索@3x.png" alt />
+      <li class="item" v-for="item in cinemaList" :key="item.uid" @click="fouce(item.point)">
+        <img class="cinema-img" src="@/assets/imgs/cinema/map-01.png" alt />
         <div class="cinema-info">
           <router-link :to="`/cinema/cinemaDetails/${item.uid}`" class="view" tag="div">查看</router-link>
           <p class="elipsis">{{ item.title }}</p>
@@ -37,11 +37,18 @@ export default {
     ...mapState({
       cinemaList: function(state) {
         return state.BaiduMap.cinemaList;
-      }
+      },
+      BMap: state => state.BaiduMap.BMap
     })
   },
   methods: {
-    ...mapActions({ getLocation: "BaiduMap/getLocation" })
+    ...mapActions({
+      getLocation: "BaiduMap/getLocation",
+      mapFouce: "BaiduMap/mapFouce"
+    }),
+    fouce(point) {
+      this.mapFouce(new this.BMap.Point(point.lng, point.lat));
+    }
   }
 };
 </script>

@@ -22,7 +22,7 @@
           <swiper-slide class="item" v-for="item in hotList" :key="item.id">
             <img :src="imgUrl(item.img)" alt />
             <p class="text-ellipsis">{{ item.title }}</p>
-            <div class="buy">购票</div>
+            <router-link to="/cinema" tag="div" class="buy">购票</router-link>
           </swiper-slide>
         </swiper>
       </div>
@@ -48,9 +48,20 @@
         </div>
         <swiper :options="crossOption" class="trailer-list">
           <swiper-slide class="item" v-for="item in trailerList" :key="item.id">
-            <img :src="imgUrl(item.img)" alt />
+            <iframe
+              :src="item.src"
+              scrolling="no"
+              border="0"
+              frameborder="no"
+              framespacing="0"
+              allowfullscreen="true"
+            ></iframe>
             <p class="info">{{ item.info }}</p>
           </swiper-slide>
+          <!-- <swiper-slide class="item" v-for="item in trailerList" :key="item.id">
+            <img :src="imgUrl(item.img)" alt />
+            <p class="info">{{ item.info }}</p>
+          </swiper-slide>-->
         </swiper>
       </div>
     </div>
@@ -58,12 +69,12 @@
     <nav-Bar left="location" class="nav">
       <template v-slot:center>
         <div class="search-eara" @click="$router.push('/search')">
-          <img src="@/assets/images/首页_slices/搜索@3x.png" alt />
+          <img src="@/assets/imgs/home/search.png" alt />
           <input type="text" placeholder="搜影片、影院、影人" />
         </div>
       </template>
       <template v-slot:right>
-        <img @click="$router.push('/home/signIn')" src="@/assets/images/首页_slices/打卡@3x.png" alt />
+        <img @click="$router.push('/home/signIn')" src="@/assets/imgs/home/punch.png" alt />
       </template>
     </nav-Bar>
     <!-- tab栏 -->
@@ -99,29 +110,29 @@ export default {
         freeMode: true
       },
       bannerSlides: [
-        "爱学习不解释采集到大护法相关@3x.png",
-        "大鱼海棠@3x.png",
-        "大鱼海棠复制4@3x.png"
+        "home-banner1.png",
+        "home-banner2.png",
+        "home-banner3.png"
       ],
       hotList: [
         {
           title: "傲慢与偏见",
-          img: "傲慢与偏见@3x.png",
+          img: "hot-01.png",
           id: Math.random()
         },
         {
           title: "韩国电影",
-          img: "anan小玉采集到绘画@3x.png",
+          img: "hot-02.png",
           id: Math.random()
         },
         {
           title: "帕丁顿熊",
-          img: "JIONSEM采集到海报画册@3x.png",
+          img: "hot-03.png",
           id: Math.random()
         },
         {
           title: "不知道是啥",
-          img: "朱大来〞采集到设计复制@3x.png",
+          img: "hot-04.png",
           id: Math.random()
         }
       ],
@@ -129,41 +140,43 @@ export default {
         {
           id: Math.random(),
           title: "My bluebery aaaaaaaaaa",
-          img: "都付与断井颓垣采集到影。@3x.png",
+          img: "coming-01.png",
           date: "1月25日"
         },
         {
           id: Math.random(),
           title: "THE WORLD aaaaaaaaa",
-          img: "NicoleVivico采集到经典电影海报@3x.png",
+          img: "coming-02.png",
           date: "2月25日"
         },
         {
           id: Math.random(),
           title: "BABBIT HOLE",
-          img: "嘿看这采集到Graphic Design ☆ 广告、海报复制@3x.png",
+          img: "coming-03.png",
           date: "1月20日"
         }
       ],
       trailerList: [
         {
           id: Math.random(),
-          img: "爱学习不解释采集到大护法相关@3x.png",
+          src:
+            "//player.bilibili.com/player.html?aid=9753434&cid=16122187&page=1",
           info:
             "《大护法》是一部能够体现反专制、反乌托邦式的寓言动画啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
         },
         {
           id: Math.random(),
-          img: "电影截图复制@3x.png",
+          src:
+            "//player.bilibili.com/player.html?aid=49984077&cid=87512147&page=1",
           info:
-            "《大护法》是一部能够体现反专制、反乌托邦式的寓言动画啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+            "《紫罗兰永恒花园》是一部能够体现反专制、反乌托邦式的寓言动画啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
         }
       ]
     };
   },
   methods: {
     imgUrl(name) {
-      return require(`@/assets/images/首页_slices/${name}`);
+      return require(`@/assets/imgs/home/${name}`);
     }
   },
   mounted() {
@@ -273,10 +286,7 @@ export default {
     .trailer {
       .item {
         width: 295px;
-        img {
-          width: 295px;
-          height: 160px;
-        }
+        height: 200px;
         .info {
           padding-top: 10px;
           display: -webkit-box;

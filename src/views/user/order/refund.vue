@@ -7,7 +7,7 @@
         <div class="whole-title">
           <div class="whole-title1">
             <div>万达国际影城</div>
-            <div>&gt</div>
+            <div>&gt;</div>
           </div>
           <div class="whole-title2">已完成</div>
         </div>
@@ -15,7 +15,7 @@
         <div class="film">
           <!-- 图片 -->
           <div class="film-price">
-            <img :src="img1" alt class="film-price1" />
+            <img :src="require('@/assets/imgs/user/order/img2.png')" alt class="film-price1" />
             <div class="film-price2">总价：70元</div>
           </div>
           <!-- 座位 -->
@@ -33,13 +33,8 @@
   </div>
 </template>
 <script>
-import img1 from "@/assets/images/我的订单_slices/后来的我们(1).png";
 export default {
-  data() {
-    return {
-      img1
-    };
-  }
+ name:"refund"
 };
 </script>
 <style lang="scss" scoped>

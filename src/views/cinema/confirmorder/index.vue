@@ -72,8 +72,8 @@
 </template>
 <style lang="scss" scoped>
 .confirmorder {
-  background: #23262d url("~@/assets/images/确认订单_slices/banner.png")
-    no-repeat 0 0;
+  background: #23262d url("~@/assets/imgs/confirmorder/banner.png") no-repeat 0
+    0;
   background-size: 100%;
   color: #dfdfdf;
   font-size: 16px;
@@ -213,20 +213,20 @@ export default {
       buySeatArr: [],
       imgs: [
         {
-          url: require("@/assets/images/确认订单_slices/sarrow.png")
+          url: require("@/assets/imgs/confirmorder/sarrow.png")
         },
         {
-          url: require("@/assets/images/确认订单_slices/larrow.png")
+          url: require("@/assets/imgs/confirmorder/larrow.png")
         },
         {
-          url: require("@/assets/images/确认订单_slices/rarrow.png")
+          url: require("@/assets/imgs/confirmorder/rarrow.png")
         }
       ]
     };
   },
   computed: {
     ticketTotal() {
-      return Math.floor(this.buySeatArr.length * 30.9);
+      return Math.ceil(this.buySeatArr.length * 30.9);
     }
   },
   created() {

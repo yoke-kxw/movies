@@ -8,7 +8,7 @@
         </ul>
       </template>
       <template v-slot:right>
-        <img src="@/assets/images/首页_slices/搜索@3x.png" alt @click="$router.push('/search')" />
+        <img src="@/assets/imgs/movie/search.png" alt @click="$router.push('/search')" />
       </template>
     </nav-bar>
     <router-view></router-view>

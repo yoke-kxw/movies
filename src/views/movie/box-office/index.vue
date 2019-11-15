@@ -2,7 +2,7 @@
 <!-- 票房 -->
     <div class="box-office">
         <div class="box-head">
-            <span @click="$router.go(-1)">&lt;</span>
+            <span @click="$router.go(-1)"> <img src="~@/assets/imgs/setting/back.png" alt=""></span>
             <span>设置</span>
             <span></span>
         </div>

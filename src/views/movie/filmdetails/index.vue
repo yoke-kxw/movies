@@ -26,8 +26,17 @@
               v-model="show"
               closeable
               position="bottom"
-              :style="{ height: '20%' }"
-            />
+              :style="{ height: '20%', width: '95%' }"
+              close-icon="close"
+              close-icon-position="top-right"
+              round
+              class="vant-pop"
+            >
+              <!-- 分享还有 链接 接口  -->
+              <router-link tag="div" to="" class="share">
+                分享好友
+              </router-link>
+            </van-popup>
           </div>
         </div>
         <!--  -->
@@ -63,7 +72,13 @@
             </div>
             <!-- 信息 与星星 -->
             <div class="film-item-icon">
-              <img class="film-smsimg" :src="imgs[0].smsImg" alt="" />
+              <router-link
+                tag="img"
+                to="/cinecism"
+                class="film-smsimg"
+                :src="imgs[0].smsImg"
+                alt=""
+              ></router-link>
               <img
                 class="film-starsimg"
                 @click="addStars"
@@ -87,36 +102,14 @@
               </span>
             </div>
             <!-- 影片详情介绍 -->
-            <div class="film-text">
-              <div class="film-text-view" v-if="current == '介绍'">
-                11111
-                伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐
-                <!-- 查看 更多 跳转 接口  -->
-                <router-link class="router-link" to="">
-                  查看更多 >
-                </router-link>
-              </div>
-              <div class="film-text-view" v-if="current == '影评'">
-                2222
-                伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐
-                <!-- 查看 更多 跳转 接口  -->
-                <router-link class="router-link" to="">
-                  查看更多 >
-                </router-link>
-              </div>
-              <div class="film-text-view" v-if="current == '讨论'">
-                3333
-                伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐
-                <!-- 查看 更多 跳转 接口  -->
-                <router-link class="router-link" to="">
-                  查看更多 >
-                </router-link>
-              </div>
-              <div class="film-text-view" v-if="current == '更多'">
-                444
-                伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐
-                <!-- 查看 更多 跳转 接口  -->
-                <router-link class="router-link" to="">
+            <div
+              class="film-text"
+              v-for="filmText in list"
+              :key="filmText.title"
+            >
+              <div class="film-text-view" v-if="current == filmText.title">
+                {{ filmText.text }}
+                <router-link class="router-link" :to="filmText.paths">
                   查看更多 >
                 </router-link>
               </div>
@@ -125,65 +118,42 @@
             <div class="film-actor">
               <h2>演职人员</h2>
               <swiper :options="actorSwiperOption" class="film-actor-swiper">
-                <swiper-slide class="film-swiper-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
-                    <h3>凯拉·奈特莉</h3>
-                    <h4>wem mu</h4>
-                  </div>
-                </swiper-slide>
-                <swiper-slide class="film-swiper-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
-                    <h3>凯拉·奈特莉</h3>
-                    <h4>wem mu</h4>
-                  </div>
-                </swiper-slide>
-                <swiper-slide class="film-swiper-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
-                    <h3>凯拉·奈特莉</h3>
-                    <h4>wem mu</h4>
-                  </div></swiper-slide
+                <swiper-slide
+                  class="film-swiper-slide"
+                  v-for="swipweOne in swiperList"
+                  :key="swipweOne.actor"
                 >
-                <swiper-slide class="film-swiper-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
-                    <h3>凯拉·奈特莉</h3>
-                    <h4>wem mu</h4>
-                  </div></swiper-slide
-                >
+                  <!-- 单个演员 详情 接口 -->
+                  <router-link tag="div" to="/actorDetail">
+                    <img :src="swipweOne.imgs" alt="" />
+                    <h3>{{ swipweOne.director }}</h3>
+                    <h4>{{ swipweOne.actor }}</h4>
+                  </router-link>
+                </swiper-slide>
               </swiper>
               <!-- 查看全部演员  接口 -->
-              <router-link class="boxoffice-h4" tag="h4" to=""
-                >全部32位演员</router-link
-              >
+              <router-link class="h4" tag="h4" to="">全部32位演员</router-link>
             </div>
             <!-- 短视频介绍 -->
             <div class="film-video">
               <h2>视频</h2>
               <swiper :options="videoSwiperOption" class="film-video-swiper">
-                <swiper-slide class="film-video-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
+                <swiper-slide
+                  class="film-video-slide"
+                  v-for="voideSwiper in voideList"
+                  :key="voideSwiper.text"
+                >
+                  <!-- 单个 视频 接口 -->
+                  <router-link tag="div" to="/home">
+                    <img :src="voideSwiper.imgs" alt="" />
                     <h3>
-                      《傲慢与偏见》：百年经典的绝美呈现，
-                      一次现实与理想的爱情碰撞
+                      {{ voideSwiper.text }}
                     </h3>
-                  </div>
-                </swiper-slide>
-                <swiper-slide class="film-video-slide">
-                  <div>
-                    <img :src="imgs[0].actorImgOne" alt="" />
-                    <h3>
-                      《傲慢与偏见》：百年经典的绝美呈现，
-                      一次现实与理想的爱情碰撞
-                    </h3>
-                  </div>
+                  </router-link>
                 </swiper-slide>
               </swiper>
               <!-- 查看全部视频 跳转 接口 -->
-              <router-link class="video-h4" tag="h4" to=""
+              <router-link class="video-h4" tag="h4" to="/movie/showing"
                 >全部10个视频</router-link
               >
             </div>
@@ -204,12 +174,12 @@
                 </div>
               </div>
               <!-- 查看票房详情 进行跳转 接口 -->
-              <router-link class="boxoffice-h4" tag="h4" to=""
+              <router-link class="boxoffice-h4" tag="h4" to="/movie/boxoffice"
                 >票房详情</router-link
               >
             </div>
             <!--  特惠选座 进行跳转 接口 -->
-            <router-link class="router-link-btn" to="" tag="a">
+            <router-link class="router-link-btn" to="/chooseseat" tag="a">
               特惠选座
             </router-link>
           </div>
@@ -228,11 +198,81 @@ import { Popup, Rate } from "vant";
 Vue.use(Popup).use(Rate);
 import "vant/lib/popup/style";
 import "vant/lib/rate/style";
+import swiperOneImg from "@/assets/images/电影详情_slices/裴淳华图片_百度百科.png";
 export default {
   name: "Film",
 
   data() {
     return {
+      show: false,
+      // 电影信息 列表 介绍
+      list: [
+        {
+          title: "介绍",
+          text:
+            "11111伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
+        },
+        {
+          title: "影评",
+          text:
+            "2222伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
+        },
+        {
+          title: "讨论",
+          text:
+            "3333伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/cinecism"
+        },
+        {
+          title: "更多",
+          text:
+            "4444伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）伊丽莎白·班纳特（凯拉·奈特莉饰）和姐姐伊丽莎白·班纳特（凯拉·奈特莉饰）",
+          paths: "/movieScore"
+        }
+      ],
+      // 演员 列表 介绍
+      swiperList: [
+        {
+          imgs: swiperOneImg,
+          director: "凯拉·奈特莉",
+          actor: "wen mu"
+        },
+        {
+          imgs: swiperOneImg,
+          director: "凯拉·奈特莉",
+          actor: "文 mu"
+        },
+        {
+          imgs: swiperOneImg,
+          director: "凯拉·奈特莉",
+          actor: "wen 木"
+        },
+        {
+          imgs: swiperOneImg,
+          director: "凯拉·奈特莉",
+          actor: "文木"
+        }
+      ],
+      // 视频列表 介绍
+      voideList: [
+        {
+          imgs: swiperOneImg,
+          text:
+            "1111111《傲慢与偏见》：百年经典的绝美呈现,一次现实与理想的爱情碰撞"
+        },
+        {
+          imgs: swiperOneImg,
+          text:
+            "2222222《傲慢与偏见》：百年经典的绝美呈现,一次现实与理想的爱情碰撞"
+        },
+        {
+          imgs: swiperOneImg,
+          text:
+            "3333333333,《傲慢与偏见》：百年经典的绝美呈现,一次现实与理想的爱情碰撞"
+        }
+      ],
       // 轮播
       actorSwiperOption: {
         slidesPerView: 3,
@@ -281,7 +321,6 @@ export default {
     // 分享事件
     showPopup() {
       this.show = true;
-      message = "分享";
     },
     // 单个小星星的点击事件
     addStars() {
@@ -293,6 +332,7 @@ export default {
         this.isShowStart = this.imgs[0].starsImgs;
       }
     },
+    // 电影 详情 列表 切换 效果
     toView() {
       if (event.target.tagName == "SPAN") {
         console.log(event.target.innerText);
@@ -303,27 +343,25 @@ export default {
         event.target.classList.add("checkBgc");
       }
     }
-  }
+  },
+  created() {}
 };
 </script>
 
 <style lang="scss" scoped>
 // 本页面的根
 .film-main {
-  // position: relative;
-  // z-index: 999;
   width: 100%;
-  height: 100%;
   .wrappe {
     width: 100%;
     height: 667px;
     .content {
       width: 100%;
-      height: 800px;
+      height: 1280px;
       position: relative;
       //  页面的 顶部 图片
       .film-header {
-        width: 375px;
+        width: 100%;
         height: 254px;
         position: relative;
         .film-header-bg {
@@ -336,7 +374,7 @@ export default {
         }
         .film-header-icon {
           position: absolute;
-          top: 0;
+          top: 25px;
           left: 20px;
           width: 339px;
           height: 30px;
@@ -349,6 +387,13 @@ export default {
             width: 20px;
             height: 20px;
             margin-top: 10px;
+          }
+
+          div.share {
+            text-align: center;
+            line-height: 100px;
+            font-size: 32px;
+            color: #000;
           }
         }
       }
@@ -391,7 +436,9 @@ export default {
         .film-score {
           margin-top: 12px;
           height: 27px;
-          //  分数 
+          position: relative;
+
+          //  分数
           .the-stars {
             width: 125px;
             height: 100%;
@@ -462,6 +509,9 @@ export default {
             margin-top: 10px;
             width: 340px;
             height: 70px;
+            position: absolute;
+            top: 85px;
+            left: 0;
             .film-text-view {
               width: 100%;
               height: 70px;
@@ -481,7 +531,7 @@ export default {
           // 电影的 演员
           .film-actor {
             width: 100%;
-            margin-top: 60px;
+            margin-top: 120px;
             margin-left: -20px;
             h2 {
               font-size: 16px;
@@ -493,7 +543,6 @@ export default {
               height: 183px;
               margin-top: 20px;
               margin-bottom: 10px;
-
               .film-swiper-slide {
                 div {
                   img {
@@ -519,9 +568,11 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
               font-weight: normal;
               color: orange;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的视频
@@ -563,9 +614,14 @@ export default {
               font-size: 16px;
               margin: 0 auto;
               text-align: center;
-              margin-left: -20px;
+              // margin-left: -40px;
               font-weight: normal;
               color: orange;
+              margin-top: -20px;
+              // background: red;
+              width: 100%;
+              height: 30px;
+              line-height: 30px;
             }
           }
           // 电影的 票房

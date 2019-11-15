@@ -1,8 +1,8 @@
 <template>
     <div class="sign-in">
     <div class="sign-head">
-        <img src="~@/assets/images/签到_slices/错误(1).png"  @click="$router.back(-1)">
-        <img src="~@/assets/images/签到_slices/错误.png" alt="">
+        <img src="~@/assets/imgs/signIn/error.png"  @click="$router.back(-1)">
+        <img src="~@/assets/imgs/signIn/menu.png" alt="">
     </div>
     <div class="sign-img">
         <!-- <img src="~@/assets/images/签到_slices/大表姐CC采集到电影｜海报｜记忆.png" alt="">
@@ -10,10 +10,10 @@
         <img src="~@/assets/images/签到_slices/大鱼海棠。.png" alt=""> -->
         <stack ref="stack" :pages="imgArr"></stack>
         <div class="sign-icon">
-          <img src="~@/assets/images/签到_slices/编组 4.png" alt="">
-          <img src="~@/assets/images/签到_slices/点赞.png" alt="">
-          <img src="~@/assets/images/签到_slices/分 享.png" alt="">
-          <img src="~@/assets/images/签到_slices/评论.png" alt="">
+          <img src="~@/assets/imgs/signIn/movies.png" alt="">
+          <img src="~@/assets/imgs/signIn/nb.png" alt="">
+          <img src="~@/assets/imgs/signIn/share.png" alt="">
+          <img src="~@/assets/imgs/signIn/comment.png" alt="">
         </div>
        
     </div>
@@ -33,13 +33,13 @@
             return{
               imgArr:[
                 {
-                  src:require("@/assets/images/签到_slices/大表姐CC采集到电影｜海报｜记忆.png"),
+                  src:require("@/assets/imgs/signIn/sign-1.png"),
                   title:"傲慢与偏见"
               },{
-                  src:require("@/assets/images/签到_slices/大表姐CC采集到电影｜海报｜记忆复制.png"),
+                  src:require("@/assets/imgs/signIn/sign-2.png"),
                   title:"某某韩剧"
                 },{
-                  src:require("@/assets/images/签到_slices/大鱼海棠。.png"),
+                  src:require("@/assets/imgs/signIn/sign-3.png"),
                   title:"大鱼海棠"}],
             }
           }
@@ -54,7 +54,7 @@
         height: 100%;
         padding: 0 20px;
         box-sizing: border-box;
-        background:url("~@/assets/images/影院详情_slices/椭圆形复制 3.png") no-repeat top;
+        background:url("~@/assets/imgs/signIn/round.png") no-repeat top;
         background-size: 100% auto;
         .sign-head{
             height: 44px;
