@@ -3,31 +3,31 @@
     <div class="head">
       <img
         class="head-back"
-        src="@/assets/images/登录页_slices (1)/返回箭头.png"
+        src="@/assets/images/login/arrow-l.png"
         alt=""
       />
       <img
         class="head-avator"
-        src="@/assets/images/消息列表_slices/椭圆形复制 3@3x.png"
+        src="@/assets/images/talk/avator.png"
         alt=""
       />
       Zeng Wen
       <img
         class="head-more"
-        src="@/assets/images/消息列表_slices/三个点.png"
+        src="@/assets/images/talk/more.png"
         alt=""
       />
     </div>
     <div class="content">
       <div class="content-1">
         <img
-          src="../../../assets/images/消息列表_slices/编组 2@3x.png"
+          src="@/assets/images/talk/hi-black.png"
           alt=""
         />
       </div>
       <div class="content-2">
         <img
-          src="../../../assets/images/消息列表_slices/编组 2复制@3x.png"
+          src="@/assets/images/talk/hi-yellow.png"
           alt=""
         />
       </div>
@@ -100,7 +100,7 @@ export default {};
       width: 234px;
       height: 85px;
       margin-top: 57px;
-      background: url("../../../assets/images/消息列表_slices/编组 2复制 2@3x.png")
+      background: url("~@/assets/images/talk/blank.png")
         no-repeat center/100%;
       overflow: hidden;
       div {

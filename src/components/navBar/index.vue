@@ -2,7 +2,7 @@
   <div class="nav-bar">
     <!-- 导航栏左侧 -->
     <div class="left">
-      <div class="location" v-if="left==='location'" @click="$router.push('cityList')">
+      <div class="location" v-if="left==='location'" @click="$router.push('/cityList')">
         <p class="elipsis">{{ city }}</p>
         <img src="@/assets/images/首页_slices/下 箭头@3x.png" alt />
       </div>
