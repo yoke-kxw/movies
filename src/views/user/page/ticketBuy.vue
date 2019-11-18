@@ -37,7 +37,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
@@ -69,7 +69,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
@@ -101,7 +101,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
