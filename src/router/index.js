@@ -222,6 +222,10 @@ const routes = [{
     path: "/confirmorder",
     name: "confirmorder",
     component: () => import("@/views/cinema/confirmorder")
+  },
+  {
+    path: "*",
+    redirect: "/"
   }
 ];
 
