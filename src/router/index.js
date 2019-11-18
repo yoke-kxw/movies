@@ -110,6 +110,7 @@ const routes = [{
     component: () => import("@/views/cinema/cinemaDetails")
   },
 
+
   {
     path: "/user",
     name: "user",

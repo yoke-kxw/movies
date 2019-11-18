@@ -64,7 +64,7 @@
     <p class="private">全部私信</p>
 
             <ul class="header-sub  private-letter">
-        <li>
+        <li @click="$router.push('/talk')">
           <div>
             <span>
               <b></b>
@@ -85,7 +85,7 @@
         </li>
 
 
-               <li>
+               <li @click="$router.push('/talk')">
           <div>
             <span>
               <b></b>
@@ -105,7 +105,7 @@
 
         </li>
 
-        <li>
+        <li @click="$router.push('/talk')">
           <div>
             <span>
               <b></b>
@@ -123,7 +123,7 @@
           </p>
 
 
-        </li>
+        </li @click="$router.push('/talk')">
 
                 <li>
           <div>
@@ -145,7 +145,7 @@
 
         </li>
 
-                <li>
+                <li  @click="$router.push('/talk')">
           <div>
             <span>
               <b></b>

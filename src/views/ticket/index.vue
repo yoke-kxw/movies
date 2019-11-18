@@ -14,22 +14,22 @@
       <!-- 头部下方的购票块儿 -->
       <ul class="header-sub">
         <li>
-          <div>
+          <div @click="$router.push('/search')">
             <p>试试搜索影片</p>
             <b></b>
           </div>
           <span></span>
         </li>
 
-        <li>
-          <div>
+        <li @click="$router.push('/cinema')">
+          <div >
             <p>万达影城</p>
             <b></b>
           </div>
           <span></span>
         </li>
 
-        <li>
+        <li @click="$router.push('/cinema/cinemaDetails/cad9084a3bc4dedf7369d30a')">
           <div>
             <div>
               <p>5月9日</p>
@@ -43,15 +43,15 @@
         </li>
 
         <li>
-          <div>
-            <div @click="changeBgc" :style="{background: bgc1}">
+          <div @click="changeBgc">
+            <div  :style="{background: bgc1}">
               <span v-if="lock1">✔</span>
             </div>
             <p>特惠票</p>
           </div>
 
-          <div>
-            <div @click="changeBgc2" :style="{background: bgc2}">
+          <div @click="changeBgc2">
+            <div  :style="{background: bgc2}">
               <span v-if="lock2">✔</span>
             </div>
             <p>推荐座位</p>
@@ -97,7 +97,7 @@
 
           <p>40.9元</p>
 
-          <span>购票</span>
+          <span  @click="$router.push('/chooseseat')">购票</span>
         </li>
 
         <li>
@@ -113,7 +113,7 @@
 
           <p>40.9元</p>
 
-          <span>购票</span>
+          <span  @click="$router.push('/chooseseat')">购票</span>
         </li>
 
         <li>
@@ -129,7 +129,7 @@
 
           <p>40.9元</p>
 
-          <span>购票</span>
+          <span  @click="$router.push('/chooseseat')">购票</span>
         </li>
 
         <li>
@@ -145,7 +145,7 @@
 
           <p>40.9元</p>
 
-          <span>购票</span>
+          <span  @click="$router.push('/chooseseat')">购票</span>
         </li>
 
         <li>
@@ -161,7 +161,7 @@
 
           <p>40.9元</p>
 
-          <span>购票</span>
+          <span  @click="$router.push('/chooseseat')">购票</span>
         </li>
       </ul>
     </div>

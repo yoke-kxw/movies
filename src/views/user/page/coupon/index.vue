@@ -79,8 +79,8 @@
       </ul>
     </div>
     <footer>
-      <p @click="toPurchase_tickets">去购票</p>
-      <span  @click="toPurchase_tickets"></span>
+      <p @click='$router.push("/ticket")'>去购票</p>
+      <span   @click='$router.push("/ticket")'></span>
     </footer>
   </div>
 </template>
@@ -99,12 +99,6 @@ export default {
         click: true
       });
     });
-  },
-
-  methods:{
-       toPurchase_tickets(){
-        this.$router.push('/user/purchase_tickets')
-    }
   }
 };
 </script>
