@@ -4,20 +4,20 @@
       <div class="back-image"></div>
       <!-- 头部 -->
       <div class="topbar">
-        <img @click="$router.go(-1)" src="@/assets/images/影评_slices/arrowl.png" alt />
+        <img @click="$router.go(-1)" src="@/assets/imgs/moviescore/arrowl.png" alt />
         <span>电影评分</span>
-        <img src="@/assets/images/签到_slices/分 享.png" alt />
+        <img src="@/assets/imgs/moviescore/share.png" alt />
       </div>
       <!-- 评分区间 -->
       <div class="score-range">
         <div class="range-title">
           <h3>《傲慢与偏见》</h3>
           <div class="point-star">
-            <img src="@/assets/images/电影详情_slices/星复制 2.png" alt />
-            <img src="@/assets/images/电影详情_slices/星复制 2.png" alt />
-            <img src="@/assets/images/电影详情_slices/星复制 2.png" alt />
-            <img src="@/assets/images/电影详情_slices/星复制 2.png" alt />
-            <img src="@/assets/images/电影详情_slices/星复制 2.png" alt />
+            <img src="@/assets/imgs/moviescore/star.png" alt />
+            <img src="@/assets/imgs/moviescore/star.png" alt />
+            <img src="@/assets/imgs/moviescore/star.png" alt />
+            <img src="@/assets/imgs/moviescore/star.png" alt />
+            <img src="@/assets/imgs/moviescore/star.png" alt />
             <span>9.0</span>
           </div>
           <p>28.5万人评分</p>
@@ -63,13 +63,13 @@
         <!-- 性别评分 -->
         <div class="sex-range">
           <div class="item-point man">
-            <img src="@/assets/images/电影评分_slices/男.png" alt />
+            <img src="@/assets/imgs/moviescore/man.png" alt />
             <p>男性观众</p>
             <p>8.4分</p>
           </div>
           <span>VS</span>
           <div class="item-point woman">
-            <img src="@/assets/images/电影评分_slices/女.png" alt />
+            <img src="@/assets/imgs/moviescore/woman.png" alt />
             <p>女性观众</p>
             <p>8.6分</p>
           </div>
@@ -133,7 +133,7 @@
     // position: relative;
     height: 215px;
     width: 100%;
-    background: url("~@/assets/images/电影详情_slices/《傲慢与偏见》.png")
+    background: url("~@/assets/imgs/moviescore/film5.png")
       no-repeat top;
     background-color: #23262d;
     opacity: 0.2;

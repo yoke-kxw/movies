@@ -3,8 +3,8 @@
   <div class="cinecism">
     <!-- 头部 -->
     <div class="topbar">
-      <img @click="$router.go(-1)" src="@/assets/images/影评_slices/arrowl.png" alt />
-      <img src="@/assets/images/签到_slices/分 享.png" alt />
+      <img @click="$router.go(-1)" src="@/assets/imgs/cinecism/arrowl.png" alt />
+      <img src="@/assets/imgs/cinecism/share.png" alt />
     </div>
     <!-- 内容区 -->
     <div class="content">
@@ -57,7 +57,7 @@
           </li>
         </ul>
         <div class="arrow">
-          <img src="@/assets/images/首页_slices/下 箭头.png" alt />
+          <img src="@/assets/imgs/cinecism/downarrow.png" alt />
         </div>
       </div>
       <!-- 详细影评区 -->
@@ -67,22 +67,22 @@
           <div class="item-head">
             <div class="user-info">
               <div class="avatar">
-                <img src="@/assets/images/影评_slices/点击查看源网页.png" alt />
+                <img src="@/assets/imgs/cinecism/user1.png" alt />
               </div>
               <div class="user-point">
                 <p>石原里美</p>
                 <div class="user-star">
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/半星.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/halfstar.png" alt />
                   <span>9.0</span>
                 </div>
               </div>
             </div>
             <div class="info-more">
-              <img src="@/assets/images/影评_slices/更多.png" alt />
+              <img src="@/assets/imgs/cinecism/more.png" alt />
             </div>
           </div>
           <!-- 评论内容 -->
@@ -96,11 +96,11 @@
             </div>
             <ul class="itemfoot-right">
               <li>
-                <img src="@/assets/images/影评_slices/点赞.png" alt />
+                <img src="@/assets/imgs/cinecism/good.png" alt />
                 <span>56</span>
               </li>
               <li>
-                <img src="@/assets/images/影评_slices/评论.png" alt />
+                <img src="@/assets/imgs/cinecism/argue.png" alt />
                 <span>1</span>
               </li>
             </ul>
@@ -111,22 +111,22 @@
           <div class="item-head">
             <div class="user-info">
               <div class="avatar">
-                <img src="@/assets/images/影评_slices/点击查看源网页(1).png" alt />
+                <img src="@/assets/imgs/cinecism/user2.png" alt />
               </div>
               <div class="user-point">
                 <p>十元</p>
                 <div class="user-star">
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/半星.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/halfstar.png" alt />
                   <span>9.0</span>
                 </div>
               </div>
             </div>
             <div class="info-more">
-              <img src="@/assets/images/影评_slices/更多.png" alt />
+              <img src="@/assets/imgs/cinecism/more.png" alt />
             </div>
           </div>
           <!-- 评论内容 -->
@@ -140,11 +140,11 @@
             </div>
             <ul class="itemfoot-right">
               <li>
-                <img src="@/assets/images/影评_slices/点赞.png" alt />
+                <img src="@/assets/imgs/cinecism/good.png" alt />
                 <span>56</span>
               </li>
               <li>
-                <img src="@/assets/images/影评_slices/评论.png" alt />
+                <img src="@/assets/imgs/cinecism/argue.png" alt />
                 <span>1</span>
               </li>
             </ul>
@@ -155,22 +155,22 @@
           <div class="item-head">
             <div class="user-info">
               <div class="avatar">
-                <img src="@/assets/images/影评_slices/点击查看源网页(2).png" alt />
+                <img src="@/assets/imgs/cinecism/user3.png" alt />
               </div>
               <div class="user-point">
                 <p>拾圆</p>
                 <div class="user-star">
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/五角星.png" alt />
-                  <img src="@/assets/images/影评_slices/半星.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/star.png" alt />
+                  <img src="@/assets/imgs/cinecism/halfstar.png" alt />
                   <span>9.0</span>
                 </div>
               </div>
             </div>
             <div class="info-more">
-              <img src="@/assets/images/影评_slices/更多.png" alt />
+              <img src="@/assets/imgs/cinecism/more.png" alt />
             </div>
           </div>
           <!-- 评论内容 -->
@@ -184,11 +184,11 @@
             </div>
             <ul class="itemfoot-right">
               <li>
-                <img src="@/assets/images/影评_slices/点赞.png" alt />
+                <img src="@/assets/imgs/cinecism/good.png" alt />
                 <span>56</span>
               </li>
               <li>
-                <img src="@/assets/images/影评_slices/评论.png" alt />
+                <img src="@/assets/imgs/cinecism/argue.png" alt />
                 <span>1</span>
               </li>
             </ul>
@@ -297,12 +297,12 @@ export default {
           }
         }
         li:nth-child(3) {
-          background: url("~@/assets/images/影评_slices/矩形复制 2.png")
+          background: url("~@/assets/imgs/cinecism/back.png")
             no-repeat center;
           background-size: 149px 22px;
         }
         li:nth-child(4) {
-          background: url("~@/assets/images/影评_slices/矩形复制 2.png")
+          background: url("~@/assets/imgs/cinecism/back.png")
             no-repeat center;
           background-size: 112px 22px;
         }
