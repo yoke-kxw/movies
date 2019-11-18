@@ -20,9 +20,9 @@
         </div>
         <swiper :options="crossOption" class="hot-list">
           <swiper-slide class="item" v-for="item in hotList" :key="item.id">
-            <img :src="imgUrl(item.img)" alt />
+            <img :src="imgUrl(item.img)" alt @click="$router.push('/movie/film')" />
             <p class="text-ellipsis">{{ item.title }}</p>
-            <router-link to="/cinema" tag="div" class="buy">购票</router-link>
+            <router-link to="/ticket" tag="div" class="buy">购票</router-link>
           </swiper-slide>
         </swiper>
       </div>
@@ -34,7 +34,7 @@
         </div>
         <swiper :options="crossOption" class="coming-list">
           <swiper-slide class="item" v-for="item in comingList" :key="item.id">
-            <img :src="imgUrl(item.img)" alt />
+            <img :src="imgUrl(item.img)" alt @click="$router.push('/movie/film')" />
             <p class="text-ellipsis">{{ item.title }}</p>
             <p class="date">{{ item.date }}</p>
           </swiper-slide>
@@ -58,10 +58,6 @@
             ></iframe>
             <p class="info">{{ item.info }}</p>
           </swiper-slide>
-          <!-- <swiper-slide class="item" v-for="item in trailerList" :key="item.id">
-            <img :src="imgUrl(item.img)" alt />
-            <p class="info">{{ item.info }}</p>
-          </swiper-slide>-->
         </swiper>
       </div>
     </div>
@@ -77,8 +73,6 @@
         <img @click="$router.push('/home/signIn')" src="@/assets/imgs/home/punch.png" alt />
       </template>
     </nav-Bar>
-    <!-- tab栏 -->
-    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -88,8 +82,7 @@ import BScroll from "@better-scroll/core";
 export default {
   name: "home",
   components: {
-    navBar: () => import("@/components/navBar"),
-    tabBar: () => import("@/components/tabBar")
+    navBar: () => import("@/components/navBar")
   },
   data() {
     return {
