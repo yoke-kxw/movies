@@ -34,7 +34,14 @@ const routes = [{
   {
     path: "/user/setting",
     name: "userSetting",
-    component: () => import("@/views/user/setting/index.vue")
+    component: () => import("@/views/user/setting/index.vue"),
+    beforeEnter: (to, from, next) => {
+      if(localStorage.getItem("user")){
+        next();
+      }else{
+        next("/login");
+      }
+    }
   },
   {
     //票房
