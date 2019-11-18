@@ -26,7 +26,7 @@
     </ul>
 </template>
 <script>
-import icon from "@/assets/images/签到_slices/喇叭.png"
+import icon from "@/assets/imgs/signIn/horn.png"
 export default {
   props: {
     // pages数据包含基础的图片数据

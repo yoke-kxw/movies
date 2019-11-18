@@ -22,7 +22,7 @@
       <div class="center-item">
         <p>电影优惠券</p>
         <div class="center-item-row">
-          <p @click="$router.push('/user/coupon')">有优惠券可用</p>
+          <p>一张优惠券可用</p>
           <img :src="imgs[2].url" alt="" />
         </div>
       </div>
@@ -66,7 +66,9 @@
           </div>
         </div>
       </div>
-      <button class="sure-order">确认订单</button>
+      <button class="sure-order" @click="$router.push('/ticketBuy')">
+        确认订单
+      </button>
     </div>
   </div>
 </template>

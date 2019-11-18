@@ -2,7 +2,8 @@
   <div class="wrapper" ref="wrapper">
     <div class="ticket-buy-c">
       <div class="head">
-        <span @click="$router.go(-1)">&lt;</span> <span>我的影票</span>
+        <span @click="$router.push('/order/whole')">&lt;</span>
+        <span>我的影票</span>
         <span> &lt; </span>
       </div>
       <div class="content">
@@ -26,10 +27,7 @@
                 <p>耀莱成龙影城(建业店)</p>
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
-              <img
-                src="@/assets/imgs/myticket/cover.png"
-                alt=""
-              />
+              <img src="@/assets/imgs/myticket/cover.png" alt="" />
             </div>
             <div class="slide-middle">
               <div class="slide-middle-head">
@@ -58,10 +56,7 @@
                 <p>耀莱成龙影城(建业店)</p>
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
-              <img
-                src="@/assets/imgs/myticket/cover.png"
-                alt=""
-              />
+              <img src="@/assets/imgs/myticket/cover.png" alt="" />
             </div>
             <div class="slide-middle">
               <div class="slide-middle-head">
@@ -90,10 +85,7 @@
                 <p>耀莱成龙影城(建业店)</p>
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
-              <img
-                src="@/assets/imgs/myticket/cover.png"
-                alt=""
-              />
+              <img src="@/assets/imgs/myticket/cover.png" alt="" />
             </div>
             <div class="slide-middle">
               <div class="slide-middle-head">
@@ -121,7 +113,7 @@
 </template>
 
 <script>
-import BScroll from '@better-scroll/core'
+import BScroll from "@better-scroll/core";
 export default {
   data() {
     return {
@@ -147,13 +139,13 @@ export default {
       return this.$refs.mySwiper.swiper;
     }
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {
-
-      })
-    })
-  }    
+        click: true
+      });
+    });
+  }
 };
 </script>
 
@@ -192,8 +184,8 @@ export default {
       margin: 0 auto 30px;
       // box-shadow: 0 10px 10px 0 gray;
       .swiper-container {
-        background: url("~@/assets/imgs/myticket/background.png")
-          no-repeat center/340px 550px;
+        background: url("~@/assets/imgs/myticket/background.png") no-repeat
+          center/340px 550px;
         position: relative;
         z-index: 3;
         width: 100%;

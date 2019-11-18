@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [{
+const routes = [
+  {
     path: "/",
     name: "index",
     redirect: "/home"
@@ -13,7 +14,7 @@ const routes = [{
     name: "home",
     component: () => import("@/views/home"),
     meta: {
-      mainIndex: 1,
+      mainIndex: 1
     }
   },
   {
@@ -36,9 +37,9 @@ const routes = [{
     name: "userSetting",
     component: () => import("@/views/user/setting/index.vue"),
     beforeEnter: (to, from, next) => {
-      if(localStorage.getItem("user")){
+      if (localStorage.getItem("user")) {
         next();
-      }else{
+      } else {
         next("/login");
       }
     }
@@ -110,7 +111,6 @@ const routes = [{
     component: () => import("@/views/cinema/cinemaDetails")
   },
 
-
   {
     path: "/user",
     name: "user",
@@ -138,7 +138,8 @@ const routes = [{
     name: "order",
     redirect: "/order/whole",
     component: () => import("@/views/user/order/index.vue"),
-    children: [{
+    children: [
+      {
         // 全部
         path: "whole",
         name: "whole",
@@ -224,7 +225,15 @@ const routes = [{
   {
     path: "/chooseseat",
     name: "chooseseat",
-    component: () => import("@/views/cinema/chooseseat")
+    component: () => import("@/views/cinema/chooseseat"),
+    beforeEnter(to, from, next) {
+      if (localStorage.getItem("user")) {
+        next();
+      } else {
+        alert("请先登录");
+        next("/login");
+      }
+    }
   },
   // 确认订单
   {
@@ -260,7 +269,7 @@ const router = new VueRouter({
     return {
       x: 0,
       y: 0
-    }
+    };
   }
 });
 
