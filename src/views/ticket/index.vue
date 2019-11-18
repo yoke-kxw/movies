@@ -74,7 +74,7 @@
       <div class="special-ticke">
         <h4>特惠票</h4>
 
-        <div>
+        <div @click="$router.push('/user/coupon')">
           <p>更多优惠</p>
 
           <span></span>
