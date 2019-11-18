@@ -3,31 +3,31 @@
     <div class="head">
       <img
         class="head-back"
-        src="@/assets/images/login/arrow-l.png"
+        src="@/assets/imgs/login/arrow-l.png"
         alt=""
       />
       <img
         class="head-avator"
-        src="@/assets/images/talk/avator.png"
+        src="@/assets/imgs/talk/avator.png"
         alt=""
       />
       Zeng Wen
       <img
         class="head-more"
-        src="@/assets/images/talk/more.png"
+        src="@/assets/imgs/talk/more.png"
         alt=""
       />
     </div>
     <div class="content">
       <div class="content-1">
         <img
-          src="@/assets/images/talk/hi-black.png"
+          src="@/assets/imgs/talk/hi-black.png"
           alt=""
         />
       </div>
       <div class="content-2">
         <img
-          src="@/assets/images/talk/hi-yellow.png"
+          src="@/assets/imgs/talk/hi-yellow.png"
           alt=""
         />
       </div>
@@ -100,7 +100,7 @@ export default {};
       width: 234px;
       height: 85px;
       margin-top: 57px;
-      background: url("~@/assets/images/talk/blank.png")
+      background: url("~@/assets/imgs/talk/blank.png")
         no-repeat center/100%;
       overflow: hidden;
       div {

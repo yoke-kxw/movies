@@ -8,12 +8,12 @@
       <div class="content">
         <img
           class="content-shadow1"
-          src="@/assets/images/myticket/background.png"
+          src="@/assets/imgs/myticket/background.png"
           alt=""
         />
         <img
           class="content-shadow2"
-          src="@/assets/images/myticket/background.png"
+          src="@/assets/imgs/myticket/background.png"
           alt=""
         />
         <swiper :options="swiperOption" ref="mySwiper">
@@ -27,7 +27,7 @@
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
               <img
-                src="@/assets/images/myticket/cover.png"
+                src="@/assets/imgs/myticket/cover.png"
                 alt=""
               />
             </div>
@@ -37,7 +37,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/images/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
@@ -46,7 +46,7 @@
               </p>
               <p>
                 <span>1.3</span>km
-                <img src="@/assets/images/myticket/phone.png" alt="" />
+                <img src="@/assets/imgs/myticket/phone.png" alt="" />
               </p>
             </div>
           </swiper-slide>
@@ -59,7 +59,7 @@
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
               <img
-                src="@/assets/images/myticket/cover.png"
+                src="@/assets/imgs/myticket/cover.png"
                 alt=""
               />
             </div>
@@ -69,7 +69,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/images/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
@@ -78,7 +78,7 @@
               </p>
               <p>
                 <span>1.3</span>km
-                <img src="@/assets/images/myticket/phone.png" alt="" />
+                <img src="@/assets/imgs/myticket/phone.png" alt="" />
               </p>
             </div>
           </swiper-slide>
@@ -91,7 +91,7 @@
                 <p>1号激光厅 7排12座 7排13座</p>
               </div>
               <img
-                src="@/assets/images/myticket/cover.png"
+                src="@/assets/imgs/myticket/cover.png"
                 alt=""
               />
             </div>
@@ -101,7 +101,7 @@
                 <span>284856992589858F</span>
                 <span>33元</span>
               </div>
-              <img src="@/assets/images/myticket/timg@3x.png" alt="" />
+              <img src="@/assets/imgs/myticket/timg@3x.png" alt="" />
               <p>2张电影票</p>
             </div>
             <div class="slide-bottom">
@@ -110,7 +110,7 @@
               </p>
               <p>
                 <span>1.3</span>km
-                <img src="@/assets/images/myticket/phone.png" alt="" />
+                <img src="@/assets/imgs/myticket/phone.png" alt="" />
               </p>
             </div>
           </swiper-slide>
@@ -192,7 +192,7 @@ export default {
       margin: 0 auto 30px;
       // box-shadow: 0 10px 10px 0 gray;
       .swiper-container {
-        background: url("~@/assets/images/myticket/background.png")
+        background: url("~@/assets/imgs/myticket/background.png")
           no-repeat center/340px 550px;
         position: relative;
         z-index: 3;

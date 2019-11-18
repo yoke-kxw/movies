@@ -5,11 +5,11 @@
         <!-- 版心 -->
         <div class="intro-c">
           <div class="topbar">
-            <img @click="$router.go(-1)" src="@/assets/images/影评_slices/arrowl.png" alt />
+            <img @click="$router.go(-1)" src="@/assets/imgs/actordetail/arrowl.png" alt />
           </div>
           <!-- 简介 -->
           <div class="actor-info">
-            <img src="@/assets/images/演员详情_slices/点击查看源网页2.png" alt />
+            <img src="@/assets/imgs/actordetail/avastar.png" alt />
             <h3>凯拉·奈特莉</h3>
             <p>Satomi lshihara</p>
             <p>关注</p>
@@ -28,7 +28,7 @@
             <h3 class="common-title">个人作品</h3>
             <ul class="product-items">
               <li class="product-item">
-                <img src="@/assets/images/演员详情_slices/忍者之国图片_百度百科.png" alt />
+                <img src="@/assets/imgs/actordetail/film1.png" alt />
                 <div class="product-name">
                   <h3>忍者之国</h3>
                   <p>
@@ -40,7 +40,7 @@
                 </div>
               </li>
               <li class="product-item">
-                <img src="@/assets/images/演员详情_slices/新·哥斯拉图片_百度百科.png" alt />
+                <img src="@/assets/imgs/actordetail/film2.png" alt />
                 <div class="product-name">
                   <h3>新·哥斯拉</h3>
                   <p>
@@ -59,15 +59,15 @@
             <div class="photos">
               <div class="photos-l">
                 <div class="inner-top">
-                  <img src="@/assets/images/演员详情_slices/IMG_91637.png" alt />
+                  <img src="@/assets/imgs/actordetail/IMG_91637.png" alt />
                 </div>
                 <div class="inner-below">
-                  <img src="@/assets/images/演员详情_slices/IMG_91647.png" alt />
-                  <img src="@/assets/images/演员详情_slices/IMG_91658.png" alt />
+                  <img src="@/assets/imgs/actordetail/IMG_91647.png" alt />
+                  <img src="@/assets/imgs/actordetail/IMG_91658.png" alt />
                 </div>
               </div>
               <div class="photos-r">
-                <img src="@/assets/images/演员详情_slices/IMG_91625.png" alt />
+                <img src="@/assets/imgs/actordetail/IMG_91625.png" alt />
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default {
     // height: 489px;
     width: 100%;
     overflow: hidden;
-    background: url("~@/assets/images/演员详情_slices/点击查看源网页.png")
+    background: url("~@/assets/imgs/actordetail/actor.png")
       no-repeat top;
       background-size: 100%;
     .intro-c {
