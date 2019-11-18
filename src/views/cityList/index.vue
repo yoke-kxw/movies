@@ -105,11 +105,9 @@ export default {
       if (!this.keywords) {
         return;
       }
-      var list = [];
-      this.allCity.forEach(ele => {
-        list = [...list, ...ele.citys.filter(el => el.includes(this.keywords))];
-      });
-      return list;
+      return this.allCity.reduce((a, b) => {
+        return [...a, ...b.citys.filter(el => el.includes(this.keywords))];
+      }, []);
     }
   },
   methods: {

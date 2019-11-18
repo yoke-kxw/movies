@@ -1,7 +1,6 @@
 <template>
   <div class="purchase_tickets-wrapper" ref="wrapper">
     <div class="purchase_tickets-content">
-
       <!-- 头部 -->
       <header>
         <span @click="$router.go(-1)" class="header-l"></span>
@@ -14,7 +13,7 @@
 
       <!-- 头部下方的购票块儿 -->
       <ul class="header-sub">
-        <li>
+        <li @click="$router.push('/search')">
           <div>
             <p>试试搜索影片</p>
             <b></b>
@@ -23,7 +22,7 @@
         </li>
 
         <li>
-          <div>
+          <div @click="$router.push('/cinema')">
             <p>万达影城</p>
             <b></b>
           </div>
@@ -52,7 +51,7 @@
           </div>
 
           <div>
-            <div  @click="changeBgc2" :style="{background: bgc2}">
+            <div @click="changeBgc2" :style="{background: bgc2}">
               <span v-if="lock2">✔</span>
             </div>
             <p>推荐座位</p>
@@ -70,122 +69,101 @@
         </li>
       </ul>
 
-
-
-
       <!-- 特惠票部分 -->
 
       <div class="special-ticke">
-          <h4>特惠票</h4>
+        <h4>特惠票</h4>
 
-          <div>
-            <p>更多优惠</p>
+        <div>
+          <p>更多优惠</p>
 
-            <span></span>
-          </div>
+          <span></span>
+        </div>
       </div>
 
+      <!-- 特惠票下边 -->
 
+      <ul class="special-ticke-sub">
+        <li>
+          <div>
+            <p>18:15</p>
+            <p>22:16散场</p>
+          </div>
 
+          <div>
+            <p>英雄联盟S决赛</p>
+            <p>万达影城6号激光厅</p>
+          </div>
 
-        <!-- 特惠票下边 -->
+          <p>40.9元</p>
 
-        <ul class="special-ticke-sub">
+          <span>购票</span>
+        </li>
 
-            <li>
-              <div>
-                <p>18:15</p>
-                <p>22:16散场</p>
-              </div>
+        <li>
+          <div>
+            <p>18:15</p>
+            <p>22:16散场</p>
+          </div>
 
-              <div>
-                <p>英雄联盟S决赛</p>
-                <p>万达影城6号激光厅</p>
-              </div>
+          <div>
+            <p>英雄联盟S决赛</p>
+            <p>万达影城6号激光厅</p>
+          </div>
 
-              <p>40.9元</p>
+          <p>40.9元</p>
 
-              <span>
-                  购票
-              </span>
-            </li>
+          <span>购票</span>
+        </li>
 
-            
-            <li>
-              <div>
-                <p>18:15</p>
-                <p>22:16散场</p>
-              </div>
+        <li>
+          <div>
+            <p>18:15</p>
+            <p>22:16散场</p>
+          </div>
 
-              <div>
-                <p>英雄联盟S决赛</p>
-                <p>万达影城6号激光厅</p>
-              </div>
+          <div>
+            <p>英雄联盟S决赛</p>
+            <p>万达影城6号激光厅</p>
+          </div>
 
-              <p>40.9元</p>
+          <p>40.9元</p>
 
-              <span>
-                  购票
-              </span>
-            </li>
-            
-            <li>
-              <div>
-                <p>18:15</p>
-                <p>22:16散场</p>
-              </div>
+          <span>购票</span>
+        </li>
 
-              <div>
-                <p>英雄联盟S决赛</p>
-                <p>万达影城6号激光厅</p>
-              </div>
+        <li>
+          <div>
+            <p>18:15</p>
+            <p>22:16散场</p>
+          </div>
 
-              <p>40.9元</p>
+          <div>
+            <p>英雄联盟S决赛</p>
+            <p>万达影城6号激光厅</p>
+          </div>
 
-              <span>
-                  购票
-              </span>
-            </li>
-            
-            <li>
-              <div>
-                <p>18:15</p>
-                <p>22:16散场</p>
-              </div>
+          <p>40.9元</p>
 
-              <div>
-                <p>英雄联盟S决赛</p>
-                <p>万达影城6号激光厅</p>
-              </div>
+          <span>购票</span>
+        </li>
 
-              <p>40.9元</p>
+        <li>
+          <div>
+            <p>18:15</p>
+            <p>22:16散场</p>
+          </div>
 
-              <span>
-                  购票
-              </span>
-            </li>
-            
-            <li>
-              <div>
-                <p>18:15</p>
-                <p>22:16散场</p>
-              </div>
+          <div>
+            <p>英雄联盟S决赛</p>
+            <p>万达影城6号激光厅</p>
+          </div>
 
-              <div>
-                <p>英雄联盟S决赛</p>
-                <p>万达影城6号激光厅</p>
-              </div>
+          <p>40.9元</p>
 
-              <p>40.9元</p>
-
-              <span>
-                  购票
-              </span>
-            </li>
-
-        </ul>
-
-
+          <span>购票</span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -205,32 +183,32 @@ export default {
     });
   },
 
-  data(){
-    return{
+  data() {
+    return {
       lock1: false,
       lock2: true,
 
-      bgc1: '',
-      bgc2: 'linear-gradient(#f16d7d, #f28d6d)'
-    }
+      bgc1: "",
+      bgc2: "linear-gradient(#f16d7d, #f28d6d)"
+    };
   },
 
-  methods:{
-    changeBgc(){
+  methods: {
+    changeBgc() {
       this.lock1 = !this.lock1;
-      if(this.bgc1 != ''){
-        this.bgc1 = ''
-      }else{
-      this.bgc1 = 'linear-gradient(#f16d7d, #f28d6d)'
+      if (this.bgc1 != "") {
+        this.bgc1 = "";
+      } else {
+        this.bgc1 = "linear-gradient(#f16d7d, #f28d6d)";
       }
     },
 
-    changeBgc2(){
+    changeBgc2() {
       this.lock2 = !this.lock2;
-       if(this.bgc2 != ''){
-        this.bgc2 = ''
-      }else{
-      this.bgc2 = 'linear-gradient(#f16d7d, #f28d6d)'
+      if (this.bgc2 != "") {
+        this.bgc2 = "";
+      } else {
+        this.bgc2 = "linear-gradient(#f16d7d, #f28d6d)";
       }
     }
   }
@@ -245,7 +223,7 @@ export default {
   width: 100%;
   height: 100%;
 
-  .purchase_tickets-content { 
+  .purchase_tickets-content {
     width: 100%;
     // height: 700px;
     color: #fff;
@@ -265,8 +243,7 @@ export default {
       .header-l {
         width: 32px;
         height: 32px;
-        background: url(~./imgs/arr_left.png) no-repeat
-          center;
+        background: url(~./imgs/arr_left.png) no-repeat center;
       }
 
       .header-r {
@@ -282,8 +259,7 @@ export default {
           width: 33px;
           height: 33px;
           border-radius: 50%;
-          background: url(~./imgs/user_photo.png) no-repeat
-            center;
+          background: url(~./imgs/user_photo.png) no-repeat center;
           background-size: 33px 33px;
         }
       }
@@ -330,8 +306,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~./imgs/arr_left.png)
-              no-repeat center;
+            background: url(~./imgs/arr_left.png) no-repeat center;
             margin-left: 2px;
           }
         }
@@ -349,8 +324,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~./imgs/arr_left.png)
-              no-repeat center;
+            background: url(~./imgs/arr_left.png) no-repeat center;
           }
         }
 
@@ -358,8 +332,7 @@ export default {
           display: block;
           width: 16px;
           height: 19px;
-          background: url(~./imgs/position.png) no-repeat
-            center;
+          background: url(~./imgs/position.png) no-repeat center;
           margin-right: 33px;
         }
       }
@@ -388,8 +361,7 @@ export default {
             width: 16px;
             height: 16px;
             transform: rotate(180deg);
-            background: url(~./imgs/arr_left.png)
-              no-repeat center;
+            background: url(~./imgs/arr_left.png) no-repeat center;
             margin-right: 10px;
           }
         }
@@ -452,24 +424,24 @@ export default {
         }
       }
 
-      li:nth-child(5){
+      li:nth-child(5) {
         justify-content: center;
 
-          div{
-            width: 86%;
-            height: 76%;
-            background: linear-gradient(to right, #F25B86, #F1AC5E );
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            border-radius: 6px;
-          }
+        div {
+          width: 86%;
+          height: 76%;
+          background: linear-gradient(to right, #f25b86, #f1ac5e);
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          border-radius: 6px;
+        }
       }
 
-      li:nth-child(6){
-        div{
+      li:nth-child(6) {
+        div {
           justify-content: space-around;
-          p{
+          p {
             opacity: 0.7;
             margin-right: 40px;
           }
@@ -477,9 +449,8 @@ export default {
       }
     }
 
-    
     // 特惠票部分
-    .special-ticke{
+    .special-ticke {
       width: 334px;
       height: 80px;
       margin: 0 auto;
@@ -487,78 +458,74 @@ export default {
       justify-content: space-between;
       align-items: center;
 
-      h4{
+      h4 {
         font-size: 16px;
         font-weight: normal;
-      } 
+      }
 
-      div{
+      div {
         display: flex;
         align-items: center;
-          p{
-            opacity: 0.7;
-          }
+        p {
+          opacity: 0.7;
+        }
 
-          span{
-             width: 16px;
-            height: 16px;
-            transform: rotate(180deg);
-            background: url(~./imgs/arr_left.png)
-              no-repeat center;
-            margin-left: 3px;
-          }
+        span {
+          width: 16px;
+          height: 16px;
+          transform: rotate(180deg);
+          background: url(~./imgs/arr_left.png) no-repeat center;
+          margin-left: 3px;
+        }
       }
     }
 
-
     // 特惠票下边的购票部分
-    .special-ticke-sub{
-        width: 100%;
+    .special-ticke-sub {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      li {
+        width: 336px;
+        height: 70px;
+        background-color: #33363d;
+        border-radius: 10px;
+        margin: 10px 0;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
 
-        li{
-          width: 336px;
-          height: 70px;
-          background-color: #33363D;
-          border-radius: 10px;
-          margin: 10px 0;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-
-          div{
-            p{
-              color: #fff;
-              font-size: 12px;
-              margin: 10px 0;
-              opacity: 0.7;
-            }
-
-            p:nth-child(1){
-              font-size: 15px;
-              opacity: 1;
-            }
-
+        div {
+          p {
+            color: #fff;
+            font-size: 12px;
+            margin: 10px 0;
+            opacity: 0.7;
           }
 
-          p{
-            font-size: 18px;
-            color: #FBC34A;
-          }
-
-          span{
-            text-align: center;
-            line-height: 25px;
-            width: 45px;
-            height: 25px;
-            background: linear-gradient(135deg, #F25B86,#F1AC5E);
-            border-radius: 5px;
+          p:nth-child(1) {
+            font-size: 15px;
+            opacity: 1;
           }
         }
+
+        p {
+          font-size: 18px;
+          color: #fbc34a;
+        }
+
+        span {
+          text-align: center;
+          line-height: 25px;
+          width: 45px;
+          height: 25px;
+          background: linear-gradient(135deg, #f25b86, #f1ac5e);
+          border-radius: 5px;
+        }
+      }
     }
-    
   }
 }
 </style>
