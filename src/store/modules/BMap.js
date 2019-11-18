@@ -102,18 +102,27 @@ const BaiduMap = {
                 onSearchComplete: function (r) {
                     if (local.getStatus() == BMAP_STATUS_SUCCESS) {
                         console.log(r);
-                        // 搜索结果去重
-                        r.forEach((ele, index) => {
-                            if (index === 0) {
-                                state.cinemaList = ele.Br;
-                            } else {
-                                ele.Br.forEach(el => {
-                                    if (state.cinemaList.every(e => e.uid !== el.uid)) {
-                                        state.cinemaList.push(el)
-                                    }
-                                })
-                            }
-                        })
+                        // 搜索结果合并去重(方法一)
+                        // r.forEach((ele, index) => {
+                        //     if (index === 0) {
+                        //         state.cinemaList = ele.Br;
+                        //     } else {
+                        //         ele.Br.forEach(el => {
+                        //             if (state.cinemaList.every(e => e.uid !== el.uid)) {
+                        //                 state.cinemaList.push(el)
+                        //             }
+                        //         })
+                        //     }
+                        // })
+                        // 搜索结果合并去重(方法二)
+                        r.forEach(el => {
+                            state.cinemaList = [...state.cinemaList, ...el.Br]
+                        });
+                        let obj = {};
+                        state.cinemaList = state.cinemaList.reduce((cur, next) => {
+                            obj[next.uid] ? "" : obj[next.uid] = true && cur.push(next);
+                            return cur;
+                        }, [])
                         console.log(state.cinemaList);
                         // 获取当前位置到电影院的距离，添加到电影院对象的属性中，单位‘米’
                         state.cinemaList.forEach(el => {

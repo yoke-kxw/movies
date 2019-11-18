@@ -27,8 +27,8 @@
           </ul>
         </div>
         <div class="operation">
-          <div v-if="type=='coming'" class="presale">预售</div>
-          <div v-if="type=='showing'" class="buy">购票</div>
+          <div v-if="type=='coming'" class="presale" @click.stop="$router.push('/ticket')">预售</div>
+          <div v-if="type=='showing'" class="buy" @click.stop="$router.push('/ticket')">购票</div>
         </div>
       </li>
     </ul>

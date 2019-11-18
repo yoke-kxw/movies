@@ -17,6 +17,11 @@ const routes = [{
     }
   },
   {
+    path: "/cityList",
+    name: "cityList",
+    component: () => import("@/views/cityList")
+  },
+  {
     path: "/search",
     name: "Search",
     component: () => import("../views/home/search/index.vue")
@@ -77,6 +82,7 @@ const routes = [{
     name: "film",
     component: () => import("@/views/movie/filmdetails/index.vue")
   },
+  // 购票页面
   {
     path: "/ticket",
     name: "ticket",
@@ -84,11 +90,6 @@ const routes = [{
     meta: {
       mainIndex: 4
     }
-  },
-  {
-    path: "/cityList",
-    name: "cityList",
-    component: () => import("@/views/cityList")
   },
   {
     path: "/cinema",
@@ -164,11 +165,11 @@ const routes = [{
   },
 
   // purchase_tickets: 购票页面
-  {
-    path: "/user/purchase_tickets",
-    name: "purchase_tickets",
-    component: () => import("@/views/user/page/purchase_tickets/index.vue")
-  },
+  // {
+  //   path: "/user/purchase_tickets",
+  //   name: "purchase_tickets",
+  //   component: () => import("@/views/user/page/purchase_tickets/index.vue")
+  // },
 
   {
     // coupon: 优惠券页面
@@ -184,7 +185,7 @@ const routes = [{
     component: () => import("@/views/user/page/message/index.vue")
   },
   {
-    path: "/cinecism",
+    path: "movie/cinecism",
     name: "cinecism",
     component: () => import("@/views/movie/cinecism")
   },
@@ -257,10 +258,5 @@ const router = new VueRouter({
     }
   }
 });
-
-router.beforeEach((to, from, next) => {
-  console.log(to);
-  next();
-})
 
 export default router;
