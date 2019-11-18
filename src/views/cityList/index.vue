@@ -4,7 +4,7 @@
       <!-- 搜索开始 -->
       <div class="search">
         <div class="search-eara">
-          <img src="@/assets/images/首页_slices/搜索@3x.png" alt />
+          <img src="@/assets/imgs/home/search.png" alt />
           <input type="text" placeholder="输入城市" v-model="keywords" />
         </div>
         <span class="cancel" @click="$router.go(-1)">取消</span>
